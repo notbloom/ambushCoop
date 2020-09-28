@@ -1,0 +1,31 @@
+digraph AgentStructure {
+
+
+    Player -> Agent;
+    Player -> WaitForActions
+    Enemy -> Agent;
+    Enemy -> TurnActions
+    //Agent
+    Agent -> HObject
+    Agent -> HICanReceiveDamage
+
+    Agent -> VisibleObject;
+    Agent -> baseStats;
+    Agent -> roundStats;
+    Agent -> resistances;
+    Agent -> status;
+    Agent -> PlayTurn
+    PlayTurn -> TurnActions;
+    PlayTurn -> WaitForActions;
+
+    WaitForActions -> ActionCommand;
+    TurnActions -> ActionCommand;
+    ActionCommand -> ActionCommandsInvoker;
+    ActionCommandsInvoker -> AnimationSystem;
+    ActionCommandsInvoker -> Network;
+    //HObject
+    HObject -> HObjectFactions;
+    HObject -> HObjectTypes;
+    HObject -> HNode;
+    HObject -> Agent;
+}

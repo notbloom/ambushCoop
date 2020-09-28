@@ -9,14 +9,13 @@ namespace notbloom.HexagonalMap
         public float x => position.x;
         public float y => position.y;
         public List<HNode> neighbours;
-
-        public List<HOcupant> occupant;
+        public HObject occupant;
+        public List<HTrigger> triggers;
         public bool passable => true;
 
         public HNode(float x, float y)
         {
             position = new HPosition(x, y);
-            occupant = new List<HOcupant>();
             neighbours = new List<HNode>();
         }
 

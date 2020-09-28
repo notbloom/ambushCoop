@@ -1,22 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using notbloom.HexagonalMap;
 
-public class Agent : MonoBehaviour
+public class Agent : HObject, HICanReceiveDamage
 {
-    public VisibleCharacter visibleCharacter;
+    public VisibleObject visibleCharacter;
     public BaseStats baseStats;
     public BaseStats roundStats;
     public List<Status> resistances;
     public List<Status> status;
 
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
     public int hp;
     // Start is called before the first frame update
 
+    public virtual void ReceiveDamage()
+    {
+
+    }
     public virtual void OnSpawn()
     {
         roundStats = new BaseStats();
+        agent = this;
+        hp = 100;
     }
     public virtual void OnTurnStart()
     {
@@ -58,8 +65,8 @@ public class Agent : MonoBehaviour
 
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = visibleCharacter.sprite;
+        //  spriteRenderer = GetComponent<SpriteRenderer>();
+        // spriteRenderer.sprite = visibleCharacter.sprite;
     }
     void Start()
     {

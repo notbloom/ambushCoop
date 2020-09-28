@@ -11,11 +11,19 @@ public class HexagonalMapView : MonoBehaviour
     public int rows;
     public int cols;
     private HMap map;
-
+    public static HexagonalMapView instance;
+    public static HMap MainMap => instance.map;
     public static HNode finalNode;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        // }
+        // void Start()
+        // {
         map = new HMap();
         map.CreateSimpleGrid(rows, cols);
         foreach (HNode node in map.nodes)

@@ -20,8 +20,8 @@ namespace notbloom.HexagonalMap
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (UnityEngine.Random.Range(0f, 1f) < 0.3f)
-                        continue;
+                    // if (UnityEngine.Random.Range(0f, 1f) < 0.1f)
+                    //     continue;
                     HNode node;
                     if (j % 2 == 0)
                     {

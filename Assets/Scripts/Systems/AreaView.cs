@@ -7,7 +7,8 @@ public class AreaView : MonoBehaviour
     NodeView[] nodeViews;
 
     //public HNode node;
-    public ScriptableAOE aoe;
+    public ScriptableCard card;
+    public PlayerAgent playerAgent;
     private static AreaView instance;
     // Start is called before the first frame update
     void Awake()
@@ -22,14 +23,23 @@ public class AreaView : MonoBehaviour
         nodeViews = FindObjectsOfType<NodeView>();
     }
 
-    // Update is called once per frame
-    public static void UpdateView(HNode node)
+    public static void OnNodeClick(HNode node)
     {
+        //HexagonalMapView.finalNode = node;
+        instance.playerAgent.ClickOnNode(node);
+    }
+
+    public static void OnNodeEnter(HNode node)
+    {
+        instance.card = instance.playerAgent.currentCard;
         List<HNode> n = new List<HNode>();
-        List<HNode> r = instance.aoe.Range.Targets(HexagonalMapView.finalNode, node);
+        //List<HNode> r = instance.card.Range(HexagonalMapView.finalNode, node);
+        List<HNode> r = instance.card.Range(instance.playerAgent.agent.node, node);
+
         if (r.Contains(node))
         {
-            n = instance.aoe.Area.Targets(HexagonalMapView.finalNode, node);
+            //n = instance.card.Area(HexagonalMapView.finalNode, node);
+            n = instance.card.Area(instance.playerAgent.agent.node, node);
         }
 
 
@@ -58,6 +68,12 @@ public class AreaView : MonoBehaviour
                 _renderer.SetPropertyBlock(_propBlock);
             }
         }
+    }
+    // Update is called once per frame
+    public static void UpdateView(HNode node)
+    {
+        //TODO make an input controller system
+
 
     }
 }

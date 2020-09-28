@@ -7,7 +7,7 @@ public class RoundsEngine : MonoBehaviour
 {
     public int roundNumber { get; }
 
-    public List<Agent> agents;
+    public List<ScriptableAgent> agents;
 
 
     void Start()
@@ -23,7 +23,7 @@ public class RoundsEngine : MonoBehaviour
         agents = HexagonalMapView.MainMap.nodes.Where(x => x.occupant != null).
         Select(q => q.occupant).
         Where(o => o.agent != null).Select(y => y.agent).ToList();
-        foreach (Agent agent in agents)
+        foreach (ScriptableAgent agent in agents)
         {
             Debug.Log(agent.name);
         }

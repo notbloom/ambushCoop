@@ -56,6 +56,8 @@ namespace notbloom.HexagonalMap
 
                 foreach (HNode cnn in node.neighbours)
                 {
+                    if (cnn.occupant != null)
+                        continue;
                     if (visited.Contains(cnn))
                         continue;
                     //TODO change cnn.Cost to terrain cost, water, etc

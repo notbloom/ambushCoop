@@ -14,18 +14,24 @@ namespace notbloom.HexagonalMap
             map = new HMap();
 
         }
+        //public void 
         public void StepObjectTo(HObject _object, HNode toNode)
         {
             if (TryPlaceAt(toNode))
             {
 
-                foreach (HTrigger trigger in _object.node.triggers)
+                if (_object.node.triggers != null)
                 {
-                    trigger.OnExit();
+                    foreach (HTrigger trigger in _object.node.triggers)
+                    {
+                        trigger.OnExit();
+                    }
                 }
                 //TODO this may cause it to be in the air
                 _object.node.occupant = null;
+
                 _object.node = toNode;
+                toNode.occupant = _object;
             }
 
         }
@@ -33,7 +39,7 @@ namespace notbloom.HexagonalMap
         {
             if (node.occupant != null)
                 return false;
-            if (node.triggers.Count > 0)
+            if (node.triggers != null)
             {
                 foreach (HTrigger trigger in node.triggers)
                 {

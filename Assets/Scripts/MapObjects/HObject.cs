@@ -23,7 +23,7 @@ namespace notbloom.HexagonalMap
         public HObjectTypes type;
         public HNode node;
         public new string name;
-        public Agent agent;
+        public ScriptableAgent agent;
         //void SetAtNode(HNode node);
         //  bool OnTrigger(Agent agentWhoTriggered);
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAgent : Agent
+public class EnemyAgent : ScriptableAgent
 {
     public virtual void OnSpawn()
     {

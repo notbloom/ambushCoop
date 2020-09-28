@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed229ac80544b487f8497a2d9bd831a3, type: 3}
+  m_Name: EnemyAgent
+  m_EditorClassIdentifier: 
+  faction: 1
+  type: 0
+  name: bloom
+  agent: {fileID: 0}
+  visibleCharacter: {fileID: 11400000, guid: 282488477bbd74efb9c1f5edbb48508a, type: 2}
+  baseStats: {fileID: 11400000, guid: f6f62ff7c07a24e12bf3650694429e8c, type: 2}
+  roundStats: {fileID: 11400000, guid: f6f62ff7c07a24e12bf3650694429e8c, type: 2}
+  resistances: []
+  status: []
+  hp: 0

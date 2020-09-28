@@ -16,10 +16,14 @@ public class MoveableArea : ScriptableArea
         List<HNode> lastNeighbours = new List<HNode>() { origin };
         for (int i = 0; i < distance; i++)
         {
-            lastNeighbours.Where(x => x.neigh)
-            area.AddRange();
+            List<HNode> currentNeighbours = new List<HNode>();
+            foreach (HNode neighbour in lastNeighbours)
+            {
+                currentNeighbours.AddRange(neighbour.neighbours.Where(n => n.occupant == null && !area.Contains(n)).Distinct().ToList());
+            }
+            lastNeighbours = currentNeighbours;
+            area.AddRange(currentNeighbours);
         }
-
         // = HexagonalMapView.MainMap.nodes.Where(p => HNode.SquaredDistance(p, target) < distance).ToList<HNode>();// && p != node).ToList<HNode>();
         return area;
     }

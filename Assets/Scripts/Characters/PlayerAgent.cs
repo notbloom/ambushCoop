@@ -10,6 +10,8 @@ public class PlayerAgent : MonoBehaviour
     public List<ScriptableCard> actions;
 
     public int actionCount = 0;
+
+    public HNode node;
     public ScriptableCard currentCard => actions[actionCount];
     // Start is called before the first frame update
     void Start()

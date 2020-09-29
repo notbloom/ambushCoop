@@ -25,7 +25,17 @@ public class AreaView : MonoBehaviour
 
     public static void OnNodeClick(HNode node)
     {
-        //HexagonalMapView.finalNode = node;
+        // instance.card = instance.playerAgent.currentCard;
+        // List<HNode> n = new List<HNode>();
+        // //List<HNode> r = instance.card.Range(HexagonalMapView.finalNode, node);
+        // List<HNode> r = instance.card.Range(instance.playerAgent.agent.node, node);
+
+        // if (r.Contains(node))
+        // {
+        //     //n = instance.card.Area(HexagonalMapView.finalNode, node);
+        //     n = instance.card.Area(instance.playerAgent.agent.node, node);
+        // }
+
         instance.playerAgent.ClickOnNode(node);
     }
 

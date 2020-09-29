@@ -39,7 +39,7 @@ namespace notbloom.HexagonalMap
             foreach (HNode node in nodes)
             {
                 node.neighbours = nodes.Where(p => HNode.SquaredDistance(p, node) < 3.8f && p != node).ToList<HNode>();
-                Debug.Log(node.neighbours.Count);
+                //   Debug.Log(node.neighbours.Count);
             }
         }
     }

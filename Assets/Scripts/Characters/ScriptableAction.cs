@@ -7,5 +7,5 @@ public abstract class ScriptableAction : ScriptableObject
     //   public int targets;
     // public abstract bool ValidateTargets(List<HNode> targets);
 
-    public abstract void PerformAction(HNode from, List<HNode> targets);
+    public abstract void PerformAction(HNode from, List<HNode> targets, AgentBase agent);
 }

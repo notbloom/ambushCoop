@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\notbloom\Lootdrop\Deck.cs" />
      <Compile Include="Assets\Scripts\MapObjects\Objects\UndestructableWall.cs" />
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HMap.cs" />
+     <Compile Include="Assets\Scripts\Characters\Agent.cs" />
      <Compile Include="Assets\Scripts\notbloom\Lootdrop\LootItem.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableActions\SAAttack.cs" />
      <Compile Include="Assets\Scripts\Characters\RoundModifiers.cs" />
@@ -74,12 +75,14 @@
      <Compile Include="Assets\Scripts\Characters\Cards\ScriptableCard.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableAction.cs" />
      <Compile Include="Assets\Scripts\PlayerDeck\TestCommands.cs" />
-     <Compile Include="Assets\Scripts\Characters\ScriptableAgent.cs" />
      <Compile Include="Assets\Scripts\Characters\PlayerAgent.cs" />
      <Compile Include="Assets\Scripts\MapObjects\VisibleObject.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableTargetRequest\ScriptableTargetRequest.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableTargetRequest\RequestAnyTargetOfTypeInArea.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableAreas\MoveableArea.cs" />
+     <Compile Include="Assets\Scripts\Characters\AgentBase.cs" />
+     <Compile Include="Assets\Scripts\Systems\AnimationInvoker.cs" />
+     <Compile Include="Assets\Scripts\Characters\ScriptableTargetRequest\RequestCloserTargetAnywhere.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

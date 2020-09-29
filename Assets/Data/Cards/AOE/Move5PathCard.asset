@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e082202e204b149069b27f1366ac0cc7, type: 3}
   m_Name: Move5PathCard
   m_EditorClassIdentifier: 
-  Range: {fileID: 11400000, guid: f7e1d9ca4e2b84db38d94fb2c882f99a, type: 2}
+  Range: {fileID: 11400000, guid: 467881fa6363b4d24bbe95e64d66815c, type: 2}
   Area: {fileID: 11400000, guid: 88635edc92de54ab1a443b7109299c29, type: 2}

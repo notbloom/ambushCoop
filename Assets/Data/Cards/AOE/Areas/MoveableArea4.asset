@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f62166992684065b5c0f41ab795a6d, type: 3}
   m_Name: MoveableArea4
   m_EditorClassIdentifier: 
-  distance: 0
+  distance: 4

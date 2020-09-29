@@ -17,19 +17,34 @@ namespace notbloom.HexagonalMap
     //     void SetAtNode(HNode node);
     //     //  bool OnTrigger(Agent agentWhoTriggered);
     // }
-    public abstract class HObject : ScriptableObject
+    public class HObject //: ScriptableObject
     {
         public HObjectFactions faction;
-        public HObjectTypes type;
+        // public HObjectTypes type;
         public HNode node;
-        public new string name;
-        public ScriptableAgent agent;
+        //public new string name;
+        public Agent agent;
         //void SetAtNode(HNode node);
         //  bool OnTrigger(Agent agentWhoTriggered);
     }
+    // public class HScriptableObjectType : ScriptableObject
+    // {
+    //     public HObjectFactions faction;
+    //     public HObjectTypes type;
+
+    // }
+    public class HDamageInstance
+    {
+        public float amount;
+        //TODO add pierce and status here
+        public HDamageInstance(float damage)
+        {
+            amount = damage;
+        }
+    }
     public interface HICanReceiveDamage
     {
-        void ReceiveDamage();
+        void ReceiveDamage(HDamageInstance damageInstance);
     }
 
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestCommands : MonoBehaviour
 {
-    public ScriptableAgent playerAgent;
+    public Agent playerAgent;
     // Start is called before the first frame update
     void Start()
     {

@@ -34,29 +34,5 @@ public class HexagonalMapView : MonoBehaviour
             nodeView.node = node;
             finalNode = node;
         }
-
-        // for (int i = 0; i < rows; i++)
-        // {
-        //     for (int j = 0; j < cols; j++)
-        //     {
-        //         Vector3 position;
-        //         if (j % 2 == 0)
-        //         {
-        //             position = new Vector3(i * innerRadius, 0, j * outerRadius);
-        //         }
-        //         else
-        //         {
-        //             position = new Vector3(i * innerRadius + innerRadius / 2f, 0, j * outerRadius);
-        //         }
-        //         GameObject hexCell = Instantiate(hexPrefab, position, Quaternion.identity);
-        //         hexCell.transform.parent = transform;
-        //     }
-        // }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

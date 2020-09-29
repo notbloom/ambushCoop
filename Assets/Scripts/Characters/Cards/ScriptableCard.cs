@@ -15,19 +15,20 @@ public class ScriptableCard : ScriptableObject
     public ScriptableTargetRequest targetRequest;
 
     //Scriptable Target Picker
-    public void AITurn(HNode origin)
+    public void AITurn(HNode origin, AgentBase agent)
     {
         List<HNode> rangeList = Range(origin, origin);
         List<HNode> targets = RequestTarget(rangeList, HObjectFactions.HPlayerFaction);
-        PerformAction(origin, targets);
+        PerformAction(origin, targets, agent);
+        // Debug.Log("AITURN");
     }
     public List<HNode> RequestTarget(List<HNode> area, HObjectFactions targetFaction)
     {
         return targetRequest.Request(area, targetFaction);
     }
-    public void PerformAction(HNode from, List<HNode> targets)
+    public void PerformAction(HNode from, List<HNode> targets, AgentBase agent)
     {
-        action.PerformAction(from, targets);
+        action.PerformAction(from, targets, agent);
     }
     public List<HNode> Range(HNode origin, HNode target)
     {

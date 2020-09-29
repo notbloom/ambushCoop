@@ -7,9 +7,21 @@ using notbloom.HexagonalMap;
 public class SAMove : ScriptableAction
 {
     public int moveAmount;
-    public override void PerformAction(HNode from, List<HNode> targets)
+    public override void PerformAction(HNode from, List<HNode> targets, AgentBase agent)
     {
         HMapController map = new HMapController();
-        map.StepObjectTo(from.occupant, targets[0]);
+        //List<HNode> path = HPathFinder.GetShortestPathDijkstra(from, targets[0]);
+        if (targets.Count == 0)
+            return;
+        List<HNode> path = HPathFinder.AIClosestToObjective(from, targets[targets.Count - 1], moveAmount, agent.faction);
+        path.RemoveAt(0);
+        foreach (HNode node in path)
+        {
+            AnimationInvoker.Enqueue(new MoveAnimation(agent.transform, node.ToVector3(), 0.2f));
+            //map.StepObjectTo(from.occupant, node);
+            map.StepObjectTo(agent.agent, node);
+        }
+        //  AnimationInvoker.Enqueue(new DamageAnimation(agent.agent, new HDamageInstance(20f), 0.2f));
+        //agent.ReceiveDamage(new HDamageInstance(30f));
     }
 }

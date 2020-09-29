@@ -46,7 +46,6 @@ namespace notbloom.HexagonalMap
                     trigger.OnEnter();
                 }
             }
-
             return true;
         }
         //map.CreateSimpleGrid(rows, cols);

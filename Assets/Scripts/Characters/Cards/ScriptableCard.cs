@@ -14,6 +14,9 @@ public class ScriptableCard : ScriptableObject
     public ScriptableAOE aoe;
     public ScriptableTargetRequest targetRequest;
 
+    public string title;
+    public string description;
+    public int cost;
     //Scriptable Target Picker
     public void AITurn(HNode origin, AgentBase agent)
     {

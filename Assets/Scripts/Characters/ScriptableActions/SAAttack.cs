@@ -22,7 +22,7 @@ public class SAAttack : ScriptableAction
                 if (target.occupant.agent != null)
                 {
                     Debug.Log("agent not null");
-                    AnimationInvoker.Enqueue(new DamageAnimation(target.occupant.agent, new HDamageInstance(damage), 0.2f));
+                    AnimationInvoker.Enqueue(new DamageAnimation(target.occupant.agent, from, targets, new HDamageInstance(damage), 0.2f));
                 }
             }
         }

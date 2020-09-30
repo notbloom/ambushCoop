@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using notbloom.HexagonalMap;
+//TODO remate to maybe PlayerUIController, PlayerViewController
 public class AreaView : MonoBehaviour
 {
     NodeView[] nodeViews;
@@ -22,26 +23,24 @@ public class AreaView : MonoBehaviour
     {
         nodeViews = FindObjectsOfType<NodeView>();
     }
-
+    public static void OnCardActivate(ScriptableCard card)
+    {
+        instance.card = card;
+    }
     public static void OnNodeClick(HNode node)
     {
-        // instance.card = instance.playerAgent.currentCard;
-        // List<HNode> n = new List<HNode>();
-        // //List<HNode> r = instance.card.Range(HexagonalMapView.finalNode, node);
-        // List<HNode> r = instance.card.Range(instance.playerAgent.agent.node, node);
-
-        // if (r.Contains(node))
-        // {
-        //     //n = instance.card.Area(HexagonalMapView.finalNode, node);
-        //     n = instance.card.Area(instance.playerAgent.agent.node, node);
-        // }
-
-        instance.playerAgent.ClickOnNode(node);
+        if (instance.card != null)
+        {
+            instance.playerAgent.ClickOnNode(node, instance.card);
+            instance.card = null;
+        }
     }
 
     public static void OnNodeEnter(HNode node)
     {
-        instance.card = instance.playerAgent.currentCard;
+        if (instance.card == null)
+            return;
+        //instance.card = instance.playerAgent.currentCard;
         List<HNode> n = new List<HNode>();
         //List<HNode> r = instance.card.Range(HexagonalMapView.finalNode, node);
         List<HNode> r = instance.card.Range(instance.playerAgent.agent.node, node);

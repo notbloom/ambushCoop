@@ -6,8 +6,8 @@ public class PlayerAgent : AgentBase
 
 {
     public List<ScriptableCard> actions;
-    public ScriptableCard currentCard => actions[actionCount];
-
+    //public ScriptableCard currentCard => actions[actionCount];
+    public bool playingACard;
     void Start()
     {
         base.Init();
@@ -23,7 +23,7 @@ public class PlayerAgent : AgentBase
     {
 
     }
-    public void ClickOnNode(HNode clickedNode)
+    public void ClickOnNode(HNode clickedNode, ScriptableCard currentCard)
     {
 
         List<HNode> areaOfEffect = new List<HNode>();
@@ -37,10 +37,11 @@ public class PlayerAgent : AgentBase
         {
             Debug.Log(_node.ToString());
         }
-        PerformAction(actions[actionCount], areaOfEffect);
-        actionCount++;
-        if (actionCount == actions.Count)
-            actionCount = 0;
+        PerformAction(currentCard, areaOfEffect);
+        //PerformAction(actions[actionCount], areaOfEffect);
+        // actionCount++;
+        // if (actionCount == actions.Count)
+        //     actionCount = 0;
         RoundsEngine.EndTurn(this);
     }
     public void PerformAction(ScriptableCard action, List<HNode> targets)

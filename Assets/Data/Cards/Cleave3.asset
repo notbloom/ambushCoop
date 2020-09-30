@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: 25c338d7b45ac4331b36acdac210e7dd, type: 2}
   aoe: {fileID: 11400000, guid: c76c3c6df01b6409a90021743bbd4d4e, type: 2}
+  targetRequest: {fileID: 0}
+  title: Swipe
+  description: Cleave 3 enemies for 5
+  cost: 1

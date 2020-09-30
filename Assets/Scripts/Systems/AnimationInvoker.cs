@@ -6,7 +6,7 @@ public class AnimationInvoker : MonoBehaviour
 {
     static AnimationInvoker instance;
     public Transform target;
-    Queue<AnimationCommand> animationCommands;
+    Queue<ScriptableNodeAnimation> animationCommands;
 
     private bool busy = false;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class AnimationInvoker : MonoBehaviour
     }
     void Start()
     {
-        animationCommands = new Queue<AnimationCommand>();
+        animationCommands = new Queue<ScriptableNodeAnimation>();
         //Step();
     }
 
@@ -30,7 +30,7 @@ public class AnimationInvoker : MonoBehaviour
         if (animationCommands.Count > 0)
             Step();
     }
-    public static void Enqueue(AnimationCommand animationCommand)
+    public static void Enqueue(ScriptableNodeAnimation animationCommand)
     {
         instance.animationCommands.Enqueue(animationCommand);
     }
@@ -61,44 +61,13 @@ public class AnimationInvoker : MonoBehaviour
     }
 }
 
-public abstract class AnimationCommand : ScriptableObject
-{
-    public abstract IEnumerator Animate();
-}
+// public abstract class ScriptableAnimation : ScriptableObject
+// {
+//     public abstract IEnumerator Animate();
+// }
 
-public class MoveAnimation : AnimationCommand
-{
-    public float animationTime;
-    public Transform transform;
-    public Vector3 origin;
-    public Vector3 destination;
-    public float startTime;
 
-    public MoveAnimation(Transform transform, Vector3 destination, float animationTime)
-    {
-
-        this.transform = transform;
-        this.destination = destination;
-        this.animationTime = animationTime;
-    }
-    public override IEnumerator Animate()
-    {
-        origin = transform.position;
-        startTime = Time.time;
-        yield return _Animate();
-    }
-    private IEnumerator _Animate()
-    {
-        while (Time.time < startTime + animationTime)
-        {
-            transform.position = Vector3.Lerp(origin, destination, (Time.time - startTime) / animationTime);
-            yield return null;
-        }
-        transform.position = destination;
-    }
-
-}
-public class DamageAnimation : AnimationCommand
+public class DamageAnimation : ScriptableNodeAnimation
 {
     public float animationTime;
     public Agent agent;
@@ -107,7 +76,7 @@ public class DamageAnimation : AnimationCommand
 
     public float startingHp;
 
-    public DamageAnimation(Agent agent, HDamageInstance damageInstance, float animationTime)
+    public DamageAnimation(Agent agent, HNode from, List<HNode> to, HDamageInstance damageInstance, float animationTime) : base(from, to)
     {
 
         this.agent = agent;

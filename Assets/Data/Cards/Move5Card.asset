@@ -15,3 +15,6 @@ MonoBehaviour:
   action: {fileID: 11400000, guid: 8d9c27e7577ab499aae75fcce434b5d8, type: 2}
   aoe: {fileID: 11400000, guid: 5f57209ce01164410a6270450953aad6, type: 2}
   targetRequest: {fileID: 11400000, guid: 2199081f1c7b14ea5a28cc69c372aa9f, type: 2}
+  title: Run
+  description: 'Move 5 '
+  cost: 1

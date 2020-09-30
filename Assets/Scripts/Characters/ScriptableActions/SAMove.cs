@@ -17,7 +17,7 @@ public class SAMove : ScriptableAction
         path.RemoveAt(0);
         foreach (HNode node in path)
         {
-            AnimationInvoker.Enqueue(new MoveAnimation(agent.transform, node.ToVector3(), 0.2f));
+            AnimationInvoker.Enqueue(new MoveAnimation(agent.transform, from, node, 0.2f));
             //map.StepObjectTo(from.occupant, node);
             map.StepObjectTo(agent.agent, node);
         }

@@ -6,7 +6,7 @@ public class AnimationInvoker : MonoBehaviour
 {
     static AnimationInvoker instance;
     public Transform target;
-    Queue<ScriptableNodeAnimation> animationCommands;
+    Queue<AnimationCommand> animationCommands;
 
     private bool busy = false;
     // Start is called before the first frame update
@@ -16,13 +16,8 @@ public class AnimationInvoker : MonoBehaviour
         {
             instance = this;
         }
+        animationCommands = new Queue<AnimationCommand>();
     }
-    void Start()
-    {
-        animationCommands = new Queue<ScriptableNodeAnimation>();
-        //Step();
-    }
-
     void Update()
     {
         if (busy)
@@ -30,7 +25,7 @@ public class AnimationInvoker : MonoBehaviour
         if (animationCommands.Count > 0)
             Step();
     }
-    public static void Enqueue(ScriptableNodeAnimation animationCommand)
+    public static void Enqueue(AnimationCommand animationCommand)
     {
         instance.animationCommands.Enqueue(animationCommand);
     }
@@ -67,39 +62,3 @@ public class AnimationInvoker : MonoBehaviour
 // }
 
 
-public class DamageAnimation : ScriptableNodeAnimation
-{
-    public float animationTime;
-    public Agent agent;
-    public HDamageInstance damageInstance;
-    public float startTime;
-
-    public float startingHp;
-
-    public DamageAnimation(Agent agent, HNode from, List<HNode> to, HDamageInstance damageInstance, float animationTime) : base(from, to)
-    {
-
-        this.agent = agent;
-        this.damageInstance = damageInstance;
-        this.animationTime = animationTime;
-    }
-    public override IEnumerator Animate()
-    {
-        startingHp = agent.hp;
-        startTime = Time.time;
-        yield return _Animate();
-    }
-    private IEnumerator _Animate()
-    {
-        while (Time.time < startTime + animationTime)
-        {
-            agent.hp = Mathf.Lerp(startingHp, startingHp - damageInstance.amount, (Time.time - startTime) / animationTime);
-            agent.UpdateView();
-            yield return null;
-        }
-        //TODO change this math to agent damage processing
-        agent.hp = startingHp - damageInstance.amount;
-        agent.UpdateView();
-    }
-
-}

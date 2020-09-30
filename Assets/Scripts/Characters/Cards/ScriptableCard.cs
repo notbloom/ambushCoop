@@ -14,6 +14,8 @@ public class ScriptableCard : ScriptableObject
     public ScriptableAOE aoe;
     public ScriptableTargetRequest targetRequest;
 
+    public NodeAnimationFactory animationFactory;
+
     public string title;
     public string description;
     public int cost;

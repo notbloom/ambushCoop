@@ -27,18 +27,73 @@ public abstract class AgentBase : MonoBehaviour
         {
             slider.maxValue = agent.maxHp;
             slider.value = agent.maxHp;
-            agent.UpdateView += UpdateView;
+            agent.ReceiveDamageCall += PostReceiveDamage;
         }
     }
-    public void ReceiveDamage(HDamageInstance damageInstance)
+    public void PostReceiveDamage(HDamageInstance damageInstance)
     {
-        agent.hp -= damageInstance.amount;
-        UpdateView();
+        AnimationInvoker.Enqueue(new ReceiveDamageAnimationCommand(this, agent.hp, 0.2f));
+        if (agent.hp <= 0)
+        {
+            Debug.Log("DEAD?");
+            AnimationInvoker.Enqueue(new DestroyGameobjectCommand(gameObject));
+            RoundsEngine.RemoveAgent(this);
+        }
+        //agent.hp -= damageInstance.amount;
+        //UpdateView();
     }
     public abstract void PlayTurn();
 
-    public void UpdateView()
+    // public void UpdateView()
+    // {
+    //     //slider.value = agent.hp;
+    // }
+}
+
+public class DestroyGameobjectCommand : AnimationCommand
+{
+    GameObject target;
+    public DestroyGameobjectCommand(GameObject target)
     {
-        slider.value = agent.hp;
+        this.target = target;
     }
+    public override IEnumerator Animate()
+    {
+        GameObject.Destroy(target);
+        Debug.Log("DESTROY");
+        return null;
+    }
+}
+public class ReceiveDamageAnimationCommand : AnimationCommand
+{
+    public float animationTime;
+    public AgentBase agent;
+    public float startTime;
+    public float startingHp;
+    public float endingHp;
+    public ReceiveDamageAnimationCommand(AgentBase agent, float endingHp, float animationTime)
+    {
+        this.agent = agent;
+        this.endingHp = endingHp;
+        this.animationTime = animationTime;
+    }
+    public override IEnumerator Animate()
+    {
+        startingHp = agent.slider.value;
+        startTime = Time.time;
+        yield return _Animate();
+    }
+    private IEnumerator _Animate()
+    {
+        while (Time.time < startTime + animationTime)
+        {
+            agent.slider.value = Mathf.Lerp(startingHp, endingHp, (Time.time - startTime) / animationTime);
+            //agent.UpdateView();
+            yield return null;
+        }
+        //TODO change this math to agent damage processing
+        agent.slider.value = endingHp;
+        //agent.UpdateView();
+    }
+
 }

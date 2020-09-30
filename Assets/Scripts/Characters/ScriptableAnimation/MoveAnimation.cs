@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using notbloom.HexagonalMap;
 
-public class MoveAnimation : ScriptableNodeAnimation
+[CreateAssetMenu(fileName = "new MoveAnimation", menuName = "Animation/MoveAnimationFactory", order = 0)]
+
+public class MoveAnimation : NodeAnimationFactory
+{
+    public override AnimationCommand Generate(GameObject caster, List<HNode> from, List<HNode> to, float animationTime)
+    {
+        return new MoveAnimationCommand(caster.transform, from[0], to[0], animationTime);
+    }
+}
+public class MoveAnimationCommand : AnimationCommand
 {
     public float animationTime;
     public Transform transform;
@@ -11,7 +20,7 @@ public class MoveAnimation : ScriptableNodeAnimation
     public Vector3 destination;
     public float startTime;
 
-    public MoveAnimation(Transform transform, HNode from, HNode to, float animationTime) : base(from, new List<HNode>() { to })
+    public MoveAnimationCommand(Transform transform, HNode from, HNode to, float animationTime)
     {
 
         this.transform = transform;

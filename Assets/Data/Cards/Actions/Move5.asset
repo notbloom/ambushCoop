@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Move5
   m_EditorClassIdentifier: 
   moveAmount: 5
+  animationFactory: {fileID: 11400000, guid: 057f8989bbf804ba8b511e5f078d3df2, type: 2}

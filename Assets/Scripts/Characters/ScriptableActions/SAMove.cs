@@ -7,6 +7,7 @@ using notbloom.HexagonalMap;
 public class SAMove : ScriptableAction
 {
     public int moveAmount;
+    public NodeAnimationFactory animationFactory;
     public override void PerformAction(HNode from, List<HNode> targets, AgentBase agent)
     {
         HMapController map = new HMapController();
@@ -17,7 +18,7 @@ public class SAMove : ScriptableAction
         path.RemoveAt(0);
         foreach (HNode node in path)
         {
-            AnimationInvoker.Enqueue(new MoveAnimation(agent.transform, from, node, 0.2f));
+            AnimationInvoker.Enqueue(animationFactory.Generate(agent.gameObject, new List<HNode>() { from }, new List<HNode>() { node }, 0.2f));
             //map.StepObjectTo(from.occupant, node);
             map.StepObjectTo(agent.agent, node);
         }

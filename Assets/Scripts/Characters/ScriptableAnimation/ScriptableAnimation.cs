@@ -4,20 +4,22 @@ using UnityEngine;
 
 using notbloom.HexagonalMap;
 
-public abstract class ScriptableNodeAnimation : ScriptableObject
+public abstract class NodeAnimationFactory : ScriptableObject
 {
-    public abstract IEnumerator Animate();
-    HNode from;
-    List<HNode> to;
-    public ScriptableNodeAnimation(HNode from, List<HNode> to)
-    {
-        this.from = from;
-        this.to = to;
-    }
+    public float animationTime = 0.2f;
+    public abstract AnimationCommand Generate(GameObject caster, List<HNode> from, List<HNode> to, float animationTime);
+    // public abstract IEnumerator Animate();
+    // HNode from;
+    // List<HNode> to;
+    // public NodeAnimationFactory(HNode from, List<HNode> to)
+    // {
+    //     this.from = from;
+    //     this.to = to;
+    // }
 
 }
 
-public abstract class AnimatorCommand
+public abstract class AnimationCommand
 {
     public abstract IEnumerator Animate();
 }

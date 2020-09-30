@@ -33,15 +33,7 @@ public class PlayerAgent : AgentBase
         {
             areaOfEffect = currentCard.Area(node, clickedNode);
         }
-        foreach (HNode _node in areaOfEffect)
-        {
-            Debug.Log(_node.ToString());
-        }
         PerformAction(currentCard, areaOfEffect);
-        //PerformAction(actions[actionCount], areaOfEffect);
-        // actionCount++;
-        // if (actionCount == actions.Count)
-        //     actionCount = 0;
         RoundsEngine.EndTurn(this);
     }
     public void PerformAction(ScriptableCard action, List<HNode> targets)

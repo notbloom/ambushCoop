@@ -22,7 +22,7 @@ public class RoundsEngine : MonoBehaviour
     }
     void Start()
     {
-        StartGame();
+        //StartGame();
     }
     public void StartGame()
     {
@@ -40,6 +40,12 @@ public class RoundsEngine : MonoBehaviour
         //     //Debug.Log(agent.name);
         // }
     }
+    public static void RegisterAgent() { }
+    public static void RemoveAgent(AgentBase agentBase)
+    {
+        instance.agents.Remove(agentBase);
+        agentBase.node.occupant = null;
+    }
     public static void StartRound()
     {
         instance.agents[agentIndex].PlayTurn();
@@ -47,7 +53,7 @@ public class RoundsEngine : MonoBehaviour
     public static void NextTurn()
     {
         agentIndex++;
-        if (agentIndex == instance.agents.Count)
+        if (agentIndex <= instance.agents.Count)
         {
             agentIndex = 0;
         }
@@ -55,6 +61,7 @@ public class RoundsEngine : MonoBehaviour
     }
     public static void EndTurn(AgentBase agent)
     {
+        Debug.Log("END TURN");
         NextTurn();
     }
     // Update is called once per frame

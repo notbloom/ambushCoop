@@ -17,7 +17,7 @@ public class Agent : HObject, HICanReceiveDamage
     //private SpriteRenderer spriteRenderer;
     public float hp = 100f;
     public float maxHp = 100f;
-    public Action UpdateView;
+    public Action<HDamageInstance> ReceiveDamageCall;
 
     public Agent()
     {
@@ -29,7 +29,7 @@ public class Agent : HObject, HICanReceiveDamage
     public virtual void ReceiveDamage(HDamageInstance damageInstance)
     {
         hp -= damageInstance.amount;
-        UpdateView();
+        ReceiveDamageCall(damageInstance);
     }
     public virtual void OnSpawn()
     {

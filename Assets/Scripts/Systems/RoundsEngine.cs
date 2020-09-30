@@ -40,20 +40,21 @@ public class RoundsEngine : MonoBehaviour
         //     //Debug.Log(agent.name);
         // }
     }
+    public static void StartRound()
+    {
+        instance.agents[agentIndex].PlayTurn();
+    }
     public static void RegisterAgent() { }
     public static void RemoveAgent(AgentBase agentBase)
     {
         instance.agents.Remove(agentBase);
         agentBase.node.occupant = null;
     }
-    public static void StartRound()
-    {
-        instance.agents[agentIndex].PlayTurn();
-    }
+
     public static void NextTurn()
     {
         agentIndex++;
-        if (agentIndex <= instance.agents.Count)
+        if (agentIndex >= instance.agents.Count)
         {
             agentIndex = 0;
         }

@@ -43,11 +43,6 @@ public abstract class AgentBase : MonoBehaviour
         //UpdateView();
     }
     public abstract void PlayTurn();
-
-    // public void UpdateView()
-    // {
-    //     //slider.value = agent.hp;
-    // }
 }
 
 public class DestroyGameobjectCommand : AnimationCommand

@@ -88,6 +88,10 @@
      <Compile Include="Assets\Scripts\Characters\ScriptableAnimation\MoveAnimation.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableAnimation\DamageAnimationFactory.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableAnimation\SpawnAtTargetAnimationFactory.cs" />
+     <Compile Include="Assets\Scripts\Characters\ScriptableAnimation\ThrowableAnimationFactory.cs" />
+     <Compile Include="Assets\Scripts\View\InitiativeView.cs" />
+     <Compile Include="Assets\Scripts\Characters\ScriptableAnimation\InitiativeTurnAnimationFactory.cs" />
+     <Compile Include="Assets\Scripts\View\HoverPanelView.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

@@ -43,8 +43,10 @@ public abstract class AgentBase : MonoBehaviour
         //UpdateView();
     }
     public abstract void PlayTurn();
+    public abstract string Intent();
 }
 
+//TODO make their own file
 public class DestroyGameobjectCommand : AnimationCommand
 {
     GameObject target;

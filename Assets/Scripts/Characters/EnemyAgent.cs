@@ -23,6 +23,15 @@ public class EnemyAgent : AgentBase
     {
 
     }
+    public override string Intent()
+    {
+        string intent = "";
+        foreach (ScriptableCard card in cards)
+        {
+            intent += card.description + "\n";
+        }
+        return intent;
+    }
     public override void PlayTurn()
     {
         foreach (ScriptableCard card in cards)

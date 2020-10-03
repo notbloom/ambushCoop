@@ -23,6 +23,10 @@ public class PlayerAgent : AgentBase
     {
 
     }
+    public override string Intent()
+    {
+        return "Player Turn";
+    }
     public void ClickOnNode(HNode clickedNode, ScriptableCard currentCard)
     {
 
@@ -34,6 +38,7 @@ public class PlayerAgent : AgentBase
             areaOfEffect = currentCard.Area(node, clickedNode);
         }
         PerformAction(currentCard, areaOfEffect);
+        AreaView.ResetView();
         RoundsEngine.EndTurn(this);
     }
     public void PerformAction(ScriptableCard action, List<HNode> targets)

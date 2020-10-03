@@ -8,4 +8,7 @@ public class VisibleObject : ScriptableObject
 {
     public Sprite sprite;
     public new string name;
+
+    public Color initiativeColorOnTurn;
+    public Color initiativeColorOffTurn;
 }

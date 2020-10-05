@@ -26,6 +26,7 @@ public class HexagonalMapView : MonoBehaviour
         // {
         map = new HMap();
         map.CreateSimpleGrid(rows, cols);
+        map.Save();
         foreach (HNode node in map.nodes)
         {
             GameObject hexCell = Instantiate(hexPrefab, new Vector3(node.x, 0, node.y), Quaternion.identity);

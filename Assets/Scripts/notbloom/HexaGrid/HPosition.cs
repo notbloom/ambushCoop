@@ -1,5 +1,7 @@
+using System;
 namespace notbloom.HexagonalMap
 {
+    [Serializable]
     public class HPosition
     {
         public float x;

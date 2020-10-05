@@ -5,6 +5,7 @@ using notbloom.HexagonalMap;
 using System;
 //[CreateAssetMenu(fileName = "ScriptableAgent", menuName = "Char/Agent", order = 0)]
 
+//TODO rename to AgentEngine or something similar
 public class Agent : HObject, HICanReceiveDamage
 {
     //Scriptable Objects
@@ -17,6 +18,8 @@ public class Agent : HObject, HICanReceiveDamage
     //private SpriteRenderer spriteRenderer;
     public float hp = 100f;
     public float maxHp = 100f;
+
+    public int attack => baseStats.attack;
     public Action<HDamageInstance> ReceiveDamageCall;
 
     public Agent()

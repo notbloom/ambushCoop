@@ -28,6 +28,10 @@ public class RoundsEngine : MonoBehaviour
     {
         //StartGame();
     }
+    public void OnPlayerPressedEndTurn()
+    {
+        EndTurn(null);
+    }
     public void StartGame()
     {
         FindAgents();

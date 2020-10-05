@@ -4,9 +4,12 @@ using UnityEngine;
 using notbloom.HexagonalMap;
 using UnityEngine.UI;
 [RequireComponent(typeof(SpriteRenderer))]
+
+//TODO rename to AgentBaseView or similar. AgentSkin?
 public abstract class AgentBase : MonoBehaviour
 {
     public VisibleObject visibleCharacter;
+    public BaseStats baseStats;
     public HObjectFactions faction;
     public Agent agent;
     public SpriteRenderer spriteRenderer;
@@ -19,7 +22,8 @@ public abstract class AgentBase : MonoBehaviour
     {
         agent = new Agent();
         agent.faction = faction;
-        spriteRenderer.sprite = visibleCharacter.sprite;
+        agent.baseStats = baseStats;
+        ShowSprite();
         node = HexagonalMapView.MainMap.nodes[UnityEngine.Random.Range(0, HexagonalMapView.MainMap.nodes.Count)];
         node.occupant = agent;
 
@@ -29,6 +33,10 @@ public abstract class AgentBase : MonoBehaviour
             slider.value = agent.maxHp;
             agent.ReceiveDamageCall += PostReceiveDamage;
         }
+    }
+    public void ShowSprite()
+    {
+        spriteRenderer.sprite = visibleCharacter.sprite;
     }
     public void PostReceiveDamage(HDamageInstance damageInstance)
     {

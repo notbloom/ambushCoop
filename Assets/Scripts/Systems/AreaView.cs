@@ -58,7 +58,7 @@ public class AreaView : MonoBehaviour
             //instance.card = instance.playerAgent.currentCard;
             List<HNode> n = new List<HNode>();
             //List<HNode> r = instance.card.Range(HexagonalMapView.finalNode, node);
-            List<HNode> r = instance.card.Range(instance.playerAgent.agent.node, node);
+            List<HNode> r = instance.card.Range(instance.playerAgent.agent.node);//, node);
 
             if (r.Contains(node))
             {

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 namespace notbloom.HexagonalMap
 {
+    [Serializable]
     public class HMap
     {
         public const float innerRadius = 3f;
@@ -11,6 +13,11 @@ namespace notbloom.HexagonalMap
 
         public List<HNode> nodes;
 
+        public void Save()
+        {
+            string json = JsonUtility.ToJson(this);
+            Debug.Log(json);
+        }
         public void CreateSimpleGrid(int rows, int cols)
         {
             //Create the nodes;

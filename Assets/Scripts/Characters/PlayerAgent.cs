@@ -31,7 +31,7 @@ public class PlayerAgent : AgentBase
     {
 
         List<HNode> areaOfEffect = new List<HNode>();
-        List<HNode> r = currentCard.Range(agent.node, clickedNode);
+        List<HNode> r = currentCard.Range(agent.node);//, clickedNode);
 
         if (r.Contains(clickedNode))
         {
@@ -39,7 +39,7 @@ public class PlayerAgent : AgentBase
         }
         PerformAction(currentCard, areaOfEffect);
         AreaView.ResetView();
-        RoundsEngine.EndTurn(this);
+        //RoundsEngine.EndTurn(this);
     }
     public void PerformAction(ScriptableCard action, List<HNode> targets)
     {

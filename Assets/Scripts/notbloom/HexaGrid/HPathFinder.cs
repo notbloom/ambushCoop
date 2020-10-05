@@ -17,6 +17,26 @@ namespace notbloom.HexagonalMap
 
             return path;
         }
+        public static List<HNode> AI_Meele(HNode Start, HNode Target, int movement, HObjectFactions goThrough)
+        {
+            HNode End = Target.neighbours.Where(x => x.occupant == null).OrderBy(y => y.SquaredDistance(Target)).First();
+            if (End == null)
+                return null;
+            Dictionary<HNode, HNode> NearestToStartDictinoary = AIDijkstraMoveSearch(Start, End, goThrough);
+            var shortestPath = new List<HNode>();
+            shortestPath.Add(End);
+            BuildShortestPath(shortestPath, End, NearestToStartDictinoary);
+            shortestPath.Reverse();
+
+
+            if (shortestPath.Count > movement)
+                shortestPath.RemoveRange(movement, shortestPath.Count - movement);
+            while (shortestPath[shortestPath.Count - 1].occupant != null)
+            {
+                shortestPath.RemoveAt(shortestPath.Count - 1);
+            }
+            return shortestPath;
+        }
         public static List<HNode> AIClosestToObjective(HNode Start, HNode End, int movement, HObjectFactions goThrough)
         {
             Dictionary<HNode, HNode> NearestToStartDictinoary = AIDijkstraMoveSearch(Start, End, goThrough);
@@ -68,31 +88,55 @@ namespace notbloom.HexagonalMap
 
                 foreach (HNode cnn in node.neighbours)
                 {
+                    //SKIP UNAVOIDABLE OBSTACLES
                     if (node.occupant != null)
                     {
                         if (node.occupant.faction != goThrough)
                             continue;
 
                     }
+                    //SKIP VISITED NODES
                     if (visited.Contains(cnn))
                         continue;
+
+
+                    //CALCULATE THE COST OF THE NODE
+                    //DEFAULT IS 1
+                    int cost = 1;
+                    //IF THE NODE IS ADJACENT BUT HAS ANY OBJECT
+                    if (node.neighbours.Contains(End))
+                    {
+                        if (cnn.occupant != null)
+                        {
+                            // visited.Add(cnn);
+                            // continue;
+                            cost = 100;
+                        }
+                    }
                     //TODO change cnn.Cost to terrain cost, water, etc
                     if (!MinCostToStart.ContainsKey(cnn) ||
-                        MinCostToStart[node] + 1 < MinCostToStart[cnn])
+                        MinCostToStart[node] + cost < MinCostToStart[cnn])
 
                     {
-                        MinCostToStart[cnn] = MinCostToStart[node] + 1;
+                        MinCostToStart[cnn] = MinCostToStart[node] + cost;
                         NearestToStart[cnn] = node;
                         if (!prioQueue.Contains(cnn))
                             prioQueue.Add(cnn);
                     }
                 }
                 visited.Add(node);
-                if (node.neighbours.Contains(End))
-                {
-                    if (node.occupant == null)
-                        return NearestToStart;
-                }
+                //CHECK END CONDITIONS
+                //IF THIS NODE IS ADJACENT TO OUR TARGET
+                // if (node.neighbours.Contains(End))
+                // {
+                //     //IF THIS NODE IS EMPTY
+                //     if (node.occupant == null)
+                //     {
+                //         return NearestToStart;
+                //     }
+                // }
+                if (node == End)
+                    return NearestToStart;
             } while (prioQueue.Any());
 
             //I added this

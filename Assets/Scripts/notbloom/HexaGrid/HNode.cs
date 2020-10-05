@@ -1,16 +1,20 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 namespace notbloom.HexagonalMap
 {
+    [Serializable]
     public class HNode
     {
         public HPosition position;
         public float x => position.x;
         public float y => position.y;
+        [NonSerialized]
         public List<HNode> neighbours;
+        [NonSerialized]
         public HObject occupant;
+        [NonSerialized]
         public List<HTrigger> triggers;
         public bool passable => true;
 

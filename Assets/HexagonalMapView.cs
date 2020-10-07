@@ -21,19 +21,29 @@ public class HexagonalMapView : MonoBehaviour
         {
             instance = this;
         }
-        // }
-        // void Start()
-        // {
-        map = new HMap();
-        map.CreateSimpleGrid(rows, cols);
-        map.Save();
+    }
+    public static void GenericMap()
+    {
+        instance.map = new HMap();
+        instance.map.CreateSimpleGrid(instance.rows, instance.cols);
+        //map.Save();
+        instance.GenerateView();
+    }
+    public void GenerateView()
+    {
         foreach (HNode node in map.nodes)
         {
-            GameObject hexCell = Instantiate(hexPrefab, new Vector3(node.x, 0, node.y), Quaternion.identity);
+            GameObject hexCell = Instantiate(hexPrefab, node.ToVector3(), Quaternion.identity);
             hexCell.transform.parent = transform;
             NodeView nodeView = hexCell.GetComponent<NodeView>();
             nodeView.node = node;
             finalNode = node;
         }
+    }
+    public static void CreateMapFromNodeData(List<NodeData> nodes)
+    {
+        instance.map = new HMap();
+        instance.map.CreateFromNodeData(nodes);
+        instance.GenerateView();
     }
 }

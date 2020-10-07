@@ -27,26 +27,27 @@ namespace notbloom.HexagonalMap
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    // if (UnityEngine.Random.Range(0f, 1f) < 0.1f)
-                    //     continue;
-                    HNode node;
-                    if (j % 2 == 0)
-                    {
-                        node = new HNode(i * innerRadius, j * outerRadius);
-                    }
-                    else
-                    {
-                        node = new HNode(i * innerRadius + innerRadius / 2f, j * outerRadius);
-                    }
-
-                    nodes.Add(node);
+                    nodes.Add(new HNode(i, j)); //node);
                 }
             }
             //Register Neighbours
+            ConnectCloseAsNeighbours();
+        }
+        public void CreateFromNodeData(List<NodeData> nodeData)
+        {
+            nodes = new List<HNode>();
+            foreach (NodeData node in nodeData)
+            {
+                nodes.Add(new HNode(node.x, node.y));
+            }
+            ConnectCloseAsNeighbours();
+        }
+        public void ConnectCloseAsNeighbours(float distance = 3.8f)
+        {
             foreach (HNode node in nodes)
             {
-                node.neighbours = nodes.Where(p => HNode.SquaredDistance(p, node) < 3.8f && p != node).ToList<HNode>();
-                //   Debug.Log(node.neighbours.Count);
+                node.neighbours = nodes.Where(p => HNode.SquaredDistance(p, node) < distance && p != node).ToList<HNode>();
+                Debug.Log(node.neighbours.Count);
             }
         }
     }

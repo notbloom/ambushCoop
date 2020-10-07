@@ -8,6 +8,7 @@ using UnityEngine.UI;
 //TODO rename to AgentBaseView or similar. AgentSkin?
 public abstract class AgentBase : MonoBehaviour
 {
+    public string string_id;
     public VisibleObject visibleCharacter;
     public BaseStats baseStats;
     public HObjectFactions faction;

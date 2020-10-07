@@ -94,4 +94,42 @@ public class RoundsEngine : MonoBehaviour
     {
 
     }
+
+    public void SaveScenario()
+    {
+        ScenarioData data = new ScenarioData();
+        //REGISTER NODES
+        data.string_id = "test_scenario";
+        data.s_nodes = new List<NodeData>();
+        foreach (HNode hnode in HexagonalMapView.MainMap.nodes)
+        {
+            data.s_nodes.Add(new NodeData(hnode));
+        }
+        //REGISTER OBJECTS
+        data.s_objects = new List<ObjectInstaceData>();
+        //OBJECTS -> ENEMY AGENTS
+        List<EnemyAgent> agentBases = GameObject.FindObjectsOfType<EnemyAgent>().ToList();
+        foreach (EnemyAgent agent in agentBases)
+        {
+            data.s_objects.Add(new ObjectInstaceData(agent));
+        }
+        ScenarioData.Save(data);
+    }
+    public void LoadScenario()
+    {
+        HexagonalMapView.GenericMap();
+    }
+    public void LoadScenario(ScenarioData data)
+    {
+        //Create Map
+        HexagonalMapView.CreateMapFromNodeData(data.s_nodes);
+        //Spawn Enemies
+        foreach (ObjectInstaceData objData in data.s_objects)
+        {
+            GameObject instance = Instantiate(Resources.Load(objData.string_id) as GameObject);
+            ISpawn ispawn = instance.GetComponent<ISpawn>();
+            if (ispawn != null)
+                ispawn.Spawn(objData);
+        }
+    }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using notbloom.HexagonalMap;
 
-public class EnemyAgent : AgentBase
+public class EnemyAgent : AgentBase, ISpawn
 {
     public List<ScriptableCard> cards;
     public ScriptableCard currentCard => cards[actionCount];
@@ -12,10 +12,16 @@ public class EnemyAgent : AgentBase
     {
         agent = new Agent();
     }
-    void Start()
+    public void Spawn(ObjectInstaceData objectInstaceData)
     {
+        EnemyInstanceData data = ResourcesIO.LoadObjectDataByID<EnemyInstanceData>(objectInstaceData.string_id);
+
+        Debug.Log("SPAWN");
         base.Init();
         transform.position = node.ToVector3();
+    }
+    void Start()
+    {
     }
 
     // Update is called once per frame

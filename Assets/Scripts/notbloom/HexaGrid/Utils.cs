@@ -6,7 +6,7 @@ namespace notbloom.HexagonalMap
     public static class Utils
     {
 
-        public static float SquaredDistance(this HNode a, HNode b) => HPosition.SquaredDistance(a.position, b.position);
+        public static float SquaredDistance(this HNode a, HNode b) => HNode.SquaredDistance(a, b);
 
         public static string ToString(this List<HNode> hNodes)
         {

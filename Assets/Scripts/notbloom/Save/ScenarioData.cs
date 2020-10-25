@@ -33,4 +33,14 @@ public class ScenarioData
         Debug.Log(folderUrl("Scenarios"));
         File.WriteAllText(url(scenarioData.string_id), json);
     }
+    public static ScenarioData Load(string scenario_id)
+    {
+        ScenarioData scenarioData = new ScenarioData();
+        if (File.Exists(url(scenario_id)))
+        {
+            string json = File.ReadAllText(url(scenario_id));
+            scenarioData = JsonUtility.FromJson<ScenarioData>(json);
+        }
+        return scenarioData;
+    }
 }

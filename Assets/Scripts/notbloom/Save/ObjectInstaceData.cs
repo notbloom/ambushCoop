@@ -15,6 +15,11 @@ public class ObjectInstaceData
         node = new NodeData(agentBase.node);
         string_id = agentBase.string_id;
     }
+    public ObjectInstaceData(NodeData nodeData)
+    {
+        node = nodeData;
+        //string_id = agentBase.string_id;
+    }
 }
 
 public class EnemyInstanceData

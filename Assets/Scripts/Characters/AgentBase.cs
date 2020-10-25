@@ -19,13 +19,14 @@ public abstract class AgentBase : MonoBehaviour
     public Slider slider;
     public HNode node { get { return agent.node; } set { agent.node = value; } }
 
-    public void Init()
+    public void Init(ObjectInstaceData objectInstaceData)
     {
         agent = new Agent();
         agent.faction = faction;
         agent.baseStats = baseStats;
         ShowSprite();
-        node = HexagonalMapView.MainMap.nodes[UnityEngine.Random.Range(0, HexagonalMapView.MainMap.nodes.Count)];
+        node = HexagonalMapView.FindNodeByData(objectInstaceData.node);
+        //node = HexagonalMapView.MainMap.nodes[UnityEngine.Random.Range(0, HexagonalMapView.MainMap.nodes.Count)];
         node.occupant = agent;
 
         if (slider != null)

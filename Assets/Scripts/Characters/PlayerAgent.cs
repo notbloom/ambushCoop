@@ -8,9 +8,12 @@ public class PlayerAgent : AgentBase, ISpawn
     public List<ScriptableCard> actions;
     //public ScriptableCard currentCard => actions[actionCount];
     public bool playingACard;
-    public void Spawn(ObjectInstaceData objectInstace)
+    public void Spawn(ObjectInstaceData objectInstaceData)
     {
-        base.Init();
+        Debug.Log(objectInstaceData.node.x);
+        Debug.Log(objectInstaceData.node.y);
+        node = HexagonalMapView.FindNodeByData(objectInstaceData.node);
+        base.Init(objectInstaceData);
         transform.position = node.ToVector3();
         //  Debug.Log("algo");
     }

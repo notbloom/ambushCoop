@@ -15,9 +15,8 @@ public class EnemyAgent : AgentBase, ISpawn
     public void Spawn(ObjectInstaceData objectInstaceData)
     {
         EnemyInstanceData data = ResourcesIO.LoadObjectDataByID<EnemyInstanceData>(objectInstaceData.string_id);
-
         Debug.Log("SPAWN");
-        base.Init();
+        base.Init(objectInstaceData);
         transform.position = node.ToVector3();
     }
     void Start()

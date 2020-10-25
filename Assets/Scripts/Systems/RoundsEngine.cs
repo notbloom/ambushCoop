@@ -117,7 +117,9 @@ public class RoundsEngine : MonoBehaviour
     }
     public void LoadScenario()
     {
-        HexagonalMapView.GenericMap();
+        //HexagonalMapView.GenericMap();
+        LoadScenario(ScenarioData.Load("test_scenario"));
+        
     }
     public void LoadScenario(ScenarioData data)
     {
@@ -126,10 +128,22 @@ public class RoundsEngine : MonoBehaviour
         //Spawn Enemies
         foreach (ObjectInstaceData objData in data.s_objects)
         {
-            GameObject instance = Instantiate(Resources.Load(objData.string_id) as GameObject);
+            Debug.Log("Enemies/" + objData.string_id);
+            GameObject instance = Instantiate(Resources.Load("Enemies/" + objData.string_id, typeof(GameObject))) as GameObject;
+
             ISpawn ispawn = instance.GetComponent<ISpawn>();
             if (ispawn != null)
                 ispawn.Spawn(objData);
         }
+        //SpawnPlayers();
+    }
+    public void SpawnPlayers() {        
+        PlayerAgent[] players = GameObject.FindObjectsOfType<PlayerAgent>();
+        //TODO SPAWN POINTS
+        foreach (PlayerAgent player in players)
+        {
+            player.Spawn(new ObjectInstaceData(new NodeData(7, 23)));
+        }
+
     }
 }

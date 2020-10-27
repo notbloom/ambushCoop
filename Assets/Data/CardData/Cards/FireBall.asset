@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FireBall
   m_EditorClassIdentifier: 
   action: {fileID: 11400000, guid: b6c391644bb894407a46a118c6d84bbd, type: 2}
-  range: {fileID: 0}
-  area: {fileID: 0}
+  range: {fileID: 11400000, guid: caaaaa385b65a4e8dae16f7ae4e04a2f, type: 2}
+  area: {fileID: 11400000, guid: 870fea4f29461494c98e32331e796494, type: 2}
   targetRequest: {fileID: 0}
   title: Fireball
   description: Throw Fireball

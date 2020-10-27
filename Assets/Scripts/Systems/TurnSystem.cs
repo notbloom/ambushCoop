@@ -88,7 +88,7 @@ public class TurnSystem : MonoBehaviour
     }
     public static void StartRound()
     {
-        instance.CurrentPhase = TurnPhases.placingPlayers;
+        instance.CurrentPhase = TurnPhases.play;
         //instance.initiativeViews[agentIndex].OnTurnStart();
         AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], true, 0.2f));
         instance.agents[agentIndex].PlayTurn();

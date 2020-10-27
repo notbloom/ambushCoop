@@ -25,7 +25,7 @@ public class AreaView : MonoBehaviour
             instance = this;
         }
     }
-    void Start()
+    public void Init()
     {
         nodeViews = FindObjectsOfType<NodeView>();
     }
@@ -61,6 +61,8 @@ public class AreaView : MonoBehaviour
     }
     public static void OnNodeEnter(HNode node)
     {
+        if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers)
+            return;
 
         if (instance.card != null)
         {

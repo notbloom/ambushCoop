@@ -19,10 +19,11 @@ public class PlayerState {
     public string player_id;
     public Vector2Int position;
 }
-public class GameState : MonoBehaviour
+public class GameState 
 {
     public string scenario_id = "scenario_id";
     public List<Object> objects;
+    public List<PlayerAgent> players;
 
     // Start is called before the first frame update
     void Start()

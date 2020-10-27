@@ -39,18 +39,18 @@ public class HexagonalMapView : MonoBehaviour
             NodeView nodeView = hexCell.GetComponent<NodeView>();
             nodeView.node = node;
             finalNode = node;
+            MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
+            Renderer _renderer = hexCell.GetComponent<Renderer>();
 
             
-
-             MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
-                Renderer _renderer = hexCell.GetComponent<Renderer>();
-
-                // Get the current value of the material properties in the renderer.
-                _renderer.GetPropertyBlock(_propBlock);
-                // Assign our new value.
+            _renderer.GetPropertyBlock(_propBlock);
+            if (map.startingNodes.Contains(node))
+            {
+                _propBlock.SetColor("_Color", Color.blue);
+            } else { 
                 _propBlock.SetColor("_Color", tileColors[Random.Range(0, tileColors.Count - 1)]);
-                // Apply the edited values to the renderer.
-                _renderer.SetPropertyBlock(_propBlock);
+            }
+            _renderer.SetPropertyBlock(_propBlock);
         }
     }
     public static HNode FindNodeByData(NodeData nodeData)
@@ -61,6 +61,13 @@ public class HexagonalMapView : MonoBehaviour
     {
         instance.map = new HMap();
         instance.map.CreateFromNodeData(nodes);
+        instance.GenerateView();
+    }
+        public static void Create(ScenarioData scenarioData)
+    {
+        instance.map = new HMap();
+        instance.map.CreateFromNodeData(scenarioData.s_nodes);
+        instance.map.SetStartingNodes(scenarioData.s_starting_nodes);
         instance.GenerateView();
     }
 }

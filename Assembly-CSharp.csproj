@@ -61,7 +61,6 @@
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HPosition.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Animations\SpawnAtTargetAnimationFactory.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\BaseAttackAction.cs" />
-     <Compile Include="Assets\Scripts\Systems\RoundsEngine.cs" />
      <Compile Include="Assets\Scripts\Characters\Status.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\MoveableArea.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\SAMove.cs" />
@@ -76,6 +75,7 @@
      <Compile Include="Assets\Scripts\Systems\AreaView.cs" />
      <Compile Include="Assets\Scripts\notbloom\Save\ISpawn.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\TargetRequest\RequestAnyTargetOfTypeInArea.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameState.cs" />
      <Compile Include="Assets\Scripts\MapObjects\Objects\UndestructableWall.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\AreaAoe.cs" />
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HMap.cs" />
@@ -106,7 +106,11 @@
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HMapController.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Animations\ThrowableAnimationFactory.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\PathAoe.cs" />
-     <Compile Include="Assets\Scripts\Systems\GameState.cs" />
+     <Compile Include="Assets\Scripts\Systems\TurnSystem.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameEngine.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameLoader.cs" />
+     <Compile Include="Assets\Scripts\Systems\AgentActionSystem.cs" />
+     <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\PlayerStartLocationAction.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

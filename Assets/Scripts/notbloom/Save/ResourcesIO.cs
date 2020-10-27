@@ -29,6 +29,10 @@ public class ResourcesIO
         }
         return dataObject;
     }
+    public static T LoadResource<T>(string string_id) where T : Object { 
+        return Resources.Load(string_id, typeof(T)) as T;
+
+    }
     public static void SaveObjectByID(string string_id)
     {
 

@@ -12,6 +12,7 @@ namespace notbloom.HexagonalMap
         public const float outerRadius = 0.866025404f;
 
         public List<HNode> nodes;
+        public List<HNode> startingNodes;
 
         public void Save()
         {
@@ -41,6 +42,22 @@ namespace notbloom.HexagonalMap
                 nodes.Add(new HNode(node.x, node.y));
             }
             ConnectCloseAsNeighbours();
+        }
+        public void SetStartingNodes(List<NodeData> nodeData) {
+            startingNodes = new List<HNode>();
+            foreach (NodeData node in nodeData)
+            {
+                startingNodes.Add(FindNodeByData(node));
+            }
+        }
+        
+        public HNode FindNodeByData(NodeData nodeData)
+        {
+            return nodes.Where(n => n.x == nodeData.x && n.y == nodeData.y).First();
+        }
+        public HNode FindNodeByVector2Int(Vector2Int nodeVector)
+        {
+            return nodes.Where(n => n.x == nodeVector.x && n.y == nodeVector.y).First();
         }
         public void ConnectCloseAsNeighbours(float distance = 3.8f)
         {

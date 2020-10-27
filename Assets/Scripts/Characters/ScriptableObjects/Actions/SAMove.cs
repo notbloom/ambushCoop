@@ -10,6 +10,7 @@ public class SAMove : ScriptableAction
     public NodeAnimationFactory animationFactory;
     public override void PerformAction(HNode from, List<HNode> targets, AgentBase agent)
     {
+        //TODO REMOVE THIS MAP
         HMapController map = new HMapController();
         //List<HNode> path = HPathFinder.GetShortestPathDijkstra(from, targets[0]);
         if (targets.Count == 0)

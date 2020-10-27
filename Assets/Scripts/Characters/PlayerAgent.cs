@@ -8,6 +8,9 @@ public class PlayerAgent : AgentBase, ISpawn
     public List<ScriptableCard> actions;
     //public ScriptableCard currentCard => actions[actionCount];
     public bool playingACard;
+    public void Create() {
+        base.Create();
+    }
     public void Spawn(ObjectInstaceData objectInstaceData)
     {
         Debug.Log(objectInstaceData.node.x);
@@ -20,6 +23,7 @@ public class PlayerAgent : AgentBase, ISpawn
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(agentID.unique_id);
         //transform.position = new Vector3(agent.node.x, 0, agent.node.y);
     }
     public override void PlayTurn()

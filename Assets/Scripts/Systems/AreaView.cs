@@ -13,6 +13,10 @@ public class AreaView : MonoBehaviour
     public PlayerAgent playerAgent;
     private NodeView hoverNode;
     private static AreaView instance;
+
+    public TurnSystem turnSystem;
+    public AgentActionSystem agentActionSystem;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -31,10 +35,16 @@ public class AreaView : MonoBehaviour
     }
     public static void OnNodeClick(HNode node)
     {
-        if (instance.card != null)
+        if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers) {
+            instance.agentActionSystem.PlacePlayerOnSpawningNode(node);
+        }
+        if (instance.turnSystem.CurrentPhase == TurnPhases.play)
         {
-            instance.playerAgent.ClickOnNode(node, instance.card);
-            instance.card = null;
+            if (instance.card != null)
+            {
+                instance.playerAgent.ClickOnNode(node, instance.card);
+                instance.card = null;
+            }
         }
     }
 
@@ -113,7 +123,25 @@ public class AreaView : MonoBehaviour
             _renderer.SetPropertyBlock(_propBlock);
         }
     }
-    // Update is called once per frame
+    public static void ShowStartingPoints(List<HNode> startingNodes)
+    {
+        foreach (NodeView nodeView in instance.nodeViews)
+        {
+            if (startingNodes.Contains(nodeView.node))
+            {
+                MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
+                Renderer _renderer = nodeView.gameObject.GetComponent<Renderer>();
+
+                // Get the current value of the material properties in the renderer.
+                _renderer.GetPropertyBlock(_propBlock);
+                // Assign our new value.
+                _propBlock.SetColor("_Color", Color.blue);
+                // Apply the edited values to the renderer.
+                _renderer.SetPropertyBlock(_propBlock);
+            }
+        }
+
+    }    // Update is called once per frame
     public static void UpdateView(HNode node)
     {
         //TODO make an input controller system

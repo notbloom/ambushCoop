@@ -13,6 +13,7 @@ public class MObject
 public class ScenarioData
 {
     public List<NodeData> s_nodes;
+    public List<NodeData> s_starting_nodes;
     public List<ObjectInstaceData> s_objects;
 
     public string string_id;

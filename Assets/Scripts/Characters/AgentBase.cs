@@ -6,19 +6,45 @@ using UnityEngine.UI;
 [RequireComponent(typeof(SpriteRenderer))]
 
 //TODO rename to AgentBaseView or similar. AgentSkin?
+public class AgentID {
+    public string type_id;
+    public ushort number_id;
+    public string unique_id => type_id + "-"+ number_id.ToString();
+
+    public AgentID(string uniqueString) {
+        string[] split = uniqueString.Split( new char[] {'-'});
+        type_id = split[0];
+        number_id = ushort.Parse(split[1]);
+    }
+}
 public abstract class AgentBase : MonoBehaviour
 {
     public string string_id;
+    public AgentID agentID;
     public VisibleObject visibleCharacter;
     public BaseStats baseStats;
     public HObjectFactions faction;
     public Agent agent;
     public SpriteRenderer spriteRenderer;
     public int actionCount = 0;
-
+    public int initiative;
     public Slider slider;
     public HNode node { get { return agent.node; } set { agent.node = value; } }
 
+    public void Create()
+    {
+        agent = new Agent();
+        agent.faction = faction;
+        agent.baseStats = baseStats;
+        ShowSprite();
+        
+        if (slider != null)
+        {
+            slider.maxValue = agent.maxHp;
+            slider.value = agent.maxHp;
+            agent.ReceiveDamageCall += PostReceiveDamage;
+        }        
+    }
     public void Init(ObjectInstaceData objectInstaceData)
     {
         agent = new Agent();
@@ -34,7 +60,7 @@ public abstract class AgentBase : MonoBehaviour
             slider.maxValue = agent.maxHp;
             slider.value = agent.maxHp;
             agent.ReceiveDamageCall += PostReceiveDamage;
-        }
+        }        
     }
     public void ShowSprite()
     {
@@ -47,7 +73,7 @@ public abstract class AgentBase : MonoBehaviour
         {
             Debug.Log("DEAD?");
             AnimationInvoker.Enqueue(new DestroyGameobjectCommand(gameObject));
-            RoundsEngine.RemoveAgent(this);
+            TurnSystem.RemoveAgent(this);
         }
         //agent.hp -= damageInstance.amount;
         //UpdateView();

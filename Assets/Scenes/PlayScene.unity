@@ -4406,6 +4406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameLoader: {fileID: 1946531301}
   turnSystem: {fileID: 611188675}
+  areaView: {fileID: 1995907869}
 --- !u!4 &1946531303
 Transform:
   m_ObjectHideFlags: 0

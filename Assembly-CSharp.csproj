@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2020_2_0;UNITY_2020_2;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_OSX;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2020_2_0;UNITY_2020_2;UNITY_2020;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_OSX;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;MIRROR;MIRROR_1726_OR_NEWER;MIRROR_3_0_OR_NEWER;MIRROR_3_12_OR_NEWER;MIRROR_4_0_OR_NEWER;MIRROR_5_0_OR_NEWER;MIRROR_6_0_OR_NEWER;MIRROR_7_0_OR_NEWER;MIRROR_8_0_OR_NEWER;MIRROR_9_0_OR_NEWER;MIRROR_10_0_OR_NEWER;MIRROR_11_0_OR_NEWER;MIRROR_12_0_OR_NEWER;MIRROR_13_0_OR_NEWER;MIRROR_14_0_OR_NEWER;MIRROR_15_0_OR_NEWER;MIRROR_16_0_OR_NEWER;MIRROR_17_0_OR_NEWER;MIRROR_18_0_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -39,12 +39,16 @@
      <Compile Include="Assets\Scripts\View\InitiativeView.cs" />
      <Compile Include="Assets\Scripts\LevelEditor\ObjectPlacer.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\ScriptableAction.cs" />
+     <Compile Include="Assets\Scripts\Network\PlayerClient.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\CleaveAoe.cs" />
      <Compile Include="Assets\Scripts\notbloom\Random\Utils.cs" />
+     <Compile Include="Assets\Scripts\Systems\AgentActionSystem.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\OriginAoe.cs" />
      <Compile Include="Assets\Scripts\Characters\Enemy.cs" />
      <Compile Include="Assets\Scripts\Systems\Spawner.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Ranges\RingRange.cs" />
+     <Compile Include="Assets\Scripts\Network\View\PlayerPortraitView.cs" />
+     <Compile Include="Assets\Scripts\Network\AmbushNetworkManager.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\ScriptableRange.cs" />
      <Compile Include="Assets\Scripts\Characters\AgentBase.cs" />
      <Compile Include="Assets\Scripts\notbloom\Save\AbstractData.cs" />
@@ -59,7 +63,9 @@
      <Compile Include="Assets\Scripts\MapObjects\HObject.cs" />
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HNode.cs" />
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HPosition.cs" />
+     <Compile Include="Assets\Scripts\Network\View\ViewParty.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Animations\SpawnAtTargetAnimationFactory.cs" />
+     <Compile Include="Assets\Scripts\Systems\GlobalRepositorySystem.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\BaseAttackAction.cs" />
      <Compile Include="Assets\Scripts\Characters\Status.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\MoveableArea.cs" />
@@ -72,6 +78,8 @@
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\TargetRequest\RequestCloserTargetAnywhere.cs" />
      <Compile Include="Assets\Scripts\View\CardView.cs" />
      <Compile Include="Assets\Scripts\notbloom\Save\ScenarioData.cs" />
+     <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\PlayerStartLocationAction.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameEngine.cs" />
      <Compile Include="Assets\Scripts\Systems\AreaView.cs" />
      <Compile Include="Assets\Scripts\notbloom\Save\ISpawn.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\TargetRequest\RequestAnyTargetOfTypeInArea.cs" />
@@ -90,11 +98,13 @@
      <Compile Include="Assets\Scripts\Systems\AnimationInvoker.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\SAAttack.cs" />
      <Compile Include="Assets\Scripts\Characters\RoundModifiers.cs" />
+     <Compile Include="Assets\Scripts\Systems\TurnSystem.cs" />
      <Compile Include="Assets\HexagonalMapView.cs" />
      <Compile Include="Assets\Scripts\MapObjects\HTrigger.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\SingleTargetArea.cs" />
      <Compile Include="Assets\Scripts\HexaGrid\NodeView.cs" />
      <Compile Include="Assets\Scripts\Characters\Modifier.cs" />
+     <Compile Include="Assets\Scripts\Systems\GameLoader.cs" />
      <Compile Include="Assets\Scripts\Characters\EnemyAgent.cs" />
      <Compile Include="Assets\Scripts\MapObjects\VisibleObject.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Animations\DamageAnimationFactory.cs" />
@@ -106,15 +116,13 @@
      <Compile Include="Assets\Scripts\notbloom\HexaGrid\HMapController.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Animations\ThrowableAnimationFactory.cs" />
      <Compile Include="Assets\Scripts\Characters\ScriptableObjects\AreasOfEffect\PathAoe.cs" />
-     <Compile Include="Assets\Scripts\Systems\TurnSystem.cs" />
-     <Compile Include="Assets\Scripts\Systems\GameEngine.cs" />
-     <Compile Include="Assets\Scripts\Systems\GameLoader.cs" />
-     <Compile Include="Assets\Scripts\Systems\AgentActionSystem.cs" />
-     <Compile Include="Assets\Scripts\Characters\ScriptableObjects\Actions\PlayerStartLocationAction.cs" />
+     <Compile Include="Assets\Scripts\Menu\TitleMenu.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <None Include="Assets\Mirror\Version.txt" />
+     <None Include="Assets\Mirror\Readme.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -122,7 +130,9 @@
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\Mirror\Notice.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <None Include="Assets\Mirror\Plugins\Mono.Cecil\License.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -338,6 +348,18 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>/Applications/Unity/Hub/Editor/2020.2.0a13/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Mdb">
+        <HintPath>/Users/notbloom/Documents/Work/Code/Unity/bloomhaven/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Pdb">
+        <HintPath>/Users/notbloom/Documents/Work/Code/Unity/bloomhaven/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX">
+        <HintPath>/Users/notbloom/Documents/Work/Code/Unity/bloomhaven/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Rocks">
+        <HintPath>/Users/notbloom/Documents/Work/Code/Unity/bloomhaven/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2020.2.0a13/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -773,6 +795,71 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Mirror.csproj">
+      <Project>{1680711b-c052-c32a-9574-8623902e3027}</Project>
+      <Name>Mirror</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.csproj">
+      <Project>{060f2878-8d1c-fd8d-efa8-90e3d31dcb53}</Project>
+      <Name>Mirror.Examples</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Cloud.csproj">
+      <Project>{1c7e9c84-bf76-0212-f9c5-09a80bb24303}</Project>
+      <Name>Mirror.Cloud</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.example.RigidbodyPhysics.csproj">
+      <Project>{e14bcc4b-2c3a-a56a-654c-712b43d20e39}</Project>
+      <Name>Mirror.example.RigidbodyPhysics</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Weaver.csproj">
+      <Project>{27592024-9df1-7175-dc07-cb7c507c0cb7}</Project>
+      <Name>Mirror.Weaver</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Editor.csproj">
+      <Project>{38c0c35e-6988-cd27-d2ca-f7fe35ac8cf3}</Project>
+      <Name>Mirror.Editor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.CompilerSymbols.csproj">
+      <Project>{af61e5ee-9fcc-205c-42d7-2b24feb440b7}</Project>
+      <Name>Mirror.CompilerSymbols</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Authenticators.csproj">
+      <Project>{2b7e9e60-d515-41ec-fd77-fba5471c3f6d}</Project>
+      <Name>Mirror.Authenticators</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Telepathy.csproj">
+      <Project>{3b2d392b-2ad0-1877-1859-14918d2d5b2b}</Project>
+      <Name>Telepathy</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.GUI.csproj">
+      <Project>{567ef35a-ad99-cea4-72e0-1f3295ee5c27}</Project>
+      <Name>Mirror.Examples.Cloud.GUI</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="SimpleWebTransport.csproj">
+      <Project>{8b97338a-c3f6-a6f0-e32b-3adaf51e420c}</Project>
+      <Name>SimpleWebTransport</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Components.csproj">
+      <Project>{15a904a3-eb5b-d582-c219-85792ff6425c}</Project>
+      <Name>Mirror.Components</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
+      <Project>{5d1544fa-3578-35e3-2b1a-559c0e21814d}</Project>
+      <Name>Mirror.Examples.Cloud.Pong</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

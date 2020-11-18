@@ -7,10 +7,18 @@ public class GameEngine : MonoBehaviour
     public GameLoader gameLoader;
     public TurnSystem turnSystem;
     public AreaView areaView;
+    private static GameEngine instance;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame

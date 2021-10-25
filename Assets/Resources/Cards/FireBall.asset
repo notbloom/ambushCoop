@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227d44d03ac6b45a29060dc4fea38bb1, type: 3}
+  m_Name: FireBall
+  m_EditorClassIdentifier: 
+  action: {fileID: 11400000, guid: b6c391644bb894407a46a118c6d84bbd, type: 2}
+  range: {fileID: 11400000, guid: 37d28391dc3d54462af31c66fc02e8d7, type: 2}
+  area: {fileID: 11400000, guid: b47f991fcd3b54eb6b575a1ea68701be, type: 2}
+  targetRequest: {fileID: 0}
+  title: Fireball
+  description: Throw Fireball
+  cost: 1

@@ -8,10 +8,10 @@ public class PlayerClient : NetworkBehaviour
     public string player_name;
     public PlayerAgent playerAgent;
     public ScriptableCard playingCard;
-    public short avatarRID; //REPOSITORY ID
-
+    public short avatarRID; //REPOSITORY ID    
     public Sprite avatar => GlobalRepositorySystem.PlayerAvatar(avatarRID);
 
+    public string[] deck = { "FireBall", "Move5Card", "Cleave3" };
     void Start()
     {
         

@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class TitleMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public void Continue() {
+        //Create Messenger 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //BLACK OUT
+
+        //Change Scene
+        SessionTracker.NewSession();
     }
 }

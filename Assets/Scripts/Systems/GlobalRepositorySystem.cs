@@ -26,7 +26,10 @@ public class GlobalRepositorySystem : MonoBehaviour
             return null;
         return instance.playerAvatars[spriteID];
     }
-    
+
+    public static ScriptableCard Card(string cardID) {
+        return Resources.Load("Cards/" + cardID, typeof(ScriptableCard)) as ScriptableCard;
+    }
     void Update()
     {
         

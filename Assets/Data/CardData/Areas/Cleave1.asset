@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 0.27
   ringArea: {fileID: 11400000, guid: 80de106ddbf744a09bb76d2d358e4936, type: 2}
-  distanceArea: {fileID: 11400000, guid: e22f680a2179c4aebab6e03123ab1624, type: 2}
+  distanceArea: {fileID: 11400000, guid: b47f991fcd3b54eb6b575a1ea68701be, type: 2}

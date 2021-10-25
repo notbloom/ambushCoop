@@ -14,10 +14,18 @@ public class PlayerStartLocationAction : ScriptableAction
         HNode target = targets[0];
 
         if (HexagonalMapView.MainMap.startingNodes.Contains(target) && target.occupant == null) {
-            agent.Create();
-            target.occupant = agent.agent;            
-            agent.node = target;
-            agent.transform.position = target.ToVector3();
+            if (agent.agent == null)
+            {
+                agent.Create();
+                target.occupant = agent.agent;
+                agent.node = target;
+                agent.transform.position = target.ToVector3();
+            } else {
+                agent.node.occupant = null;
+                target.occupant = agent.agent;
+                agent.node = target;
+                agent.transform.position = target.ToVector3();
+            }
         }
         
     }

@@ -16,5 +16,6 @@ public class RingRange : ScriptableRange
         float squaredMaxDistance = maxDistance * maxDistance;
         List<HNode> aoe = HexagonalMapView.MainMap.nodes.Where(p => HNode.SquaredDistance(p, origin) > squaredMinDistance && HNode.SquaredDistance(p, origin) < squaredMaxDistance).ToList<HNode>();// && p != node).ToList<HNode>();
         return aoe;
+        //
     }
 }

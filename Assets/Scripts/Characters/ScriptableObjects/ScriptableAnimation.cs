@@ -19,7 +19,7 @@ public abstract class NodeAnimationFactory : ScriptableObject
 
 }
 
-public abstract class AnimationCommand
+public abstract class AnimationCommand : ScriptableObject
 {
     public abstract IEnumerator Animate();
 }

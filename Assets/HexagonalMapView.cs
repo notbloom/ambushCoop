@@ -27,7 +27,7 @@ public class HexagonalMapView : MonoBehaviour
     {
         instance.map = new HMap();
         instance.map.CreateSimpleGrid(instance.rows, instance.cols);
-        //map.Save();
+        //instance.map.Save();
         instance.GenerateView();
     }
     public void GenerateView()

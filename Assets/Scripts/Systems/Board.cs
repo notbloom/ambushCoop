@@ -16,35 +16,40 @@ public class Board : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else {
+        else
+        {
             Destroy(gameObject);
         }
     }
 
-    public PlayerClient PlayerByID(string id) {
+    public PlayerClient PlayerByID(string id)
+    {
         return null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    public static void LoadScenario(string scenario_id) {
+    public static void LoadScenario(string scenario_id)
+    {
         instance.gameLoader.LoadScenario(scenario_id);
         instance.turnSystem.OnScenarioLoaded();
         instance.areaView.Init();
-    
+
     }
     //public void LoadScenario(string scenario_id) {
     //     gameLoader.LoadScenario(scenario_id);
     //     turnSystem.OnScenarioLoaded();
     //     areaView.Init();
     // }
-    public void SaveGameState() { 
+    public void SaveGameState()
+    {
 
     }
-    public void LoadGameState() { 
+    public void LoadGameState()
+    {
 
     }
 }

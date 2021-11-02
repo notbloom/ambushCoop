@@ -112,6 +112,7 @@ public class TurnSystem : MonoBehaviour
         {
             agentIndex = 0;
         }
+        //Todo que pasa si yo me muevo y tu te queris mover a donde mismo antes q aparezca la animacion
         AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], true, 0.2f));
         instance.agents[agentIndex].PlayTurn();
     }

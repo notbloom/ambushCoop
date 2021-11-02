@@ -11,7 +11,8 @@ public class GameLoader : MonoBehaviour
         ScenarioData data = ScenarioData.Load(scenario_id);        
         //Create Map
         //HexagonalMapView.CreateMapFromNodeData(data.s_nodes);
-        HexagonalMapView.Create(data);        
+        HexagonalMapView.GenericMap();
+        //HexagonalMapView.Create(data);        
         //Spawn Enemies
         foreach (ObjectInstaceData objData in data.s_objects)
         {
@@ -26,6 +27,7 @@ public class GameLoader : MonoBehaviour
     }
     public void SaveScenario()
     {
+        // Esta es la info q se enviaria si es q alguien se cae y relogea.
         ScenarioData data = new ScenarioData();
         //REGISTER NODES
         data.string_id = "test_scenario";

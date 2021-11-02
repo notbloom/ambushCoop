@@ -31,6 +31,12 @@ namespace notbloom.HexagonalMap
                     nodes.Add(new HNode(i, j)); //node);
                 }
             }
+            //Set starting nodes
+            startingNodes = new List<HNode>();
+            for (int i = 0; i < rows; i++)
+            {
+                startingNodes.Add(nodes[i]);
+            }
             //Register Neighbours
             ConnectCloseAsNeighbours();
         }

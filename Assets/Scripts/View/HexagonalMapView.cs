@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using notbloom.HexagonalMap;
 using System.Linq;
+
 public class HexagonalMapView : MonoBehaviour
 {
     public GameObject hexPrefab;

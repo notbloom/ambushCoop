@@ -71,20 +71,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Headache files
-Assets/Scripts/notbloom/Ambush.csproj.meta
-Assets/Scripts/notbloom/Assembly-CSharp-firstpass.csproj.meta
-Assets/Scripts/notbloom/Assembly-CSharp.csproj.meta
-Assets/Scripts/notbloom/Assembly-CSharp.sln.meta
-Assets/Scripts/notbloom/AssemblyDefinition.csproj.meta
-Assets/Scripts/notbloom/CuartoKaiserMobile.sln.meta
-Assets/Scripts/notbloom/PhotonChat.csproj.meta
-Assets/Scripts/notbloom/PhotonRealtime.csproj.meta
-Assets/Scripts/notbloom/PhotonUnityNetworking.csproj.meta
-Assets/Scripts/notbloom/PhotonUnityNetworking.Demos.csproj.meta
-Assets/Scripts/notbloom/PhotonUnityNetworking.Editor.csproj.meta
-Assets/Scripts/notbloom/PhotonUnityNetworking.Utilities.csproj.meta
-Assets/Scripts/notbloom/PhotonUnityNetworking.Utilities.Culling.Editor.csproj.meta
-Assets/Scripts/notbloom/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj.meta
-Assets/Scripts/notbloom/PhotonWebSocket.csproj.meta
-Assets/Scripts/notbloom/PunDemos.DemoHubEditor.csproj.meta
-Assets/Scripts/notbloom/PunDemos.DemoSlotcarEditor.csproj.meta
+*.csproj.meta
+*.sln.meta

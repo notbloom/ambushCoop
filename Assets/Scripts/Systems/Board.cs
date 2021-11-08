@@ -22,10 +22,10 @@ public class Board : MonoBehaviour
         }
     }
 
-    public PlayerClient PlayerByID(string id)
-    {
-        return null;
-    }
+    //public PlayerClient PlayerByID(string id)
+    //{
+    //    return null;
+    //}
 
     // Update is called once per frame
     void Update()

@@ -26,6 +26,10 @@ namespace Ambush
 
         }
         public void SpawnPlayer() {
+            GameObject go = Instantiate(Resources.Load("Player/default", typeof(GameObject))) as GameObject;
+            BoardPlayer boardPlayer = repository.GetScriptablePlayerClasses["adventurer"].Create();
+            boardPlayer.view = go.GetComponent<PlayerView>();            
+            PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
         }
         public void SpawnGenericEnemies() {
             for (int i = 0; i < 5; i++)

@@ -22,7 +22,6 @@ namespace Ambush
         public void CreateGeneric() {
             map.CreateGeneric();
             SpawnGenericEnemies();
-            //map.CreateSimpleGrid(10,10);
             SpawnPlayer();
         }
         public void SpawnPlayer() {

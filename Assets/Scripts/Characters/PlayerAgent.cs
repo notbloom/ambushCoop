@@ -20,6 +20,13 @@ public class PlayerAgent : AgentBase, ISpawn
         transform.position = node.ToVector3();
         //  Debug.Log("algo");
     }
+    public void Spawn(HNode node)
+    {
+        
+        base.Init(node);
+        transform.position = node.ToVector3();
+        //  Debug.Log("algo");
+    }
     // Update is called once per frame
     void Update()
     {

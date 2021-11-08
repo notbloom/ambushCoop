@@ -62,6 +62,23 @@ public abstract class AgentBase : MonoBehaviour
             agent.ReceiveDamageCall += PostReceiveDamage;
         }        
     }
+    public void Init(HNode node)
+    {
+        agent = new Agent();
+        agent.faction = faction;
+        agent.baseStats = baseStats;
+        ShowSprite();
+        //node = HexagonalMapView.FindNodeByData(node);
+        //node = HexagonalMapView.MainMap.nodes[UnityEngine.Random.Range(0, HexagonalMapView.MainMap.nodes.Count)];
+        node.occupant = agent;
+
+        if (slider != null)
+        {
+            slider.maxValue = agent.maxHp;
+            slider.value = agent.maxHp;
+            agent.ReceiveDamageCall += PostReceiveDamage;
+        }
+    }
     public void ShowSprite()
     {
         spriteRenderer.sprite = visibleCharacter.sprite;

@@ -19,6 +19,13 @@ public class EnemyAgent : AgentBase, ISpawn
         base.Init(objectInstaceData);
         transform.position = node.ToVector3();
     }
+    public void Spawn(HNode node)
+    {
+        EnemyInstanceData data = ResourcesIO.LoadObjectDataByID<EnemyInstanceData>("skeleton");
+        Debug.Log("SPAWN");
+        base.Init(node);
+        transform.position = node.ToVector3();
+    }
     void Start()
     {
     }

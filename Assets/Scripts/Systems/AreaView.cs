@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using notbloom.HexagonalMap;
 using System.Linq;
+using Ambush;
+
 //TODO remate to maybe PlayerUIController, PlayerViewController
 public class AreaView : MonoBehaviour
 {
     NodeView[] nodeViews;
-
+    Dictionary<HNode, NodeView> nodeViewsDict; //usar esto mejor para mostrar cosas
     //public HNode node;
     public ScriptableCard card;
     public PlayerAgent playerAgent;
@@ -27,15 +29,34 @@ public class AreaView : MonoBehaviour
     }
     public void Init()
     {
-        nodeViews = FindObjectsOfType<NodeView>();
+        nodeViews = FindObjectsOfType<NodeView>(); //cambiar a temporal o cambiar este init.
+        nodeViewsDict = new Dictionary<HNode, NodeView>();
+        foreach (NodeView nv in nodeViews) {
+            nodeViewsDict.Add(nv.node, nv);
+        }
     }
     public static void OnCardActivate(ScriptableCard card)
     {
         instance.card = card;
     }
-    public static void OnNodeClick(HNode node)
+    public static void OnNodeClick(HNode node, NodeView nodeView)
     {
-        if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers) {
+
+    }
+    public static void OnNodeEnter(HNode node, NodeView nodeView)
+    {
+        nodeView.SetColor(Color.cyan);
+        if (node.occupant is BoardAgent) {
+
+        }
+    }
+    public static void OnNodeExit(HNode node, NodeView nodeView)
+    {
+        nodeView.RestoreColor();
+    }
+    public static void _old_OnNodeClick(HNode node)
+        {
+            if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers) {
             instance.agentActionSystem.PlacePlayerOnSpawningNode(node);
         }
         if (instance.turnSystem.CurrentPhase == TurnPhases.play)
@@ -59,7 +80,7 @@ public class AreaView : MonoBehaviour
             _renderer.SetPropertyBlock(_propBlock);
         }
     }
-    public static void OnNodeEnter(HNode node)
+    public static void _old_OnNodeEnter(HNode node)
     {
         if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers)
             return;

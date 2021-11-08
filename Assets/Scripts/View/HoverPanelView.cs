@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Ambush;
 public class HoverPanelView : MonoBehaviour
 {
     public Image imageUI;
@@ -21,6 +22,17 @@ public class HoverPanelView : MonoBehaviour
         }
     }
 
+    public static void Populate(BoardAgent agent)
+    {
+        instance.imageUI.sprite = agent.boardSprite;
+        instance.titleUI.text = agent.readableName;
+        instance.descriptionUI.text = agent.Description();
+        instance.hpUI.text = agent.currentHealth.ToString() + " / " + agent.maxHealth.ToString();
+        instance.hpSlider.maxValue = agent.maxHealth;
+        instance.hpSlider.value = agent.currentHealth;
+
+    }
+    //deprecated
     public static void Populate(AgentBase agentBase)
     {
         instance.imageUI.sprite = agentBase.visibleCharacter.sprite;

@@ -5,6 +5,7 @@ using System.Linq;
 using System;
 namespace notbloom.HexagonalMap
 {
+    // deprecated
     [Serializable]
     public class HMap
     {

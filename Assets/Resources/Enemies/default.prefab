@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2367540541482341768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38790751d6985a4db508e9e060f445e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e45bfcb4d84d4575a24d73dad5f8c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 2367540541482341774}
@@ -75,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 2524999646765552298, guid: c81f846deaa80475f972276677111e62, type: 3}
       propertyPath: m_Camera
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4601841718805363167, guid: c81f846deaa80475f972276677111e62, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7728920144140480128, guid: c81f846deaa80475f972276677111e62, type: 3}
       propertyPath: m_AnchorMax.x

@@ -39,22 +39,22 @@ namespace Ambush
 
         public int GetMaxHealth()
         {
-            return maxHealth + GetStatModifier(StatType.maxHp);
+            return maxHealth + GetStatModifier(StatType.MaxHp);
         }
 
         public int GetMovement()
         {
-            return movement + GetStatModifier(StatType.movement);
+            return movement + GetStatModifier(StatType.Movement);
         }
 
         public int GetMagicalDamage()
         {
-            return magicalDamage + GetStatModifier(StatType.magicalDamage);
+            return magicalDamage + GetStatModifier(StatType.MagicalDamage);
         }
 
         public int GetPhysicalDamage()
         {
-            return physicalDamage + GetStatModifier(StatType.physicalDamage);
+            return physicalDamage + GetStatModifier(StatType.PhysicalDamage);
         }
 
         public int GetPhysicalDamage2()
@@ -63,7 +63,7 @@ namespace Ambush
 
             var o = from e in equipment
                 from s in e.stats
-                where s.type == StatType.physicalDamage
+                where s.type == StatType.PhysicalDamage
                 select s.value;
 
 
@@ -71,7 +71,7 @@ namespace Ambush
                 // e.stats.Where(s => s.type == StatType.physicalDamage).
 
             foreach (var a in e.stats)
-                if (a.type == StatType.physicalDamage)
+                if (a.type == StatType.PhysicalDamage)
                     r += a.value;
 
             return r;

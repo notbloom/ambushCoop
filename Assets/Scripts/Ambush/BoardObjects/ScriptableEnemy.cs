@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 namespace Ambush {
     [CreateAssetMenu(fileName = "new ScriptableEnemy", menuName = "Data / Enemy", order = 0)]
-
     public class ScriptableEnemy : ScriptableObject
     {
         public Sprite boardSprite;

@@ -69,6 +69,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Headache files
 Assets/Scripts/notbloom/Ambush.csproj.meta
 Assets/Scripts/notbloom/Assembly-CSharp-firstpass.csproj.meta
 Assets/Scripts/notbloom/Assembly-CSharp.csproj.meta

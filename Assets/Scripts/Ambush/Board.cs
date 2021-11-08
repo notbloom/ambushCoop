@@ -23,7 +23,7 @@ namespace Ambush
             map.CreateGeneric();
             SpawnGenericEnemies();
             //map.CreateSimpleGrid(10,10);
-
+            SpawnPlayer();
         }
         public void SpawnPlayer() {
             GameObject go = Instantiate(Resources.Load("Player/default", typeof(GameObject))) as GameObject;

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using notbloom.HexagonalMap;
-public class PlayerAgent : AgentBase, ISpawn
 
+public class PlayerAgent : AgentBase, ISpawn
 {
     public List<ScriptableCard> actions;
     //public ScriptableCard currentCard => actions[actionCount];

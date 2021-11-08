@@ -1414,7 +1414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -32768
-  m_Sprite: {fileID: 21300000, guid: 5e362bd90f5044310af7b0d175774c51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8bedf38b758ae4096ab79d511adfdbb7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1433,8 +1433,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644341133}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 13.81, y: -0.1, z: 11.76}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalPosition: {x: 14.8, y: -1, z: 11.9}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
@@ -4724,6 +4724,7 @@ GameObject:
   - component: {fileID: 1946531302}
   - component: {fileID: 1946531304}
   - component: {fileID: 1946531301}
+  - component: {fileID: 1946531305}
   m_Layer: 0
   m_Name: _GameEngine
   m_TagString: Untagged
@@ -4743,6 +4744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd2e5ae9358a24b3db98c4ea5f0a74c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  repository: {fileID: 1946531305}
   map:
     nodes: []
     startingNodes: []
@@ -4790,6 +4792,20 @@ MonoBehaviour:
   board: {fileID: 1946531301}
   boardView: {fileID: 1093361909}
   turnSystem: {fileID: 0}
+--- !u!114 &1946531305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946531300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7dcc68b0bae64636971ab50801a00da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scriptableEnemies:
+  - {fileID: 11400000, guid: e924c3f84ef4c47898ed244a7a314e21, type: 2}
 --- !u!1 &1995907868
 GameObject:
   m_ObjectHideFlags: 0

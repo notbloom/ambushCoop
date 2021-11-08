@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2006696864325446370}
   - component: {fileID: 2006696864325446371}
-  - component: {fileID: 2006696864325446372}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -84,26 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2006696864325446372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006696864325446373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adfbe09f706a54447bad8c4bd97087f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visibleCharacter: {fileID: 11400000, guid: 282488477bbd74efb9c1f5edbb48508a, type: 2}
-  baseStats: {fileID: 0}
-  faction: 1
-  spriteRenderer: {fileID: 2006696864325446371}
-  actionCount: 0
-  slider: {fileID: 7673469963310717720}
-  cards:
-  - {fileID: 11400000, guid: fee788d106031486aa620b3ceab24b0a, type: 2}
 --- !u!1 &3254433086328139688
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +165,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &1604487444664446836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

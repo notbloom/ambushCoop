@@ -37,7 +37,7 @@ public class HexagonalMapView : MonoBehaviour
             GameObject hexCell = Instantiate(hexPrefab, node.ToVector3(), Quaternion.identity);
             hexCell.transform.parent = transform;
             NodeView nodeView = hexCell.GetComponent<NodeView>();
-            nodeView.node = node;
+//            nodeView.node = node;
             finalNode = node;
             MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
             Renderer _renderer = hexCell.GetComponent<Renderer>();

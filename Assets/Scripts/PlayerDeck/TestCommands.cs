@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestCommands : MonoBehaviour
 {
-    public Agent playerAgent;
+//    public BoardAgent playerAgent;
     // Start is called before the first frame update
     void Start()
     {

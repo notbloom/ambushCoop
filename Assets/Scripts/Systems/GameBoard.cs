@@ -5,12 +5,7 @@ using UnityEngine;
 namespace Ambush
 {
    
-    public class Node
-    {
-        public ushort x;
-        public ushort y;
-    //    public BoardPiece piece;
-    }
+
 
     public class BoardPiece : BoardObject
     {

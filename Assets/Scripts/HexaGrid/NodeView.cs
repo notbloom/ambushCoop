@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using notbloom.HexagonalMap;
+using Ambush;
+
 public class NodeView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    public HNode node;
+    public Node node;
     private Renderer _renderer;
     private Color _defaultColor;
 

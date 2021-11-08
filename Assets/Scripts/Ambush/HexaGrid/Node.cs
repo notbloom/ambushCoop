@@ -2,30 +2,33 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-namespace notbloom.HexagonalMap
+namespace Ambush
 {
     [Serializable]
-    public class HNode
-    {
+    public class Node
+    {      
         public const float innerRadius = 3f;
         public const float outerRadius = 0.866025404f;
-        // public HPosition position;
-        public int x;// => position.x;
-        public int y;// => position.y;
+     
+        public ushort x;// => position.x;
+        public ushort y;// => position.y;
+
         [NonSerialized]
-        public List<HNode> neighbours;
+        public List<Node> neighbours;
+
         [NonSerialized]
-        public HObject occupant;
+        public BoardObject occupant;
+
         [NonSerialized]
         public List<HTrigger> triggers;
+
         public bool passable => true;
 
-        public HNode(int x, int y)
+        public Node(ushort x, ushort y)
         {
             this.x = x;
-            this.y = y;
-            //position = new HPosition(x, y);
-            neighbours = new List<HNode>();
+            this.y = y;            
+            neighbours = new List<Node>();
         }
 
         //public new string ToString() => position.ToString();
@@ -34,7 +37,7 @@ namespace notbloom.HexagonalMap
         {
             string output = ToString() + "\n";
             output += "Neighbours(" + neighbours.Count.ToString() + "):\n";
-            foreach (HNode node in neighbours)
+            foreach (Node node in neighbours)
             {
                 output += node.ToString() + "\n";
             }
@@ -53,16 +56,12 @@ namespace notbloom.HexagonalMap
 
         }
 
-        public static float SquaredDistance(HNode r, HNode c)
+        public static float SquaredDistance(Node r, Node c)
         {
             Vector3 a = r.ToVector3();
             Vector3 b = c.ToVector3();
             return (b.x - a.x) * (b.x - a.x) + (b.z - a.z) * (b.z - a.z);
         }
-
-
-
-        //    HPosition.SquaredDistance( Vector3.squa );// a.position, b.position);
 
     }
 }

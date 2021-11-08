@@ -32,6 +32,7 @@ namespace Ambush
     public class Equipment
     {
         public string name;
+        
         public List<Stat> stats;
         //public void Equip(BoardAgent boardAgent)
         //{
@@ -107,7 +108,7 @@ namespace Ambush
         {
             int r = 0;
 
-            var o = from e in equipment
+            var o = from e in equipment 
                     from s in e.stats
                     where s.type == statType
                     select s.value;

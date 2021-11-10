@@ -79,6 +79,7 @@ namespace Ambush
 
         public int GetStatModifier(StatType statType)
         {
+            //var buffs = equipment.Select(e => e.stats).Select(s => s.value);
             var r = 0;
 
             var o = from e in equipment

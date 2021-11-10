@@ -1751,11 +1751,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexPrefab: {fileID: 2353125638699616442, guid: 660b0f18fc3324871a02b285fc0d18a0, type: 3}
   tileColors:
-  - {r: 0.6840513, g: 0.7924528, b: 0.7860249, a: 1}
-  - {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-  - {r: 0.6677643, g: 0.75419366, b: 0.7735849, a: 1}
+  - r: 0.6840513
+    g: 0.7924528
+    b: 0.7860249
+    a: 1
+  - r: 0.7735849
+    g: 0.7735849
+    b: 0.7735849
+    a: 1
+  - r: 0.6677643
+    g: 0.75419366
+    b: 0.7735849
+    a: 1
   rows: 9
   cols: 30
+  map:
+    nodes: []
+    startingNodes: []
 --- !u!4 &723516775
 Transform:
   m_ObjectHideFlags: 0
@@ -2458,11 +2470,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hexPrefab: {fileID: 2353125638699616442, guid: 660b0f18fc3324871a02b285fc0d18a0, type: 3}
   tileColors:
-  - {r: 0.6840513, g: 0.7924528, b: 0.7860249, a: 1}
-  - {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
-  - {r: 0.6677643, g: 0.75419366, b: 0.7735849, a: 1}
+  - r: 0.6840513
+    g: 0.7924528
+    b: 0.7860249
+    a: 1
+  - r: 0.7735849
+    g: 0.7735849
+    b: 0.7735849
+    a: 1
+  - r: 0.6677643
+    g: 0.75419366
+    b: 0.7735849
+    a: 1
   rows: 9
   cols: 30
+  map:
+    nodes: []
+    startingNodes: []
 --- !u!4 &1093361911
 Transform:
   m_ObjectHideFlags: 0

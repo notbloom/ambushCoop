@@ -3,8 +3,41 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace Ambush { 
+    /* Player Controller es el input que los jugadores mandan a el server, solo toma de desiciones y monitoreo de inputs,
+    node highlights, acciones, etc
+    */
+    public class Skill{
+        //state machine?
+        public void OnSkillPress(){
+
+        }
+        public void OnNodeEnter(){
+
+        }
+        public void OnNodeExit(){
+
+        }
+        public void OnNodeClick(){
+
+        }
+    }
     public class PlayerController : MonoBehaviour
     {
+
+        public void OnSkillPress(){
+
+        }
+        public void OnNodeEnter(){
+
+        }
+        public void OnNodeExit(){
+
+        }
+        public void OnNodeClick(){
+
+        }
+
+
         private BoardPlayer _boardPlayer;
         public BoardPlayer boardPlayer {
             get { return _boardPlayer; }

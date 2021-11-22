@@ -3,11 +3,19 @@ using System.Collections;
 
 namespace Ambush
 {
-    public class EnemyView : BoardObjectView
+    public class EnemyBehaviour : MonoBehaviour, IAgentBehaviour
     {
         public SpriteRenderer spriteRenderer;        
         public BoardEnemy boardEnemy;
 
+        public Transform Transform() => transform;
+        public void PlayTurn(){
+            // foreach (ScriptableCard card in cards)
+            // {
+            //     card.AITurn(boardEnemy.position, this);
+            // }
+            // TurnSystem.EndTurn(this);
+        }
         public void ShowIntent()
         {
 

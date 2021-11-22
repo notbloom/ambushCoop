@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Core Loop Experience.md",
+            "file": "Equipment & Skills.md",
             "mode": "source"
           }
         },
@@ -21,7 +21,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Core Loop Experience.md",
+            "file": "Equipment & Skills.md",
             "mode": "preview"
           }
         },
@@ -81,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Core Loop Experience.md",
+                "file": "Equipment & Skills.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,11 +109,11 @@
   },
   "active": "a3a0d1a6c17cbfdd",
   "lastOpenFiles": [
+    "Equipment & Skills.md",
+    "RoadMap.md",
     "Core Loop Experience.md",
     "Main.md",
     "Ideas.md",
-    "Changelog.md",
-    "Equipment & Skills.md",
-    "RoadMap.md"
+    "Changelog.md"
   ]
 }

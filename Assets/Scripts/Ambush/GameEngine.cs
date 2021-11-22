@@ -4,6 +4,13 @@ using UnityEngine;
 
 namespace Ambush
 {
+    public enum GameEngineState{
+        Loading,
+        Placing,
+        Playing,
+        Victory,
+        Defeat
+    }
     public class GameEngine : MonoBehaviour{
         public Board board;
         public BoardView boardView;

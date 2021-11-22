@@ -3,12 +3,14 @@ using System.Collections;
 
 namespace Ambush
 {
-    public class PlayerView : BoardObjectView
+    public class PlayerBehaviour : MonoBehaviour, IAgentBehaviour
     {
         public SpriteRenderer spriteRenderer;        
         public BoardEnemy boardEnemy;
-        
+        public Transform Transform() => transform;
+        public void PlayTurn(){
 
+        }
         public void ShowIntent()
         {
 

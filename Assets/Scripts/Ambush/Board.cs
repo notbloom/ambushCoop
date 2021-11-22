@@ -27,7 +27,7 @@ namespace Ambush
         public void SpawnPlayer() {
             GameObject go = Instantiate(Resources.Load("Player/default", typeof(GameObject))) as GameObject;
             BoardPlayer boardPlayer = repository.GetScriptablePlayerClasses["adventurer"].Create();
-            boardPlayer.view = go.GetComponent<PlayerView>();            
+            boardPlayer.view = go.GetComponent<PlayerBehaviour>();            
             PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
         }
         public void SpawnGenericEnemies() {
@@ -46,27 +46,15 @@ namespace Ambush
                 //TODO hacer la call mas amigable?
                 BoardEnemy boardEnemy = repository.GetScriptableEnemy["default"].Create();
 
-                boardEnemy.view = go.GetComponent<EnemyView>();
-                //boardEnemy.readableName = "generic"; //WORKING! 
+                boardEnemy.view = go.GetComponent<EnemyBehaviour>();                
                 PlaceAgent(boardEnemy, map.FindNodeByVector2Int(new Vector2Int(i, 5)));
-
-
-                //BoardEnemy boardEnemy = new BoardEnemy();
-                //boardEnemy.position = map.FindNodeByVector2Int(new Vector2Int(i, 5));
-                //go.GetComponent<EnemyView>().transform.position = boardEnemy.
-
-                //Mandar los datos?
-                //ISpawn ispawn = instance.GetComponent<ISpawn>();
-                //if (ispawn != null)
-                //    ispawn.Spawn(map.FindNodeByVector2Int(new Vector2Int(i, 5)));
-                //ispawn.Spawn(objData);
             }
         }
         public bool PlaceAgent(BoardAgent agent, Node node) {
             if (node.occupant != null) return false;
             node.occupant = agent;
             agent.position = node;
-            agent.view.transform.position = node.ToVector3();
+            agent.view.Transform().position = node.ToVector3();
 
             return true;
         }

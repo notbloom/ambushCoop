@@ -43,6 +43,11 @@ public class HoverPanelView : MonoBehaviour
         instance.hpSlider.value = agentBase.agent.hp;
 
     }
+     public static void Show(BoardAgent agentBase)
+    {
+        Populate(agentBase);
+        Show();
+    }
     public static void Show(AgentBase agentBase)
     {
         Populate(agentBase);

@@ -9,6 +9,6 @@ namespace Ambush
         public Node position;
         public Sprite boardSprite;
         public BoardFaction faction;
-        public BoardObjectView view;
+        public IAgentBehaviour view;
     }
 }

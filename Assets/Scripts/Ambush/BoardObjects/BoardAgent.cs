@@ -32,6 +32,8 @@ namespace Ambush
         // public Sprite boardSprite;
         public string unique_id;
 
+        public virtual void PlayTurn(){ }
+
         public string Description()
         {
             return $"HP:{baseMaxHealth}";
@@ -90,9 +92,5 @@ namespace Ambush
             foreach (var i in o) r += i;
             return r;
         }
-    }
-
-    public class BoardEnemy : BoardAgent
-    {
     }
 }

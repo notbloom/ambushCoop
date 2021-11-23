@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5042742261794970583}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 9.33, y: 0, z: 11.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 8, y: 0, z: 11.67}
+  m_LocalScale: {x: 5, y: 5, z: 20}
   m_Children:
   - {fileID: 5042742263476063675}
   m_Father: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -360123686633694459, guid: e72c0102292de42af8727eb9bf37fd24, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 971ff9344f0b449918b3faced287fe92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1.3593016, y: 0.21}
+  m_SizeDelta: {x: 0.58, y: 0.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5042742262528134889
 MonoBehaviour:
@@ -320,8 +320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.31}
-  m_SizeDelta: {x: 1.3593016, y: 0.86158085}
+  m_AnchoredPosition: {x: 0, y: 0.27}
+  m_SizeDelta: {x: 0.78, y: 0.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &5042742263476063670
 Canvas:
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5042742263476063672
 MonoBehaviour:
   m_ObjectHideFlags: 0

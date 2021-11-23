@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Ambush
 {
@@ -12,6 +13,7 @@ namespace Ambush
         public int baseMovement; // amount of steps per turn         
         public int basePhysicalDamage; // adds physical damage
         public int currentHealth;
+        [SerializeField]
         public List<Equipment> equipment;
         public string id; //name        
 

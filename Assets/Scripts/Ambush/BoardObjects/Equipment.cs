@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
-
+using UnityEngine;
 namespace Ambush
 {
-    public class Equipment
+    [SerializeField]
+    public class Equipment : ScriptableObject
     {
-        public string name;
+
+        public string readableName;
 
         public List<Stat> stats;
         //public void Equip(BoardAgent boardAgent)

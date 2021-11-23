@@ -537,7 +537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 275.4, y: 371.5}
+  m_AnchoredPosition: {x: 275.4, y: 29}
   m_SizeDelta: {x: 516.3, y: 74.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &174261633
@@ -840,7 +840,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.4
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2834,9 +2834,9 @@ MonoBehaviour:
   hexPrefab: {fileID: 2353125638699616442, guid: 660b0f18fc3324871a02b285fc0d18a0, type: 3}
   areaView: {fileID: 1995907869}
   tileColors:
-  - {r: 0.25658596, g: 0.3972944, b: 0.5849056, a: 1}
-  - {r: 0.29966182, g: 0.4704267, b: 0.6981132, a: 1}
-  - {r: 0.23616058, g: 0.38253003, b: 0.5754717, a: 1}
+  - {r: 0.34117648, g: 0.44705886, b: 0.54901963, a: 1}
+  - {r: 0.2901961, g: 0.4666667, b: 0.64705884, a: 1}
+  - {r: 0.25882354, g: 0.4039216, b: 0.61960787, a: 1}
 --- !u!4 &1093361911
 Transform:
   m_ObjectHideFlags: 0
@@ -6282,6 +6282,14 @@ PrefabInstance:
       propertyPath: playerBehaviour
       value: 
       objectReference: {fileID: 268939021}
+    - target: {fileID: 6580855833560600111, guid: 4ade17e64f11e4c6d816799883ee8acf, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580855833560600111, guid: 4ade17e64f11e4c6d816799883ee8acf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a5bb601c31d3149e896c4c40050bbf19, type: 3}
     - target: {fileID: 6580855833560600274, guid: 4ade17e64f11e4c6d816799883ee8acf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6371,6 +6379,10 @@ PrefabInstance:
       value: Button
       objectReference: {fileID: 0}
     - target: {fileID: 6580855833560600275, guid: 4ade17e64f11e4c6d816799883ee8acf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580855835015616958, guid: 4ade17e64f11e4c6d816799883ee8acf, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

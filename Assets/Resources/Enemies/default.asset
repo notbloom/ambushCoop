@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd51dacf0a83d4facbab92838e693d0c, type: 3}
   m_Name: default
   m_EditorClassIdentifier: 
-  boardSprite: {fileID: 3844603948434292935, guid: e72c0102292de42af8727eb9bf37fd24, type: 3}
+  boardSprite: {fileID: 21300000, guid: 5941377fa4bc24580bccae6a28215c6e, type: 3}
   initiative: 0
   readableName: 'Skeleton '
   baseMovement: 1

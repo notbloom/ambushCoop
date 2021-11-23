@@ -6,9 +6,9 @@ namespace Ambush
 {
     [Serializable]
     public class Node
-    {      
-        public const float innerRadius = 3f;
-        public const float outerRadius = 0.866025404f;
+    {
+        //public const float innerRadius = 3f;//* 1.5f;
+        //public const float outerRadius = 0.866025404f;// * 1.5f;
      
         public ushort x;// => position.x;
         public ushort y;// => position.y;
@@ -47,11 +47,11 @@ namespace Ambush
         {
             if (y % 2 == 0)
             {
-                return new Vector3(x * innerRadius, 0, y * outerRadius);
+                return new Vector3(x * Constants.hexInnerRadius, 0, y * Constants.hexOuterRadius);
             }
             else
             {
-                return new Vector3(x * innerRadius + innerRadius / 2f, 0, y * outerRadius);
+                return new Vector3(x * Constants.hexInnerRadius + Constants.hexInnerRadius / 2f, 0, y * Constants.hexOuterRadius);
             }
 
         }

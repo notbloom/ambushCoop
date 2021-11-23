@@ -12,24 +12,36 @@ namespace Ambush
 
         public Map map;
         public List<BoardPlayer> boardPlayers;
+        public List<PlayerBehaviour> playerBehaviours;
         public List<BoardEnemy> boardEnemies;
         public BoardPlayer Player(string id) { return null; }
+        
         public void Agents() { }
         public void Object() { }
         public void Turn() { }
 
         public static Board Load(string ID) { return null; }
+
+
         public void CreateGeneric() {
             map.CreateGeneric();
             SpawnGenericEnemies();
+            playerBehaviours = new List<PlayerBehaviour>();
             SpawnPlayer();
         }
+
+
         public void SpawnPlayer() {
             GameObject go = Instantiate(Resources.Load("Player/default", typeof(GameObject))) as GameObject;
             BoardPlayer boardPlayer = repository.GetScriptablePlayerClasses["adventurer"].Create();
-            boardPlayer.view = go.GetComponent<PlayerBehaviour>();            
+            PlayerBehaviour playerBehaviour = go.GetComponent<PlayerBehaviour>();
+            boardPlayer.view = playerBehaviour;
+            playerBehaviour.boardAgent = boardPlayer;
+            playerBehaviours.Add(playerBehaviour);
             PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
         }
+
+
         public void SpawnGenericEnemies() {
             for (int i = 0; i < 5; i++)
             {

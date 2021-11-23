@@ -16,7 +16,8 @@ Skills can be interacted with by the player through Inputs
 
 ```cs
 class Skill{
-	public void OnSkillHover;
+	public void OnSkillHover();
+	public void OnSkillExitHover();
 	public void OnSkillActivate();
 	public void OnSkillCancel();
 	public void OnNodeEnter(Node node);

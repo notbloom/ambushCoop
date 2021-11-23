@@ -4,6 +4,7 @@ public class Grid : MonoBehaviour
 {
     public const float innerRadius = 3f;
     public const float outerRadius = 0.866025404f;
+    public Vector3 offset;
     [SerializeField]
     private float size = 1f;
 
@@ -26,18 +27,18 @@ public class Grid : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        for (float x = 0; x < 40; x += size)
+        for (float x = 0; x < 40; x += 1)
         {
-            for (float z = 0; z < 40; z += size)
+            for (float z = 0; z < 40; z += 1)
             {
                 Vector3 point;
                 if (z % 2 == 0)
                 {
-                    point = new Vector3(x * innerRadius, 0, z * outerRadius);
+                    point = new Vector3(x * innerRadius, 0, z * outerRadius) * size + offset;
                 }
                 else
                 {
-                    point = new Vector3(x * innerRadius + innerRadius / 2f, 0, z * outerRadius);
+                    point = new Vector3(x * innerRadius + innerRadius / 2f, 0, z * outerRadius) * size + offset;
                 }
                 Gizmos.DrawSphere(point, 0.1f);
             }

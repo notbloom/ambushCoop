@@ -5,20 +5,24 @@ using notbloom.HexagonalMap;
 using System.Linq;
 using Ambush;
 
-//TODO remate to maybe PlayerUIController, PlayerViewController
+// TODO maybe a system that grabs Node Lists, a color and priority and displays them.
+
 public class AreaView : MonoBehaviour
 {
     NodeView[] nodeViews;
     Dictionary<Node, NodeView> nodeViewsDict; //usar esto mejor para mostrar cosas
     //public Node node;
     public ScriptableCard card;
-    public PlayerAgent playerAgent;
+    public PlayerBehaviour playerBehaviour;
     private NodeView hoverNode;
     private static AreaView instance;
 
     public TurnSystem turnSystem;
     public AgentActionSystem agentActionSystem;
-    
+
+    private List<Node> areaNodes;
+    private List<Node> rangeNodes;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +38,8 @@ public class AreaView : MonoBehaviour
         foreach (NodeView nv in nodeViews) {
             nodeViewsDict.Add(nv.node, nv);
         }
+        areaNodes = new List<Node>();
+        rangeNodes = new List<Node>(); 
     }
     public static void OnCardActivate(ScriptableCard card)
     {
@@ -41,10 +47,13 @@ public class AreaView : MonoBehaviour
     }
     public static void OnNodeClick(Node node, NodeView nodeView)
     {
-
+        instance.playerBehaviour.OnNodeClick(node);
     }
+
     public static void OnNodeEnter(Node node, NodeView nodeView)
     {
+        instance.playerBehaviour.OnNodeEnter(node);
+
         nodeView.SetColor(Color.cyan);
         if (node.occupant is BoardAgent) {
             HoverPanelView.Populate((BoardAgent)node.occupant);
@@ -52,100 +61,51 @@ public class AreaView : MonoBehaviour
     }
     public static void OnNodeExit(Node node, NodeView nodeView)
     {
+        instance.playerBehaviour.OnNodeExit(node);
         nodeView.RestoreColor();
-    }
-    public static void _old_OnNodeClick(Node node)
-        {
-        //    if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers) {
-        //    instance.agentActionSystem.PlacePlayerOnSpawningNode(node);
-        //}
-        //if (instance.turnSystem.CurrentPhase == TurnPhases.play)
-        //{
-        //    if (instance.card != null)
-        //    {
-        //        instance.playerAgent.ClickOnNode(node, instance.card);
-        //        instance.card = null;
-        //    }
-        //}
     }
 
     public static void ResetView()
     {
-        foreach (var item in instance.nodeViews)
+        foreach (var item in instance.nodeViewsDict)
         {
-            MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
-            Renderer _renderer = item.gameObject.GetComponent<Renderer>();
-            _renderer.GetPropertyBlock(_propBlock);
-            _propBlock.SetColor("_Color", Color.white);
-            _renderer.SetPropertyBlock(_propBlock);
+            item.Value.RestoreColor();
+        }
+        foreach (var node in instance.rangeNodes)
+        {
+            instance.nodeViewsDict[node].SetColor(Color.green);
+        }
+        foreach (var node in instance.areaNodes)
+        {
+            instance.nodeViewsDict[node].SetColor(Color.magenta);
         }
     }
-    //public static void _old_OnNodeEnter(Node node)
-    //{
-    //    if (instance.turnSystem.CurrentPhase == TurnPhases.placingPlayers)
-    //        return;
+    public static void ShowArea(List<Node> areaNodes) {
 
-    //    if (instance.card != null)
-    //    {
+        instance.areaNodes = areaNodes;
+        //foreach (var node in areaNodes)
+        //{
+        //    instance.nodeViewsDict[node].SetColor(Color.green);
+        //}
+        ResetView();
+    }
+    public static void HideArea(List<Node> areaNodes = null) {
+        instance.areaNodes = new List<Node>();
+    }
+    public static void ShowRange(List<Node> rangeNodes)
+    {
+        instance.rangeNodes = rangeNodes;
+        ResetView();
 
-    //        //instance.card = instance.playerAgent.currentCard;
-    //        List<Node> n = new List<Node>();
-    //        //List<Node> r = instance.card.Range(HexagonalMapView.finalNode, node);
-    //        List<Node> r = instance.card.Range(instance.playerAgent.agent.node);//, node);
-
-    //        if (r.Contains(node))
-    //        {
-    //            //n = instance.card.Area(HexagonalMapView.finalNode, node);
-    //            n = instance.card.Area(instance.playerAgent.agent.node, node);
-    //        }
-
-
-    //        foreach (var item in instance.nodeViews)
-    //        {
-    //            MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
-    //            Renderer _renderer = item.gameObject.GetComponent<Renderer>();
-
-    //            // Get the current value of the material properties in the renderer.
-    //            _renderer.GetPropertyBlock(_propBlock);
-    //            // Assign our new value.
-    //            _propBlock.SetColor("_Color", Color.white);
-    //            // Apply the edited values to the renderer.
-    //            _renderer.SetPropertyBlock(_propBlock);
-
-    //            if (r.Contains(item.node))
-    //            {
-    //                _propBlock.SetColor("_Color", Color.magenta);
-    //                // Apply the edited values to the renderer.
-    //                _renderer.SetPropertyBlock(_propBlock);
-    //            }
-    //            if (n.Contains(item.node))
-    //            {
-    //                _propBlock.SetColor("_Color", Color.cyan);
-    //                // Apply the edited values to the renderer.
-    //                _renderer.SetPropertyBlock(_propBlock);
-    //            }
-    //        }
-    //    }
-    //    else
-    //    {
-    //        //When no card is selected
-    //        if (instance.hoverNode != null)
-    //        {
-    //            MaterialPropertyBlock __propBlock = new MaterialPropertyBlock();
-    //            Renderer __renderer = instance.hoverNode.gameObject.GetComponent<Renderer>();
-    //            __renderer.GetPropertyBlock(__propBlock);
-    //            __propBlock.SetColor("_Color", Color.white);
-    //            __renderer.SetPropertyBlock(__propBlock);
-    //        }
-    //        MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
-    //        instance.hoverNode = instance.nodeViews.Where(x => x.node == node).First();
-    //        Renderer _renderer = instance.hoverNode.gameObject.GetComponent<Renderer>();
-
-    //        _renderer.GetPropertyBlock(_propBlock);
-    //        _propBlock.SetColor("_Color", Color.blue);
-    //        _renderer.SetPropertyBlock(_propBlock);
-    //    }
-    //}
+        //foreach (var node in areaNodes)
+        //{
+        //    instance.nodeViewsDict[node].SetColor(Color.green);
+        //}
+    }
+    public static void HideRange(List<Node> areaNodes = null)
+    {
+        instance.rangeNodes = new List<Node>();
+    }
     public static void ShowStartingPoints(List<Node> startingNodes)
     {
         foreach (NodeView nodeView in instance.nodeViews)

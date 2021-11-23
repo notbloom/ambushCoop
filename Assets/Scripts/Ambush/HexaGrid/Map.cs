@@ -21,8 +21,8 @@ namespace Ambush
     [Serializable]
     public class Map
     {
-        public const float innerRadius = 3f;
-        public const float outerRadius = 0.866025404f;   
+        //public const float innerRadius = 3f;// * 1.5f;
+        //public const float outerRadius = 0.866025404f;// * 1.5f;   
 
         public List<Node> nodes;
         public List<Node> startingNodes;
@@ -101,11 +101,11 @@ namespace Ambush
         {
             return nodes.Where(n => n.x == nodeVector.x && n.y == nodeVector.y).First();
         }
-        public void ConnectCloseAsNeighbours(float distance = 3.8f)
+        public void ConnectCloseAsNeighbours(float distance = 3.8f) //8.550f
         {
             foreach (Node node in nodes)
             {
-                node.neighbours = nodes.Where(p => Node.SquaredDistance(p, node) < distance && p != node).ToList<Node>();
+                node.neighbours = nodes.Where(p => Node.SquaredDistance(p, node) < Constants.hexSquaredDistanceToNeighbours && p != node).ToList<Node>();
                 Debug.Log(node.neighbours.Count);
             }
         }

@@ -38,7 +38,13 @@ namespace Ambush
             boardPlayer.view = playerBehaviour;
             playerBehaviour.boardAgent = boardPlayer;
             playerBehaviours.Add(playerBehaviour);
-            PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
+
+            var placement = map.FindNodeByVector2Int(new Vector2Int(1, 1));
+            if (placement == null)
+                return;
+            PlaceAgent(boardPlayer, placement);
+
+            //PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
         }
 
 
@@ -58,8 +64,11 @@ namespace Ambush
                 //TODO hacer la call mas amigable?
                 BoardEnemy boardEnemy = repository.GetScriptableEnemy["default"].Create();
 
-                boardEnemy.view = go.GetComponent<EnemyBehaviour>();                
-                PlaceAgent(boardEnemy, map.FindNodeByVector2Int(new Vector2Int(i, 5)));
+                boardEnemy.view = go.GetComponent<EnemyBehaviour>();
+                var placement = map.FindNodeByVector2Int(new Vector2Int(i, 5));
+                if (placement == null) 
+                    return;
+                PlaceAgent(boardEnemy, placement);
             }
         }
         public bool PlaceAgent(BoardAgent agent, Node node) {

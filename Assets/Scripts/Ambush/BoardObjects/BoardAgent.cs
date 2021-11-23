@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using UnityEngine;
 
@@ -34,7 +35,7 @@ namespace Ambush
         // public Sprite boardSprite;
         public string unique_id;
 
-        public virtual void PlayTurn(){ }
+        public virtual void PlayTurn() { }
 
         public string Description()
         {
@@ -65,18 +66,22 @@ namespace Ambush
         {
             var r = physicalDamage;
 
-            var o = from e in equipment
-                from s in e.stats
-                where s.type == StatType.PhysicalDamage
-                select s.value;
+            var sumOfAllPhysicalStatDamageValue = equipment
+                .SelectMany(e => e.stats)
+                .Where(s => s.type == StatType.PhysicalDamage)
+                .Select(s => s.value).Sum();
 
+            r = physicalDamage + sumOfAllPhysicalStatDamageValue;
 
-            foreach (var e in equipment)
-                // e.stats.Where(s => s.type == StatType.physicalDamage).
+            //var o = from e in equipment
+            //        from s in e.stats
+            //        where s.type == StatType.PhysicalDamage
+            //        select s.value;
 
-            foreach (var a in e.stats)
-                if (a.type == StatType.PhysicalDamage)
-                    r += a.value;
+            //foreach (var e in equipment)
+            //    foreach (var a in e.stats)
+            //        if (a.type == StatType.PhysicalDamage)
+            //            r += a.value;
 
             return r;
         }
@@ -87,9 +92,9 @@ namespace Ambush
             var r = 0;
 
             var o = from e in equipment
-                from s in e.stats
-                where s.type == statType
-                select s.value;
+                    from s in e.stats
+                    where s.type == statType
+                    select s.value;
 
             foreach (var i in o) r += i;
             return r;

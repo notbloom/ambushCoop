@@ -2,9 +2,12 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Diagnostics;
+
 namespace Ambush
 {
     [Serializable]
+    [DebuggerDisplay("({x},{y})")]
     public class Node
     {
         //public const float innerRadius = 3f;//* 1.5f;
@@ -43,6 +46,7 @@ namespace Ambush
             }
             return output;
         }
+
         public Vector3 ToVector3()
         {
             if (y % 2 == 0)

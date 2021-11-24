@@ -6,53 +6,9 @@ using System;
 using notbloom.HexagonalMap;
 namespace Ambush
 {
-    //public class Map
-    //{
-    //    public List<Node> nodes;
-
-    //    public bool isNodeOccupied(Node node) => node.piece != null;
-    //    public static Map Load(string ID)
-    //    {
-    //        return null;
-    //    }
-    //    public static Map CreateGeneric() { return null; }
-
-    //}
-
-    public static class Utilities
-    {
-        public static ushort[] FromTo(int from, int to)
-        {
-            var list = new List<ushort>();
-            for (int i = from; i <= to; i++)
-            {
-                list.Add((ushort)i);
-            }
-
-            return list.ToArray();
-        }
-
-        public static ushort[] LeftColumn(int from, int to)
-        {
-            var list = new List<ushort>();
-            for (int i = from; i <= to; i++)
-            {
-                if (i % 2 != 0)
-                    continue;
-
-                list.Add((ushort)i);
-            }
-
-            return list.ToArray();
-        }
-    }
-
     [Serializable]
     public class Map
     {
-        //public const float innerRadius = 3f;// * 1.5f;
-        //public const float outerRadius = 0.866025404f;// * 1.5f;   
-
         public List<Node> nodes;
         public List<Node> startingNodes;
 
@@ -94,51 +50,18 @@ namespace Ambush
 
             //Set starting nodes
             startingNodes = new List<Node>();
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    startingNodes.Add(nodes[i]);
-            //}
+            for (int i = 0; i < 4; i++)
+            {
+                startingNodes.Add(nodes[i]);
+            }
             //Register Neighbours
             ConnectCloseAsNeighbours();
         }
 
         //public void CreateSimpleGrid(int rows, int cols)
         //{
-        //    //Create the nodes;
-        //    nodes = new List<Node>();
-
-        //    var startingX = Enumerable.Range(1, 5)
-        //        .Concat(Enumerable.Repeat(5, 3))
-        //        .Concat(Enumerable.Range(3, 5).Reverse())
-        //        .Select(x=>(ushort)x);
-
-        //    var startingY = Enumerable.Range(0, 8)
-        //        .Select(x => (ushort)x);
-
-        //    foreach (var i in startingX)
-        //    {
-        //        foreach (var j in startingY)
-        //        {
-        //            nodes.Add(new Node(i, j)); //node);
-        //        }
-        //    }
-
-        //    //for (ushort i = 0; i < rows; i++)
-        //    //{
-        //    //    for (ushort j = 0; j < cols; j++)
-        //    //    {
-        //    //        nodes.Add(new Node(i, j)); //node);
-        //    //    }
-        //    //}
-        //    //Set starting nodes
-        //    startingNodes = new List<Node>();
-        //    for (int i = 0; i < rows; i++)
-        //    {
-        //        startingNodes.Add(nodes[i]);
-        //    }
-        //    //Register Neighbours
-        //    ConnectCloseAsNeighbours();
         //}
+
         //implementar cuando cambie nodedata a ushort
         //public void CreateFromNodeData(List<NodeData> nodeData)
         //{

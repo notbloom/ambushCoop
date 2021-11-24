@@ -33,6 +33,11 @@ namespace Ambush {
             newEnemy.baseMaxHealth = baseMaxHealth;
             newEnemy.basePhysicalDamage = basePhysicalDamage;
             newEnemy.baseMagicalDamage = baseMagicalDamage;
+            
+            //Maybe calculated?
+            newEnemy.maxHealth = baseMaxHealth;
+            newEnemy.currentHealth = baseMaxHealth;
+            newEnemy.equipment = equipment ?? new List<Equipment>();
 
             return newEnemy;
         }

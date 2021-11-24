@@ -14,7 +14,7 @@ namespace Ambush
         public ThrowableAnimationFactory animationFactory;
         
         public override IActionController Generate() {
-
+            
             SimpleAttackAction action = new SimpleAttackAction();
 
             action.cost = cost;

@@ -36,6 +36,7 @@ namespace Ambush
             PlayerBehaviour playerBehaviour = go.GetComponent<PlayerBehaviour>();
             boardPlayer.view = playerBehaviour;
             playerBehaviour.boardAgent = boardPlayer;
+            playerBehaviour.ProcessEquipment();
             playerBehaviours.Add(playerBehaviour);
 
             var placement = map.FindNodeByVector2Int(new Vector2Int(4, 4));

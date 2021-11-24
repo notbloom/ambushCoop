@@ -13,6 +13,12 @@ namespace Ambush
             List<Node> aoe = origin.neighbours; //HexagonalMapView.MainMap.nodes.Where(p => Node.SquaredDistance(p, target) < distance).ToList<Node>();// && p != node).ToList<HNode>();
             return aoe;
         }
+         public static List<Node> Path(Node origin, Node target, int distance)
+        {
+            //Path Finderrrrr
+            List<Node> aoe = new List<Node>{ target }; 
+            return aoe;
+        }
     }
 
 }

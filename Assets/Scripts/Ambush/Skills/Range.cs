@@ -16,6 +16,9 @@ namespace Ambush
         public static List<Node> Ring(Node origin, int distance) { 
             return origin.neighbours;
         }
+         public static List<Node> Walkable(Node origin, int distance, BoardFaction faction) { 
+            return origin.neighbours;
+        }
     }
 
 }

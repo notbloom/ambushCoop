@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: adventurer
   m_EditorClassIdentifier: 
   boardSprite: {fileID: 21300000, guid: 971ff9344f0b449918b3faced287fe92, type: 3}
+  equipment:
+  - {fileID: 11400000, guid: 9da38222b8c8544aabb60f7d4ad63683, type: 2}
   initiative: 0
   readableName: Adventurer
   baseMovement: 2

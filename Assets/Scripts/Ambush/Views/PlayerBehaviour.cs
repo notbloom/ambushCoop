@@ -13,9 +13,9 @@ namespace Ambush
         public Transform Transform() => transform;
 
         //TODO Retrieve this from equipment?
-        [SerializeField]
+        
         public List<IActionController> actions;
-        [SerializeField]
+
         public IActionController currentAction;
 
         //test
@@ -24,12 +24,23 @@ namespace Ambush
         // Use this for initialization
         void Awake()
         {
-            var saa = simpleAttackFactory.GenerateNew();
-            //currentAction = saa;
-            actions = new List<IActionController>();
-            actions.Add(saa);
+            // var saa = simpleAttackFactory.GenerateNew();
+            // //currentAction = saa;
+            // actions = new List<IActionController>();
+            // actions.Add(saa);
         }
 
+        public void ProcessEquipment(){
+            actions = new List<IActionController>();
+            foreach (Equipment item in boardAgent.equipment)
+            {
+                foreach (ActionFactory factory in item.actionFactories)
+                {
+                    actions.Add(factory.Generate());
+                }                
+            }
+            
+        }
         // Update is called once per frame
         void Update()
         {

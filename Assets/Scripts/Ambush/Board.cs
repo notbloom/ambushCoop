@@ -1,5 +1,6 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Ambush
@@ -20,8 +21,7 @@ namespace Ambush
         public void Object() { }
         public void Turn() { }
 
-        public static Board Load(string ID) { return null; }
-
+        public static Board Load(string id) { return null; }
 
         public void CreateGeneric() {
             map.CreateGeneric();
@@ -29,7 +29,6 @@ namespace Ambush
             playerBehaviours = new List<PlayerBehaviour>();
             SpawnPlayer();
         }
-
 
         public void SpawnPlayer() {
             GameObject go = Instantiate(Resources.Load("Player/default", typeof(GameObject))) as GameObject;
@@ -39,12 +38,10 @@ namespace Ambush
             playerBehaviour.boardAgent = boardPlayer;
             playerBehaviours.Add(playerBehaviour);
 
-            var placement = map.FindNodeByVector2Int(new Vector2Int(1, 1));
+            var placement = map.FindNodeByVector2Int(new Vector2Int(4, 4));
             if (placement == null)
                 return;
             PlaceAgent(boardPlayer, placement);
-
-            //PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
         }
 
 

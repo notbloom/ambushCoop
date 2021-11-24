@@ -23,7 +23,7 @@ public class SAAttack : ScriptableAction
                 if (target.occupant.agent != null)
                 {
                     //          Debug.Log("agent not null");
-                    AnimationInvoker.Enqueue(animationFactory.Generate(agent.gameObject, new List<HNode>() { from }, new List<HNode>() { target }, 0.2f));
+//                    AnimationInvoker.Enqueue(animationFactory.Generate(agent.gameObject, new List<HNode>() { from }, new List<HNode>() { target }, 0.2f));
                     DamageAnimationFactory.damageInstance = new HDamageInstance(damage);
                     target.occupant.agent.ReceiveDamage(new HDamageInstance(damage));
                 }

@@ -13,15 +13,18 @@ namespace Ambush
         public Transform Transform() => transform;
 
         //TODO Retrieve this from equipment?
+        [SerializeField]
         public List<IActionController> actions;
+        [SerializeField]
         public IActionController currentAction;
 
-
+        //test
+        public SimpleAttackFactory simpleAttackFactory;
 
         // Use this for initialization
         void Awake()
         {
-            SimpleAttackAction saa = new SimpleAttackAction();
+            var saa = simpleAttackFactory.GenerateNew();
             //currentAction = saa;
             actions = new List<IActionController>();
             actions.Add(saa);

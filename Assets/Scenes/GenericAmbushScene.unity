@@ -2385,6 +2385,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834477669}
   - component: {fileID: 834477668}
+  - component: {fileID: 834477670}
   m_Layer: 0
   m_Name: AnimationInvoker
   m_TagString: Untagged
@@ -2399,7 +2400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834477667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28fdab4132b864b208648b5ece50be6a, type: 3}
   m_Name: 
@@ -2419,6 +2420,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &834477670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834477667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1c0cf4a69d340f29f6032d5e3c5e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &858929655
 GameObject:
   m_ObjectHideFlags: 0

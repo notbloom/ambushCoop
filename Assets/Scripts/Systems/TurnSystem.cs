@@ -4,15 +4,18 @@ using UnityEngine;
 using System.Linq;
 using notbloom.HexagonalMap;
 
-public class AgentTurnHandler {
+public class AgentTurnHandler
+{
     List<AgentBase> AllAgents;
     List<AgentBase> currentQueue;
-    public void Add(AgentBase newAgent) { 
+    public void Add(AgentBase newAgent)
+    {
 
     }
 }
 
-public enum TurnPhases { 
+public enum TurnPhases
+{
     start, placingPlayers, play
 }
 public class TurnSystem : MonoBehaviour
@@ -42,23 +45,30 @@ public class TurnSystem : MonoBehaviour
     {
         //StartGame();
     }
-    public void OnScenarioLoaded() {
+    public void OnScenarioLoaded()
+    {
         CurrentPhase = TurnPhases.placingPlayers;
     }
-    public bool isAgentPlaying(AgentBase agent) {
-        if (isPlacingPlayers) {
+    public bool isAgentPlaying(AgentBase agent)
+    {
+        if (isPlacingPlayers)
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
-    public AgentBase FindAgentBaseByID(string agent_id) {
+    public AgentBase FindAgentBaseByID(string agent_id)
+    {
         //TODO CHANGE TO UNIQUE ID 
         agents = GameObject.FindObjectsOfType<AgentBase>().ToList();
         //return agents.Where(a => a.agentID.unique_id == agent_id).First();
         return agents.Where(a => a.string_id == agent_id).First();
     }
-    public void RequestPlacePlayers() {
+    public void RequestPlacePlayers()
+    {
         isPlacingPlayers = true;
     }
     public void OnPlayerPressedEndTurn()
@@ -90,7 +100,7 @@ public class TurnSystem : MonoBehaviour
     {
         instance.CurrentPhase = TurnPhases.play;
         //instance.initiativeViews[agentIndex].OnTurnStart();
-        AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], true, 0.2f));
+  //      AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], true, 0.2f));
         instance.agents[agentIndex].PlayTurn();
 
     }
@@ -113,13 +123,13 @@ public class TurnSystem : MonoBehaviour
             agentIndex = 0;
         }
         //Todo que pasa si yo me muevo y tu te queris mover a donde mismo antes q aparezca la animacion
-        AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], true, 0.2f));
+//        AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], true, 0.2f));
         instance.agents[agentIndex].PlayTurn();
     }
     public static void EndTurn(AgentBase agent)
     {
         //        instance.initiativeViews[agentIndex].OnTurnEnd();
-        AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], false, 0.2f));
+ //       AnimationInvoker.Enqueue(new InitiativeTurnAnimationCommand(instance.initiativeViews[agentIndex], false, 0.2f));
 
         Debug.Log("END TURN");
         NextTurn();
@@ -130,12 +140,12 @@ public class TurnSystem : MonoBehaviour
 
     }
 
-    
+
     // public void LoadScenario()
     // {
     //     //HexagonalMapView.GenericMap();
     //     LoadScenario(ScenarioData.Load("test_scenario"));
-        
+
     // }
     // public void LoadScenario(ScenarioData data)
     // {
@@ -153,7 +163,8 @@ public class TurnSystem : MonoBehaviour
     //     }
     //     //SpawnPlayers();
     // }
-    public void SpawnPlayers() {        
+    public void SpawnPlayers()
+    {
         PlayerAgent[] players = GameObject.FindObjectsOfType<PlayerAgent>();
         //TODO SPAWN POINTS
         foreach (PlayerAgent player in players)

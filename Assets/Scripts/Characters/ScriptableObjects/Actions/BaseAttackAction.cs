@@ -28,7 +28,7 @@ public class BaseAttackAction : ScriptableAction
                     HDamageInstance damageInstance = new HDamageInstance(agent.agent.attack);
                     DamageAnimationFactory.damageInstance = damageInstance;
                     //TODO create a DamageAnimationFactory
-                    AnimationInvoker.Enqueue(animationFactory.Generate(agent.gameObject, new List<HNode>() { from }, new List<HNode>() { target }, 0.2f));
+//                    AnimationInvoker.Enqueue(animationFactory.Generate(agent.gameObject, new List<HNode>() { from }, new List<HNode>() { target }, 0.2f));
                     target.occupant.agent.ReceiveDamage(damageInstance);
                 }
             }

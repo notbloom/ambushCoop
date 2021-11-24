@@ -85,11 +85,11 @@ public abstract class AgentBase : MonoBehaviour
     }
     public void PostReceiveDamage(HDamageInstance damageInstance)
     {
-        AnimationInvoker.Enqueue(new ReceiveDamageAnimationCommand(this, agent.hp, 0.2f));
+//        AnimationInvoker.Enqueue(new ReceiveDamageAnimationCommand(this, agent.hp, 0.2f));
         if (agent.hp <= 0)
         {
             Debug.Log("DEAD?");
-            AnimationInvoker.Enqueue(new DestroyGameobjectCommand(gameObject));
+ //           AnimationInvoker.Enqueue(new DestroyGameobjectCommand(gameObject));
             TurnSystem.RemoveAgent(this);
         }
         //agent.hp -= damageInstance.amount;

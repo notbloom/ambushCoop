@@ -2,15 +2,24 @@
 using System.Collections.Generic;
 namespace Ambush
 {
+    
     public class SimpleAttackAction : IActionController
     {
+        [SerializeField]
         public int cost = 1;
         private bool active = false;
         public int damage = 5;
         public int range = 1;
         public BoardFaction targetFaction = BoardFaction.Enemy;
+        
+        public ThrowableAnimationFactory animationFactory;
 
         public int Cost() => cost;
+
+        public void ApplyAction()
+        {
+            //calcute damg
+        }
 
         public void OnSkillHover(PlayerBehaviour playerBehaviour)
         {
@@ -56,6 +65,9 @@ namespace Ambush
 
         public void OnNodePress(PlayerBehaviour playerBehaviour, Node node)
         {
+            ThrowableAnimationCommand anim = animationFactory.Generate(playerBehaviour.position, node);
+            AnimationInvoker.Enqueue(anim);
+
             if (node.occupant == null)
             {
                 playerBehaviour.ExpendAction(this);
@@ -64,6 +76,8 @@ namespace Ambush
             if (node.occupant.faction == targetFaction)
             {
                 //doDamage(node.occupant);
+                //animationFactory
+                
                 return;
             }
             return;

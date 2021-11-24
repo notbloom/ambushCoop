@@ -39,12 +39,12 @@ namespace Ambush
             playerBehaviour.boardAgent = boardPlayer;
             playerBehaviours.Add(playerBehaviour);
 
-            var placement = map.FindNodeByVector2Int(new Vector2Int(1, 1));
-            if (placement == null)
-                return;
-            PlaceAgent(boardPlayer, placement);
+            //var placement = map.FindNodeByVector2Int(new Vector2Int(1, 1));
+            //if (placement == null)
+            //    return;
+            //PlaceAgent(boardPlayer, placement);
 
-            //PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(1, 1)));
+            PlaceAgent(boardPlayer, map.FindNodeByVector2Int(new Vector2Int(3, 3)));
         }
 
 

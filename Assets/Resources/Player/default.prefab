@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5042742261794970581}
+  simpleAttackFactory: {fileID: 11400000, guid: 8e949b0fd990e496ea1f325ec489aa9d, type: 2}
 --- !u!1 &5042742262528134888
 GameObject:
   m_ObjectHideFlags: 0

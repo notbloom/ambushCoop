@@ -12,6 +12,7 @@ namespace Ambush{
         public Image panelImageUI;
         public TextMeshProUGUI nameUI;
         public PlayerBehaviour playerBehaviour;
+        [SerializeField]
         public IActionController actionController;
 
         public void OnPointerEnter(PointerEventData e) => actionController.OnSkillHover(playerBehaviour);
@@ -20,11 +21,7 @@ namespace Ambush{
         {
             playerBehaviour.ActivateAction(actionController);
         }
-        void Start()
-        {
-            SimpleAttackAction saa = new SimpleAttackAction();
-            actionController = saa;
-        }
+        
         public void Populate(PlayerBehaviour playerBehaviour, IActionController actionController)
         {
             this.playerBehaviour = playerBehaviour;

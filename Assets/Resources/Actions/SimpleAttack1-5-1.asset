@@ -16,3 +16,4 @@ MonoBehaviour:
   cost: 1
   damage: 5
   range: 1
+  animationFactory: {fileID: 11400000, guid: 1719cf3a2315740afafd14cadeed16f5, type: 2}

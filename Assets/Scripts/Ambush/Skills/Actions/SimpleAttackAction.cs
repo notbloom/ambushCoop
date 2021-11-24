@@ -6,8 +6,10 @@ using Codice.CM.Common;
 
 namespace Ambush
 {
+    
     public class SimpleAttackAction : IActionController
     {
+        [SerializeField]
         public int cost = 1;
         public int damage = 5;
         public int range = 1;
@@ -20,7 +22,15 @@ namespace Ambush
         public BoardAgent Attacker;
         public BoardAgent Defender;
 
+        
+        public ThrowableAnimationFactory animationFactory;
+
         public int Cost() => cost;
+
+        public void ApplyAction()
+        {
+            //calcute damg
+        }
 
         public void OnSkillHover(PlayerBehaviour playerBehaviour)
         {
@@ -69,6 +79,10 @@ namespace Ambush
 
         public void OnNodePress(PlayerBehaviour playerBehaviour, Node node)
         {
+            ThrowableAnimationCommand anim = animationFactory.Generate(playerBehaviour.position, node);
+            AnimationInvoker.Enqueue(anim);
+
+            if (node.occupant == null)
             if (!GetValidTargets(playerBehaviour, node))
             {
                 playerBehaviour.ExpendAction(this);

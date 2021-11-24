@@ -8,7 +8,8 @@ public class PlayerAgent : AgentBase, ISpawn
     public List<ScriptableCard> actions;
     //public ScriptableCard currentCard => actions[actionCount];
     public bool playingACard;
-    public void Create() {
+    public void Create()
+    {
         base.Create();
     }
     public void Spawn(ObjectInstaceData objectInstaceData)
@@ -22,7 +23,7 @@ public class PlayerAgent : AgentBase, ISpawn
     }
     public void Spawn(HNode node)
     {
-        
+
         base.Init(node);
         transform.position = node.ToVector3();
         //  Debug.Log("algo");

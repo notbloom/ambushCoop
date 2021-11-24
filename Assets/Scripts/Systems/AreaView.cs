@@ -18,7 +18,7 @@ public class AreaView : MonoBehaviour
     private static AreaView instance;
 
     public TurnSystem turnSystem;
-    public AgentActionSystem agentActionSystem;
+    //public AgentActionSystem agentActionSystem;
 
     private List<Node> areaNodes;
     private List<Node> rangeNodes;
@@ -35,11 +35,12 @@ public class AreaView : MonoBehaviour
     {
         nodeViews = FindObjectsOfType<NodeView>(); //cambiar a temporal o cambiar este init.
         nodeViewsDict = new Dictionary<Node, NodeView>();
-        foreach (NodeView nv in nodeViews) {
+        foreach (NodeView nv in nodeViews)
+        {
             nodeViewsDict.Add(nv.node, nv);
         }
         areaNodes = new List<Node>();
-        rangeNodes = new List<Node>(); 
+        rangeNodes = new List<Node>();
     }
     public static void OnCardActivate(ScriptableCard card)
     {
@@ -55,7 +56,8 @@ public class AreaView : MonoBehaviour
         instance.playerBehaviour.OnNodeEnter(node);
 
         nodeView.SetColor(Color.cyan);
-        if (node.occupant is BoardAgent) {
+        if (node.occupant is BoardAgent)
+        {
             HoverPanelView.Populate((BoardAgent)node.occupant);
         }
     }
@@ -80,7 +82,8 @@ public class AreaView : MonoBehaviour
             instance.nodeViewsDict[node].SetColor(Color.magenta);
         }
     }
-    public static void ShowArea(List<Node> areaNodes) {
+    public static void ShowArea(List<Node> areaNodes)
+    {
 
         instance.areaNodes = areaNodes;
         //foreach (var node in areaNodes)
@@ -89,7 +92,8 @@ public class AreaView : MonoBehaviour
         //}
         ResetView();
     }
-    public static void HideArea(List<Node> areaNodes = null) {
+    public static void HideArea(List<Node> areaNodes = null)
+    {
         instance.areaNodes = new List<Node>();
     }
     public static void ShowRange(List<Node> rangeNodes)

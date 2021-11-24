@@ -17,7 +17,8 @@ namespace Ambush
             if (instance == null)
             {
                 instance = this;
-            }
+            } 
+            
             animationCommands = new Queue<AnimationCommand>();
         }
         void Update()

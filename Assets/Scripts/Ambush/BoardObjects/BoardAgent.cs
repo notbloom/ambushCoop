@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
@@ -32,12 +33,13 @@ namespace Ambush
         // public BoardAgentStats baseStats;
         // public Sprite boardSprite;
         public string unique_id;
+        public int previewHealth;
 
         public virtual void PlayTurn() { }
 
         public string Description()
         {
-            return $"HP:{baseMaxHealth}";
+            return $"HP:{currentHealth}";
         }
 
         public int GetMaxHealth()
@@ -60,42 +62,14 @@ namespace Ambush
             return physicalDamage + GetStatModifier(StatType.PhysicalDamage);
         }
 
-        public int GetPhysicalDamage2()
-        {
-            var r = physicalDamage;
-
-            var sumOfAllPhysicalStatDamageValue = equipment
-                .SelectMany(e => e.stats)
-                .Where(s => s.type == StatType.PhysicalDamage)
-                .Select(s => s.value).Sum();
-
-            r = physicalDamage + sumOfAllPhysicalStatDamageValue;
-
-            //var o = from e in equipment
-            //        from s in e.stats
-            //        where s.type == StatType.PhysicalDamage
-            //        select s.value;
-
-            //foreach (var e in equipment)
-            //    foreach (var a in e.stats)
-            //        if (a.type == StatType.PhysicalDamage)
-            //            r += a.value;
-
-            return r;
-        }
-
         public int GetStatModifier(StatType statType)
         {
-            //var buffs = equipment.Select(e => e.stats).Select(s => s.value);
-            var r = 0;
-
-            var o = from e in equipment
-                    from s in e.stats
-                    where s.type == statType
-                    select s.value;
-
-            foreach (var i in o) r += i;
-            return r;
+            var statTypeValueSum = equipment
+                .SelectMany(e => e.stats)
+                .Where(s => s.type == statType)
+                .Select(s => s.value)
+                .Sum();
+            return statTypeValueSum;
         }
     }
 }

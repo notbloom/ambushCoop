@@ -6,7 +6,10 @@ using Codice.CM.Common;
 
 namespace Ambush
 {
-    
+    /// <summary>
+    /// Uses 2 boardagents as attacker, defender
+    /// Armor vs PhysicalDamage
+    /// </summary>
     public class SimpleAttackAction : IActionController
     {
         [SerializeField]
@@ -21,6 +24,7 @@ namespace Ambush
 
         public BoardAgent Attacker;
         public BoardAgent Defender;
+
 
         
         public ThrowableAnimationFactory animationFactory;
@@ -96,6 +100,7 @@ namespace Ambush
         {
             var armor = Defender.GetStatModifier(StatType.Armor);
             var damage = Attacker.GetStatModifier(StatType.PhysicalDamage) + this.damage;
+
             if (preview)
                 Defender.previewHealth = Defender.currentHealth - Math.Max(0, damage - armor);
             else

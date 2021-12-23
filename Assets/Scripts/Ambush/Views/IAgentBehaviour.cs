@@ -8,7 +8,8 @@ namespace Ambush
         void PlayTurn();
         void ShowIntent();
         void HideIntent();
-
+        void ShowHP(float hp);
+        float CurrentHp();
     }
 
 }

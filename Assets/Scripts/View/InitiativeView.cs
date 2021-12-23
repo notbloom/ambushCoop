@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Ambush;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -10,24 +11,24 @@ public class InitiativeView : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public Image imageUI;
     public Image panelImageUI;
     public TextMeshProUGUI nameUI;
-    public AgentBase agentBase;
+    public BoardAgent agentBase;
 
     public void OnPointerEnter(PointerEventData e) => HoverPanelView.Show(agentBase);
     public void OnPointerExit(PointerEventData e) => HoverPanelView.Hide();
 
 
-    public void Populate(AgentBase agentBase)
+    public void Populate(BoardAgent agentBase)
     {
         this.agentBase = agentBase;
-        imageUI.sprite = agentBase.visibleCharacter.sprite;
-        nameUI.text = agentBase.visibleCharacter.name;
+        imageUI.sprite = agentBase.boardSprite;
+        nameUI.text = agentBase.readableName;
     }
     public void OnTurnStart()
     {
-        panelImageUI.color = agentBase.visibleCharacter.initiativeColorOnTurn;
+        panelImageUI.color = Color.cyan;
     }
     public void OnTurnEnd()
     {
-        panelImageUI.color = agentBase.visibleCharacter.initiativeColorOffTurn;
+        panelImageUI.color = Color.blue;
     }
 }

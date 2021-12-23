@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using notbloom.HexagonalMap;
+//using notbloom.HexagonalMap;
 using System.Linq;
 using Ambush;
 
@@ -12,12 +12,12 @@ public class AreaView : MonoBehaviour
     NodeView[] nodeViews;
     Dictionary<Node, NodeView> nodeViewsDict; //usar esto mejor para mostrar cosas
     //public Node node;
-    public ScriptableCard card;
+    //public ScriptableCard card;
     public PlayerBehaviour playerBehaviour;
     private NodeView hoverNode;
     private static AreaView instance;
 
-    public TurnSystem turnSystem;
+    //public TurnSystem turnSystem;
     //public AgentActionSystem agentActionSystem;
 
     private List<Node> areaNodes;
@@ -42,10 +42,10 @@ public class AreaView : MonoBehaviour
         areaNodes = new List<Node>();
         rangeNodes = new List<Node>();
     }
-    public static void OnCardActivate(ScriptableCard card)
-    {
-        instance.card = card;
-    }
+    // public static void OnCardActivate(ScriptableCard card)
+    // {
+    //     instance.card = card;
+    // }
     public static void OnNodeClick(Node node, NodeView nodeView)
     {
         instance.playerBehaviour.OnNodeClick(node);

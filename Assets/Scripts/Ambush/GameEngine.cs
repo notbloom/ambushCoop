@@ -15,8 +15,9 @@ namespace Ambush
         public Board board;
         public BoardView boardView;
         public PlayerTurnView playerTurnView;
-        public TurnSystem turnSystem;
-        public AnimationSystem animationSystem;
+        //public TurnSystem turnSystem;
+        //public ActionSystem actionSystem;
+        //public AnimationSystem animationSystem;
         // Start is called before the first frame update
         void Start()
         {

@@ -152,9 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8163c84523f7460ba61272df3529711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSystem: {fileID: 611188675}
-  localPlayerUniqueID: player-0
-  playerSpawnAction: {fileID: 11400000, guid: 26a458e7b60b8472386eb2c171c214f0, type: 2}
 --- !u!4 &19899951
 Transform:
   m_ObjectHideFlags: 0
@@ -808,9 +805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b4dacfcd901140b6bbca26156bdb37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 2006696864325446373, guid: c81f846deaa80475f972276677111e62, type: 3}
-  types: 01000000
 --- !u!1 &365913721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,17 +994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d71dfd2b8f14f50b1d355e50d68478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  string_id: player-0
-  visibleCharacter: {fileID: 11400000, guid: 0a35ddd422cd245fa89fa79776c47e66, type: 2}
-  baseStats: {fileID: 11400000, guid: f6f62ff7c07a24e12bf3650694429e8c, type: 2}
-  faction: 0
-  spriteRenderer: {fileID: 430449479}
-  actionCount: 0
-  initiative: 0
-  slider: {fileID: 2078924118}
-  actions:
-  - {fileID: 11400000, guid: fee788d106031486aa620b3ceab24b0a, type: 2}
-  playingACard: 0
 --- !u!1 &450780433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 17.88, y: 10, z: 8.44}
+  m_LocalPosition: {x: 17.88, y: 10, z: 23.79}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1247686543}
@@ -1379,12 +1362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7be6150be4f54e6d9b46e8a4fa8a56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentPhase: 0
-  isPlacingPlayers: 0
-  agents: []
-  agentInitiativeView: {fileID: 1020692269675593053, guid: 45c12387803944b3eaaf6051413a5f80, type: 3}
-  agentInitiativeViewParent: {fileID: 450780434}
-  initiativeViews: []
 --- !u!4 &611188676
 Transform:
   m_ObjectHideFlags: 0
@@ -2405,7 +2382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28fdab4132b864b208648b5ece50be6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 430449480}
 --- !u!4 &834477669
 Transform:
   m_ObjectHideFlags: 0
@@ -5213,9 +5189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1fb5deb0e064fabad47a8f70c6af96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLoader: {fileID: 0}
-  turnSystem: {fileID: 611188675}
-  areaView: {fileID: 1995907869}
 --- !u!4 &1946531303
 Transform:
   m_ObjectHideFlags: 0
@@ -5245,7 +5218,6 @@ MonoBehaviour:
   board: {fileID: 1946531301}
   boardView: {fileID: 1093361909}
   playerTurnView: {fileID: 1995907871}
-  turnSystem: {fileID: 0}
 --- !u!114 &1946531305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5371,10 +5343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70884f6fb605849b0a38ff29c2b46d19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 11400000, guid: 6f19363921e0a44a9b82f97dfec59987, type: 2}
   playerBehaviour: {fileID: 268939021}
-  turnSystem: {fileID: 611188675}
-  agentActionSystem: {fileID: 19899950}
 --- !u!4 &1995907870
 Transform:
   m_ObjectHideFlags: 0

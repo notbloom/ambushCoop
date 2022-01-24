@@ -1,36 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Linq;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
 namespace Ambush
 {
     [Serializable]
     public class Map
     {
+        public static NodeCollection nodeCollection;
         public List<Node> nodes;
         public List<Node> startingNodes;
-        public static NodeCollection nodeCollection;
 
-        public static List<Node> Ring(Node center, int radius) 
-            => nodeCollection.Get(HexOperations.Ring(center.hex, radius));
-        public static List<Node> Circle(Node center, int radius) 
-            => nodeCollection.Get(HexOperations.Circle(center.hex, radius));
+        public static List<Node> Ring(Node center, int radius)
+        {
+            return nodeCollection.Get(HexOperations.Ring(center.hex, radius));
+        }
+
+        public static List<Node> Circle(Node center, int radius)
+        {
+            return nodeCollection.Get(HexOperations.Circle(center.hex, radius));
+        }
 
 
         public void Save()
         {
-            string json = JsonUtility.ToJson(this);
+            var json = JsonUtility.ToJson(this);
             Debug.Log(json);
         }
 
         private List<Node> NodeLine(int xStart, int xEnd, int atY)
         {
             var list = new List<Node>();
-            for (int i = xStart; i <= xEnd; i++)
-            {
-                list.Add(new Node(i, atY));
-            }
+            for (var i = xStart; i <= xEnd; i++) list.Add(new Node(i, atY));
 
             return list;
         }
@@ -39,18 +41,18 @@ namespace Ambush
         {
             //Create the nodes;
             nodes = new List<Node>();
-            nodes.AddRange(NodeLine(12, 16,0));
-            nodes.AddRange(NodeLine(10, 16,1));
-            nodes.AddRange(NodeLine(8, 16,2));
-            nodes.AddRange(NodeLine(6, 16,3));
-            nodes.AddRange(NodeLine(4, 15,4));
-            nodes.AddRange(NodeLine(3, 14,5));
-            nodes.AddRange(NodeLine(2, 13,6));
-            nodes.AddRange(NodeLine(1, 12,7));
-            nodes.AddRange(NodeLine(0, 10,8));
-            nodes.AddRange(NodeLine(0, 8,9));
-            nodes.AddRange(NodeLine(0, 6,10));
-            nodes.AddRange(NodeLine(0, 4,11));
+            nodes.AddRange(NodeLine(12, 16, 0));
+            nodes.AddRange(NodeLine(10, 16, 1));
+            nodes.AddRange(NodeLine(8, 16, 2));
+            nodes.AddRange(NodeLine(6, 16, 3));
+            nodes.AddRange(NodeLine(4, 15, 4));
+            nodes.AddRange(NodeLine(3, 14, 5));
+            nodes.AddRange(NodeLine(2, 13, 6));
+            nodes.AddRange(NodeLine(1, 12, 7));
+            nodes.AddRange(NodeLine(0, 10, 8));
+            nodes.AddRange(NodeLine(0, 8, 9));
+            nodes.AddRange(NodeLine(0, 6, 10));
+            nodes.AddRange(NodeLine(0, 4, 11));
             // for (int i = 0; i < 10; i++)
             // {
             //     for (int j = 0; j < 8; j++)
@@ -62,7 +64,7 @@ namespace Ambush
             //Set starting nodes
             nodeCollection = new NodeCollection();
             nodeCollection.Add(nodes);
-            List<Hex> startingHexes = new List<Hex>()
+            var startingHexes = new List<Hex>
             {
                 new Hex(6, 3),
                 new Hex(6, 4),
@@ -73,13 +75,10 @@ namespace Ambush
                 new Hex(10, 1),
                 new Hex(10, 2)
             };
-            
+
             startingNodes = new List<Node>();
-            
-            foreach (var t in startingHexes)
-            {
-                startingNodes.Add(nodeCollection.Get(t));
-            }
+
+            foreach (var t in startingHexes) startingNodes.Add(nodeCollection.Get(t));
             //Register Neighbours
             ConnectCloseAsNeighbours();
         }
@@ -157,15 +156,14 @@ namespace Ambush
 
         public void ConnectCloseAsNeighbours(float distance = 3.8f) //8.550f
         {
-            foreach (Node node in nodes)
+            foreach (var node in nodes)
             {
                 node.neighbours = nodes
                     .Where(p => Node.SquaredDistance(p, node) < Constants.hexSquaredDistanceToNeighbours && p != node)
-                    .ToList<Node>();
+                    .ToList();
 
                 Debug.Log(node.neighbours.Count);
             }
         }
     }
-
 }

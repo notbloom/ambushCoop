@@ -1,58 +1,61 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace  Ambush
+namespace Ambush
 {
-    
+    [CreateAssetMenu(fileName = "new ThrowableAnimationFactory",
+        menuName = "Factory/Animation/ThrowableAnimationFactory", order = 0)]
+    public class ThrowableAnimationFactory : ScriptableObject
+    {
+        public float animationTime;
+        public GameObject spawnGameobject;
 
-[CreateAssetMenu(fileName = "new ThrowableAnimationFactory", menuName = "Factory/Animation/ThrowableAnimationFactory", order = 0)]
-
-public class ThrowableAnimationFactory : ScriptableObject
-{
-    public GameObject spawnGameobject;
-    public float animationTime;
-    public ThrowableAnimationCommand Generate(Node from, Node to)
-    {
-        ThrowableAnimationCommand animationCommand = new ThrowableAnimationCommand(from, to, animationTime);
-        animationCommand.spawnGameobject = spawnGameobject;
-        return animationCommand;
-    }
-}
-public class ThrowableAnimationCommand : AnimationCommand
-{
-    public GameObject spawnGameobject;
-    private GameObject clone;
-    public float animationTime;
-    public float startTime;
-
-    Node to;
-    Node from;
-    public ThrowableAnimationCommand(Node from, Node to, float animationTime)
-    {
-        this.to = to;
-        this.animationTime = animationTime;
-        this.from = from;
-        Debug.Log("Spawn animator called");
-    }
-    public override IEnumerator Animate()
-    {
-        startTime = Time.time;
-        clone = GameObject.Instantiate(spawnGameobject, from.ToVector3(), spawnGameobject.transform.rotation);
-        Debug.Log("Spawn animator called");
-        yield return _Animate();
-    }
-    private IEnumerator _Animate()
-    {
-        while (Time.time < startTime + animationTime)
+        public ThrowableAnimationCommand Generate(Node from, Node to)
         {
-            clone.transform.position = Vector3.Lerp(from.ToVector3(), to.ToVector3(), (Time.time - startTime) / animationTime);
-            // agent.hp = Mathf.Lerp(startingHp, startingHp - damageInstance.amount, (Time.time - startTime) / animationTime);
-            // agent.UpdateView();
-            yield return null;
+            var animationCommand = new ThrowableAnimationCommand(from, to, animationTime);
+            animationCommand.spawnGameobject = spawnGameobject;
+            return animationCommand;
         }
-        GameObject.Destroy(clone);
     }
 
-}
+    public class ThrowableAnimationCommand : AnimationCommand
+    {
+        public float animationTime;
+        private GameObject clone;
+        private readonly Node from;
+        public GameObject spawnGameobject;
+        public float startTime;
+
+        private readonly Node to;
+
+        public ThrowableAnimationCommand(Node from, Node to, float animationTime)
+        {
+            this.to = to;
+            this.animationTime = animationTime;
+            this.from = from;
+            Debug.Log("Spawn animator called");
+        }
+
+        public override IEnumerator Animate()
+        {
+            startTime = Time.time;
+            clone = Instantiate(spawnGameobject, from.ToVector3(), spawnGameobject.transform.rotation);
+            Debug.Log("Spawn animator called");
+            yield return _Animate();
+        }
+
+        private IEnumerator _Animate()
+        {
+            while (Time.time < startTime + animationTime)
+            {
+                clone.transform.position = Vector3.Lerp(from.ToVector3(), to.ToVector3(),
+                    (Time.time - startTime) / animationTime);
+                // agent.hp = Mathf.Lerp(startingHp, startingHp - damageInstance.amount, (Time.time - startTime) / animationTime);
+                // agent.UpdateView();
+                yield return null;
+            }
+
+            Destroy(clone);
+        }
+    }
 }

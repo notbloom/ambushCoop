@@ -1,9 +1,10 @@
 using UnityEngine;
-using System.Collections.Generic;
+
 namespace Ambush
 {
     //[CreateAssetMenu(fileName = "TurnAction", menuName = "Char/TurnAction", order = 0)]
-    public abstract class ScriptableAction : ScriptableObject, IActionController{
+    public abstract class ScriptableAction : ScriptableObject, IActionController
+    {
         //   public abstract void OnSkillHover();
         //public abstract void OnSkillExitHover();
         //public abstract void OnSkillActivate();

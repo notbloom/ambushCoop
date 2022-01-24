@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace Ambush
 {
-    public interface IAgentBehaviour {
+    public interface IAgentBehaviour
+    {
         Transform Transform();
         void PlayTurn();
         void ShowIntent();
@@ -11,5 +11,4 @@ namespace Ambush
         void ShowHP(float hp);
         float CurrentHp();
     }
-
 }

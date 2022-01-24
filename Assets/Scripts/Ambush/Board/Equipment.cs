@@ -1,17 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+
 namespace Ambush
 {
     [SerializeField]
-
     [CreateAssetMenu(fileName = "new Equipment", menuName = "Equipment", order = 0)]
-
     public class Equipment : ScriptableObject
     {
-        public Sprite uiSprite;
+        public List<ActionFactory> actionFactories;
         public string readableName;
         public List<Stat> stats;
-        public List<ActionFactory> actionFactories;
+        public Sprite uiSprite;
 
         //public void Equip(BoardAgent boardAgent)
         //{

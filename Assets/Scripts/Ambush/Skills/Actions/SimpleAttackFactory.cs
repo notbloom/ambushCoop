@@ -1,21 +1,21 @@
 using UnityEngine;
-using System.Collections.Generic;
+
 namespace Ambush
 {
     [CreateAssetMenu(fileName = "new SimpleAttackFactory", menuName = "ActionFactory/SimpleAttackFactory", order = 0)]
-    public class SimpleAttackFactory : ActionFactory{
+    public class SimpleAttackFactory : ActionFactory
+    {
+        public ThrowableAnimationFactory animationFactory;
 
-      //  public Sprite uiSprite;
+        //  public Sprite uiSprite;
 
         //public int cost = 1;        
         public int damage = 5;
         public int range = 1;
 
-        public ThrowableAnimationFactory animationFactory;
-        
-        public override IActionController Generate() {
-            
-            SimpleAttackController controller = new SimpleAttackController();
+        public override IActionController Generate()
+        {
+            var controller = new SimpleAttackController();
 
             controller.cost = cost;
             controller.uiSprite = uiSprite;

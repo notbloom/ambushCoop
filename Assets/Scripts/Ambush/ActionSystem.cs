@@ -1,12 +1,9 @@
-using System;
 using UnityEngine;
 
 namespace Ambush
 {
-    
     public class ActionSystem : MonoBehaviour
     {
-        
         public static void Add(IAction action)
         {
             action.Do();

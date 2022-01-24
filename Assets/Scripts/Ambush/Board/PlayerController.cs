@@ -1,8 +1,5 @@
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-
-namespace Ambush { 
+namespace Ambush
+{
     /* Player Controller es el input que los jugadores mandan a el server, solo toma de desiciones y monitoreo de inputs,
     node highlights, acciones, etc
     */

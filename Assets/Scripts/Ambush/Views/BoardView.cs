@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,21 +5,18 @@ namespace Ambush
 {
     public class BoardView : MonoBehaviour
     {
-        public GameObject hexPrefab;
-        public AreaView areaView;
-        public List<Color> tileColors;
         public const float innerRadius = 3f;
-        public const float outerRadius = 0.866025404f;        
-        private Board board;
+        public const float outerRadius = 0.866025404f;
         public static BoardView instance;
+        public AreaView areaView;
+        private Board board;
+        public GameObject hexPrefab;
+        public List<Color> tileColors;
         public static Map MainMap => instance.board.map;
 
-        void Awake()
+        private void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
+            if (instance == null) instance = this;
         }
 
         public void Load(Board board)
@@ -28,33 +24,32 @@ namespace Ambush
             GenerateMapView(board.map);
             areaView.Init();
         }
-        // Start is called before the first frame update
-        void Start()
-        {
 
+        // Start is called before the first frame update
+        private void Start()
+        {
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-
         }
+
         public void GenerateMapView(Map map)
         {
-            foreach (Node node in map.nodes)
+            foreach (var node in map.nodes)
             {
-                GameObject hexCell = Instantiate(hexPrefab, node.ToVector3(), Quaternion.identity);
+                var hexCell = Instantiate(hexPrefab, node.ToVector3(), Quaternion.identity);
                 hexCell.transform.parent = transform;
-                NodeView nodeView = hexCell.GetComponent<NodeView>();
+                var nodeView = hexCell.GetComponent<NodeView>();
                 nodeView.node = node;
                 //finalNode = node;
 
-                if (map.startingNodes.Contains(node)) {
+                if (map.startingNodes.Contains(node))
                     nodeView.SetDefaultColor(Color.blue);
-                } else {
+                else
                     nodeView.SetDefaultColor(tileColors[Random.Range(0, tileColors.Count - 1)]);
-                }
-                
+
                 //MaterialPropertyBlock _propBlock = new MaterialPropertyBlock();
                 //Renderer _renderer = hexCell.GetComponent<Renderer>();
 
@@ -90,7 +85,4 @@ namespace Ambush
         //    instance.GenerateView();
         //}
     }
-
 }
-
-

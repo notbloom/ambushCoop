@@ -1,26 +1,28 @@
 using UnityEngine;
-using System.Collections.Generic;
+
 namespace Ambush
-{	
-    public interface IActionController{
-		int Cost();
+{
+    public interface IActionController
+    {
+        int Cost();
 
-		Sprite UISprite();
-		//En la barra
-		void OnSkillHover(PlayerBehaviour playerBehaviour);
-		void OnSkillExitHover(PlayerBehaviour playerBehaviour);
+        Sprite UISprite();
 
-		//apretarla de la barra
-		void OnSkillActivate(PlayerBehaviour playerBehaviour);
+        //En la barra
+        void OnSkillHover(PlayerBehaviour playerBehaviour);
+        void OnSkillExitHover(PlayerBehaviour playerBehaviour);
 
-		//arrepentio
-		void OnSkillCancel(PlayerBehaviour playerBehaviour);
-        
+        //apretarla de la barra
+        void OnSkillActivate(PlayerBehaviour playerBehaviour);
+
+        //arrepentio
+        void OnSkillCancel(PlayerBehaviour playerBehaviour);
+
         //que es lo que va a pasar en el nodo en el tablero
-		void OnNodeEnter(PlayerBehaviour playerBehaviour, Node node);
-		void OnNodeExit(PlayerBehaviour playerBehaviour, Node node);
+        void OnNodeEnter(PlayerBehaviour playerBehaviour, Node node);
+        void OnNodeExit(PlayerBehaviour playerBehaviour, Node node);
 
-		//Queremos que lo ejecute y su animacion;
-		void OnNodePress(PlayerBehaviour playerBehaviour, Node node);
+        //Queremos que lo ejecute y su animacion;
+        void OnNodePress(PlayerBehaviour playerBehaviour, Node node);
     }
 }

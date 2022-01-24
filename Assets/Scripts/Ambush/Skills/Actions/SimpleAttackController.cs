@@ -1,36 +1,36 @@
 ﻿using System;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
-using Codice.CM.Common;
 
 namespace Ambush
 {
-    
     public class SimpleAttackController : IActionController
     {
-        [SerializeField]
-        public int cost = 1;
-        public int damage = 5;
-        public int range = 1;
-
-        public Sprite uiSprite;
         //Clickeao en la barra
-        private bool active = false;
+        private bool active;
+
+
+        public ThrowableAnimationFactory animationFactory;
+
+        public BoardAgent Attacker;
+
+        [SerializeField] public int cost = 1;
+
+        public int damage = 5;
+        public BoardAgent Defender;
+        public int range = 1;
 
         public BoardFaction targetFaction = BoardFaction.Enemy;
 
-        public BoardAgent Attacker;
-        public BoardAgent Defender;
+        public Sprite uiSprite;
 
-        
-        public ThrowableAnimationFactory animationFactory;
-
-        public int Cost() => cost;
-        public Sprite UISprite() => uiSprite;
-        public void ApplyAction()
+        public int Cost()
         {
-            //calcute damg
+            return cost;
+        }
+
+        public Sprite UISprite()
+        {
+            return uiSprite;
         }
 
         public void OnSkillHover(PlayerBehaviour playerBehaviour)
@@ -67,11 +67,11 @@ namespace Ambush
         public void OnNodeEnter(PlayerBehaviour playerBehaviour, Node node)
         {
             //AreaView.ShowArea(Range.Ring(node, range));
-            AreaView.ShowArea( Map.Circle(node, range));
+            AreaView.ShowArea(Map.Circle(node, range));
             //AreaView.ShowArea( PathFinder.MoveArea(node, range, targetFaction));
             if (!GetValidTargets(playerBehaviour, node)) return;
             if (!CanExecuteAction()) return;
-            ExecuteAction(preview: true);
+            ExecuteAction(true);
         }
 
         public void OnNodeExit(PlayerBehaviour playerBehaviour, Node node)
@@ -84,26 +84,31 @@ namespace Ambush
         {
             // ThrowableAnimationCommand anim = animationFactory.Generate(playerBehaviour.position, node);
             // AnimationInvoker.Enqueue(anim);
-            AreaView.HideArea(); 
+            AreaView.HideArea();
             AreaView.HideRange();
             AreaView.ResetView();
-            SimpleAttackAction action =
+            var action =
                 new SimpleAttackAction(damage, playerBehaviour.position, node, animationFactory);
             ActionSystem.Add(action);
-            
+
             if (node.occupant == null)
-            if (!GetValidTargets(playerBehaviour, node))
-            {
-                playerBehaviour.ExpendAction(this);
-                return;
-            }
+                if (!GetValidTargets(playerBehaviour, node))
+                {
+                    playerBehaviour.ExpendAction(this);
+                    return;
+                }
+
             if (!CanExecuteAction()) return;
-            ExecuteAction(preview: false);
+            ExecuteAction(false);
+        }
+
+        public void ApplyAction()
+        {
+            //calcute damg
         }
 
         public void ExecuteAction(bool preview)
         {
-            
             var armor = Defender.GetStatModifier(StatType.Armor);
             var damage = Attacker.GetStatModifier(StatType.PhysicalDamage) + this.damage;
             if (preview)
@@ -138,7 +143,5 @@ namespace Ambush
             Defender = enemy;
             return true;
         }
-
-        
     }
 }

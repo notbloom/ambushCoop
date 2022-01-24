@@ -1,12 +1,19 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace Ambush {
+namespace Ambush
+{
     [CreateAssetMenu(fileName = "new PlayerClass", menuName = "Data / PlayerClass", order = 0)]
-
     public class ScriptablePlayerClass : ScriptableObject
     {
+        public int baseMagicalDamage;
+
+        public int baseMaxHealth;
+
+        // Base Stats
+        public int baseMovement; // amount of steps per turn         
+        public int basePhysicalDamage; // adds physical damage
+
         public Sprite boardSprite;
         //stats
 
@@ -15,16 +22,13 @@ namespace Ambush {
         // Stats
         //initial_fixed_stats        
         public ushort initiative;
-        public string readableName;        
-        // Base Stats
-        public int baseMovement; // amount of steps per turn         
-        public int baseMaxHealth;
-        public int basePhysicalDamage; // adds physical damage
-        public int baseMagicalDamage;
+
+        public string readableName;
         //etc
 
-        public BoardPlayer Create() {
-            BoardPlayer newEnemy = new BoardPlayer();
+        public BoardPlayer Create()
+        {
+            var newEnemy = new BoardPlayer();
 
             newEnemy.boardSprite = boardSprite;
             newEnemy.initiative = initiative;

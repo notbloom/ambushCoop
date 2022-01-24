@@ -1,35 +1,39 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 
-namespace Ambush { 
+namespace Ambush
+{
     public class EnemyController : MonoBehaviour
     {
         private BoardEnemy _boardEnemy;
-        public BoardEnemy boardEnemy {
-            get { return _boardEnemy; }
-            set {
+        public int actionCount;
+
+        public BoardEnemy boardEnemy
+        {
+            get => _boardEnemy;
+            set
+            {
                 _boardEnemy = value;
                 Display();
             }
         }
-        public int actionCount;
 
         //public List<ScriptableCard> cards;
         //public ScriptableCard currentCard => cards[actionCount];
 
-        public void Display() {
-
+        public void Display()
+        {
         }
+
         public string Intent()
         {
-            string intent = "";
+            var intent = "";
             // foreach (ScriptableCard card in cards)
             // {
             //     intent += card.description + "\n";
             // }
             return intent;
         }
+
         public void PlayTurn()
         {
             // foreach (ScriptableCard card in cards)
@@ -38,6 +42,5 @@ namespace Ambush {
             // }
             // TurnSystem.EndTurn(this);
         }
-
     }
 }

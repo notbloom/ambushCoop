@@ -1,38 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ambush
 {
-    public enum GameEngineState{
+    public enum GameEngineState
+    {
         Loading,
         Placing,
         Playing,
         Victory,
         Defeat
     }
-    public class GameEngine : MonoBehaviour{
+
+    public class GameEngine : MonoBehaviour
+    {
         public Board board;
         public BoardView boardView;
+
         public PlayerTurnView playerTurnView;
+
         //public TurnSystem turnSystem;
         //public ActionSystem actionSystem;
         //public AnimationSystem animationSystem;
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             CreateGeneric();
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
-
         }
+
         public void CreateGeneric()
         {
             board.CreateGeneric();
-            boardView.Load(board);//Cambiar por Display? algo para iniciar la vista
+            boardView.Load(board); //Cambiar por Display? algo para iniciar la vista
             playerTurnView.Load(board.playerBehaviours[0]);
             //SpawnPlayers();
             //turnSystem

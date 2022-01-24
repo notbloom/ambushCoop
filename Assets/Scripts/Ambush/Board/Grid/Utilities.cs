@@ -7,10 +7,7 @@ namespace Ambush
         public static int[] FromTo(int from, int to)
         {
             var list = new List<int>();
-            for (int i = from; i <= to; i++)
-            {
-                list.Add(i);
-            }
+            for (var i = from; i <= to; i++) list.Add(i);
 
             return list.ToArray();
         }
@@ -18,12 +15,12 @@ namespace Ambush
         public static ushort[] LeftColumn(int from, int to)
         {
             var list = new List<ushort>();
-            for (int i = from; i <= to; i++)
+            for (var i = from; i <= to; i++)
             {
                 if (i % 2 != 0)
                     continue;
 
-                list.Add((ushort)i);
+                list.Add((ushort) i);
             }
 
             return list.ToArray();

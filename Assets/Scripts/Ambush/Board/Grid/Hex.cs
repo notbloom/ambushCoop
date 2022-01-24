@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 using UnityEngine;
 
 namespace Ambush
@@ -26,40 +25,52 @@ namespace Ambush
             this.q = q;
             this.r = r;
         }
+
         public Hex(int q, int r, int s)
         {
             //todo validate s?
             this.q = q;
             this.r = r;
         }
-        public Vector2Int ToVector2Int() => new Vector2Int(q, r);
 
-        public float Width(float size = 1f) => 2f * size;
-        public float Height(float size = 1f) => Mathf.Sqrt(3) * size;
-        
+        public Vector2Int ToVector2Int()
+        {
+            return new Vector2Int(q, r);
+        }
+
+        public float Width(float size = 1f)
+        {
+            return 2f * size;
+        }
+
+        public float Height(float size = 1f)
+        {
+            return Mathf.Sqrt(3) * size;
+        }
+
         public Vector3 FlatToVector3(float size = 1f)
         {
             var x = size * (3f / 2f * q);
             var y = size * (Mathf.Sqrt(3) / 2f * q + Mathf.Sqrt(3) * r);
-            return new Vector3(x,0, y);
+            return new Vector3(x, 0, y);
         }
-        
-        public static Hex[] Directions = new Hex[]{ new Hex(1, 0, -1), new Hex(1, -1, 0), new Hex(0, -1, 1),
-        new Hex(-1, 0, 1), new Hex(-1, 1, 0), new Hex(0, 1, -1)
+
+        public static Hex[] Directions =
+        {
+            new Hex(1, 0, -1), new Hex(1, -1, 0), new Hex(0, -1, 1),
+            new Hex(-1, 0, 1), new Hex(-1, 1, 0), new Hex(0, 1, -1)
         };
 
         public static Hex Direction(int i)
         {
-            if (i >= 0 && i < 6)
-            {
-                return Directions[i];
-            }
+            if (i >= 0 && i < 6) return Directions[i];
             //todo send error;
             return Directions[0];
         }
 
-        public Hex Neighbour(Hex hex, int direction) {
-             return hex + Direction(direction);
+        public Hex Neighbour(Hex hex, int direction)
+        {
+            return hex + Direction(direction);
         }
 
         public static Hex Scale(Hex hex, int factor)
@@ -68,20 +79,43 @@ namespace Ambush
         }
 
         #region Operators
-    
-    public static Hex operator +(Hex a) => a;
-    public static Hex operator +(Hex a, Hex b) => new Hex(a.q + b.q , a.r + b.r);
-    
-    public static Hex operator -(Hex a) => new Hex(-a.q, -a.r);
-    public static Hex operator -(Hex a, Hex b) => new Hex(a.q - b.q , a.r - b.r);
-    
-    public static Hex operator *(Hex a, int i) => new Hex(a.q * i, a.r * i);    
-        
-    public int Length() => (int) ((Mathf.Abs(q) + Mathf.Abs(r) + Mathf.Abs(s)) / 2f);
 
-    public static int Distance(Hex a, Hex b) => (a - b).Length();
-     
-        
+        public static Hex operator +(Hex a)
+        {
+            return a;
+        }
+
+        public static Hex operator +(Hex a, Hex b)
+        {
+            return new Hex(a.q + b.q, a.r + b.r);
+        }
+
+        public static Hex operator -(Hex a)
+        {
+            return new Hex(-a.q, -a.r);
+        }
+
+        public static Hex operator -(Hex a, Hex b)
+        {
+            return new Hex(a.q - b.q, a.r - b.r);
+        }
+
+        public static Hex operator *(Hex a, int i)
+        {
+            return new Hex(a.q * i, a.r * i);
+        }
+
+        public int Length()
+        {
+            return (int) ((Mathf.Abs(q) + Mathf.Abs(r) + Mathf.Abs(s)) / 2f);
+        }
+
+        public static int Distance(Hex a, Hex b)
+        {
+            return (a - b).Length();
+        }
+
+
         public bool Equals(Hex other)
         {
             return q == other.q && r == other.r;
@@ -99,6 +133,7 @@ namespace Ambush
                 return (q * 397) ^ r;
             }
         }
+
         #endregion
     }
 }

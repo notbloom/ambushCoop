@@ -7,10 +7,7 @@ namespace Ambush
         public static List<Hex> Circle(Hex center, int radius)
         {
             var result = new List<Hex>();
-            for (int i = 0; i <= radius; i++)
-            {
-                result.AddRange(Ring(center, i));
-            }
+            for (var i = 0; i <= radius; i++) result.AddRange(Ring(center, i));
             return result;
         }
 
@@ -24,14 +21,13 @@ namespace Ambush
             }
 
             var hex = center + Hex.Scale(Hex.Direction(4), radius);
-            for (int i = 0; i < 6; i++)
+            for (var i = 0; i < 6; i++)
+            for (var j = 0; j < radius; j++)
             {
-                for (int j = 0; j < radius; j++)
-                {
-                    result.Add(hex);
-                    hex = hex.Neighbour(hex, i);
-                }   
+                result.Add(hex);
+                hex = hex.Neighbour(hex, i);
             }
+
             return result;
         }
     }

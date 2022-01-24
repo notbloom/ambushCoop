@@ -1,11 +1,19 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-namespace Ambush {
+namespace Ambush
+{
     [CreateAssetMenu(fileName = "new ScriptableEnemy", menuName = "Data / Enemy", order = 0)]
     public class ScriptableEnemy : ScriptableObject
     {
+        public int baseMagicalDamage;
+
+        public int baseMaxHealth;
+
+        // Base Stats
+        public int baseMovement; // amount of steps per turn         
+        public int basePhysicalDamage; // adds physical damage
+
         public Sprite boardSprite;
         //stats
 
@@ -14,16 +22,13 @@ namespace Ambush {
         // Stats
         //initial_fixed_stats        
         public ushort initiative;
-        public string readableName;        
-        // Base Stats
-        public int baseMovement; // amount of steps per turn         
-        public int baseMaxHealth;
-        public int basePhysicalDamage; // adds physical damage
-        public int baseMagicalDamage;
+
+        public string readableName;
         //etc
 
-        public BoardEnemy Create() {
-            BoardEnemy newEnemy = new BoardEnemy();
+        public BoardEnemy Create()
+        {
+            var newEnemy = new BoardEnemy();
 
             newEnemy.boardSprite = boardSprite;
             newEnemy.initiative = initiative;
@@ -33,7 +38,7 @@ namespace Ambush {
             newEnemy.baseMaxHealth = baseMaxHealth;
             newEnemy.basePhysicalDamage = basePhysicalDamage;
             newEnemy.baseMagicalDamage = baseMagicalDamage;
-            
+
             //Maybe calculated?
             newEnemy.maxHealth = baseMaxHealth;
             newEnemy.currentHealth = baseMaxHealth;

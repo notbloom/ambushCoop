@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalRepositorySystem : MonoBehaviour
 {
+    private static GlobalRepositorySystem instance;
     public List<Sprite> playerAvatars;
-    static GlobalRepositorySystem instance;
 
     //void Awake()
     //{
@@ -32,6 +31,6 @@ public class GlobalRepositorySystem : MonoBehaviour
     //// }
     //void Update()
     //{
-        
+
     //}
 }

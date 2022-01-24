@@ -1,14 +1,13 @@
 namespace Ambush
 {
-
     public class MoveAction : IAction
     {
+        private readonly MoveAnimationFactory animationFactory;
 
-        readonly BoardAgent boardAgent;
-        readonly Node target;
-        readonly MoveAnimationFactory animationFactory;
+        private readonly BoardAgent boardAgent;
+        private readonly Node target;
 
-        public MoveAction( BoardAgent boardAgent,  Node target, MoveAnimationFactory animationFactory)
+        public MoveAction(BoardAgent boardAgent, Node target, MoveAnimationFactory animationFactory)
         {
             this.boardAgent = boardAgent;
             this.target = target;
@@ -17,7 +16,6 @@ namespace Ambush
 
         public void Do()
         {
-
             var anim = animationFactory.Generate(boardAgent, target);
             AnimationInvoker.Enqueue(anim);
             //

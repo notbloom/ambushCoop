@@ -1,20 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
 namespace Ambush
 {
     public class EnemyBehaviour : MonoBehaviour, IAgentBehaviour
     {
-        public SpriteRenderer spriteRenderer;
         private BoardEnemy _boardEnemy;
+        public Slider slider;
+        public SpriteRenderer spriteRenderer;
+
         public BoardEnemy boardEnemy
         {
-            get
-            {
-                return _boardEnemy;
-                
-            }
+            get => _boardEnemy;
             set
             {
                 _boardEnemy = value;
@@ -25,22 +22,27 @@ namespace Ambush
                 }
             }
         }
-        public Slider slider;
-        public Transform Transform() => transform;
-        public void PlayTurn(){
+
+        public Transform Transform()
+        {
+            return transform;
+        }
+
+        public void PlayTurn()
+        {
             // foreach (ScriptableCard card in cards)
             // {
             //     card.AITurn(boardEnemy.position, this);
             // }
             // TurnSystem.EndTurn(this);
         }
+
         public void ShowIntent()
         {
-
         }
+
         public void HideIntent()
         {
-
         }
 
         public void ShowHP(float hp)
@@ -48,8 +50,13 @@ namespace Ambush
             slider.value = hp;
         }
 
+        public float CurrentHp()
+        {
+            return slider.value;
+        }
+
         // Use this for initialization
-        void Start()
+        private void Start()
         {
             if (slider != null)
             {
@@ -57,12 +64,10 @@ namespace Ambush
                 slider.value = boardEnemy.currentHealth;
             }
         }
-        public float CurrentHp() => slider.value;
-        // Update is called once per frame
-        void Update()
-        {
 
+        // Update is called once per frame
+        private void Update()
+        {
         }
     }
-
 }

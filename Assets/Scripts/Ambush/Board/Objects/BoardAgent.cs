@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ambush
@@ -15,8 +12,9 @@ namespace Ambush
         public int baseMovement; // amount of steps per turn         
         public int basePhysicalDamage; // adds physical damage
         public int currentHealth;
-        [SerializeField]
-        public List<Equipment> equipment;
+
+        [SerializeField] public List<Equipment> equipment;
+
         public string id; //name        
 
         // Stats
@@ -28,6 +26,7 @@ namespace Ambush
         //Usable Stats
         public int movement; // amount of steps per turn         
         public int physicalDamage; // adds physical damage
+        public int previewHealth;
 
         public string readableName;
 
@@ -35,9 +34,10 @@ namespace Ambush
         // public BoardAgentStats baseStats;
         // public Sprite boardSprite;
         public string unique_id;
-        public int previewHealth;
 
-        public virtual void PlayTurn() { }
+        public virtual void PlayTurn()
+        {
+        }
 
         public string Description()
         {

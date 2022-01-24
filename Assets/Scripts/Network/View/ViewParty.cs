@@ -9,7 +9,7 @@
 //    // Start is called before the first frame update
 //    void Start()
 //    {
-        
+
 //    }
 //    public void OnEnable()
 //    {
@@ -23,7 +23,7 @@
 //    // Update is called once per frame
 //    void Update()
 //    {
-        
+
 //    }
 //    public void Populate() {
 //        foreach (PlayerClient playerClient in networkManager.playerClients) {
@@ -33,3 +33,4 @@
 //        }
 //    }
 //}
+

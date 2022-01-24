@@ -14,12 +14,9 @@ public class ObjectPlacer : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hitInfo;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hitInfo))
-            {
-                PlaceCubeNear(hitInfo.point);
-            }
+            if (Physics.Raycast(ray, out hitInfo)) PlaceCubeNear(hitInfo.point);
         }
     }
 

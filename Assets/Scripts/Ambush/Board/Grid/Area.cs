@@ -5,20 +5,35 @@ using System.Linq;
 
 namespace Ambush
 {
-    //DEPRECATED?
     public static class Area
     {
-        
-        public static List<Node> Circle(Node origin, Node target, int distance)
+        public static List<Node> Ring(Node center, int radius) 
+            => Map.nodeCollection.Get(HexOperations.Ring(center.hex, radius));
+        public static List<Node> Circle(Node center, int radius) 
+            => Map.nodeCollection.Get(HexOperations.Circle(center.hex, radius));
+
+        public static List<Node> Empty(List<Node> list) 
+            => list.Where(n => n.occupant == null).ToList();
+
+        public static List<Node> Straight(Node center, int radius)
         {
-            List<Node> aoe = origin.neighbours; //HexagonalMapView.MainMap.nodes.Where(p => Node.SquaredDistance(p, target) < distance).ToList<Node>();// && p != node).ToList<HNode>();
-            return aoe;
+            var hexes = new List<Hex>();
+            for (int i = 0; i < radius; i++)
+            {
+                foreach (var direction in Hex.Directions)
+                {
+                    hexes.Add(direction * i + center.hex);
+                }
+            }
+            return Map.nodeCollection.Get(hexes);
         }
-         public static List<Node> Path(Node origin, Node target, int distance)
+
+        public static List<Node> Path(Node origin, Node target, int distance)
         {
             //Path Finderrrrr
-            List<Node> aoe = new List<Node>{ target }; 
-            return aoe;
+            return PathFinder.GetShortestPathDijkstra(origin, target);
+            // List<Node> aoe = new List<Node>{ target }; 
+            // return aoe;
         }
     }
 

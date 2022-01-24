@@ -10,7 +10,8 @@
           "type": "markdown",
           "state": {
             "file": "Core Loop Experience.md",
-            "mode": "source"
+            "mode": "source",
+            "source": false
           }
         },
         "group": "0048512cb1903bb0"
@@ -22,7 +23,8 @@
           "type": "markdown",
           "state": {
             "file": "Core Loop Experience.md",
-            "mode": "preview"
+            "mode": "preview",
+            "source": false
           }
         },
         "group": "0048512cb1903bb0"
@@ -93,7 +95,7 @@
             }
           },
           {
-            "id": "584e5b1da8124860",
+            "id": "e526af4d8ae4f84f",
             "type": "leaf",
             "state": {
               "type": "todo",
@@ -107,15 +109,15 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "a3a0d1a6c17cbfdd",
+  "active": "1958c67088330a77",
   "lastOpenFiles": [
     "Core Loop Experience.md",
     "Changelog.md",
-    "Network.md",
-    "MainDiagram.md",
     "Main.md",
+    "Ideas.md",
     "Equipment & Skills.md",
     "RoadMap.md",
-    "Ideas.md"
+    "Network.md",
+    "MainDiagram.md"
   ]
 }

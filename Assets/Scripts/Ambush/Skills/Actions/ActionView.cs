@@ -26,7 +26,7 @@ namespace Ambush{
         {
             this.playerBehaviour = playerBehaviour;
             this.actionController = actionController;
-            
+            this.imageUI.sprite = actionController.UISprite();
         }
         public void OnTurnStart()
         {

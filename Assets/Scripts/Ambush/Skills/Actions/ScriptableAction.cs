@@ -12,6 +12,7 @@ namespace Ambush
         //public abstract void OnNodeExit(Node node);
         //public abstract void OnNodePress(Node node);
         public abstract int Cost();
+        public abstract Sprite UISprite();
         public abstract void OnSkillHover(PlayerBehaviour playerBehaviour);
         public abstract void OnSkillExitHover(PlayerBehaviour playerBehaviour);
         public abstract void OnSkillActivate(PlayerBehaviour playerBehaviour);

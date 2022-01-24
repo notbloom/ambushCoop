@@ -14,21 +14,17 @@ namespace Ambush
         
         //Clickeao en la barra
         private bool active = false;
-        
+        public Sprite uiSprite;
         public MoveAnimationFactory animationFactory;
 
         public int Cost() => steps;
-
-        public void ApplyAction()
-        {
-            //calcute damg
-        }
-
+        public Sprite UISprite() => uiSprite;
         public void OnSkillHover(PlayerBehaviour playerBehaviour)
         {
             // SHOW RANGE
             Debug.Log(playerBehaviour.position.ToString());
-            AreaView.ShowRange(Range.Walkable(playerBehaviour.position,steps,playerBehaviour.boardAgent.faction));
+            //AreaView.ShowRange(Range.Walkable(playerBehaviour.position,steps,playerBehaviour.boardAgent.faction));
+            AreaView.ShowRange(Area.Empty(Area.Circle(playerBehaviour.position, steps)));
         }
 
         public void OnSkillExitHover(PlayerBehaviour playerBehaviour)
@@ -68,18 +64,18 @@ namespace Ambush
 
         public void OnNodePress(PlayerBehaviour playerBehaviour, Node node)
         {
-            MoveAnimationCommand anim = animationFactory.Generate(playerBehaviour.boardAgent, node);
-            // foreach (var item in collection)
-            // {
-            //     por cada paso crear una anim
-            //Board.MoveTo(Agent, )
-            // }
-            AnimationInvoker.Enqueue(anim);
-
-            if (node.occupant == null){
-
+            AreaView.HideRange();
+            AreaView.ResetView();
+            List<Node> path = Area.Path(playerBehaviour.position, node, steps);
+            foreach (var stepNode in path)
+            {
+                MoveAnimationCommand anim = animationFactory.Generate(playerBehaviour.boardAgent, stepNode);
+                AnimationInvoker.Enqueue(anim);
+                //TODO mover esto a otro lugar
+                playerBehaviour.boardAgent.position.occupant = null;
+                stepNode.occupant = playerBehaviour.boardAgent;
+                playerBehaviour.boardAgent.position = stepNode;
             }
-
         }
         
     }

@@ -5,6 +5,7 @@ namespace Ambush
     public interface IActionController{
 		int Cost();
 
+		Sprite UISprite();
 		//En la barra
 		void OnSkillHover(PlayerBehaviour playerBehaviour);
 		void OnSkillExitHover(PlayerBehaviour playerBehaviour);

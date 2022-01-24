@@ -14,6 +14,7 @@ namespace Ambush
         public int damage = 5;
         public int range = 1;
 
+        public Sprite uiSprite;
         //Clickeao en la barra
         private bool active = false;
 
@@ -26,7 +27,7 @@ namespace Ambush
         public ThrowableAnimationFactory animationFactory;
 
         public int Cost() => cost;
-
+        public Sprite UISprite() => uiSprite;
         public void ApplyAction()
         {
             //calcute damg
@@ -67,6 +68,7 @@ namespace Ambush
         {
             //AreaView.ShowArea(Range.Ring(node, range));
             AreaView.ShowArea( Map.Circle(node, range));
+            //AreaView.ShowArea( PathFinder.MoveArea(node, range, targetFaction));
             if (!GetValidTargets(playerBehaviour, node)) return;
             if (!CanExecuteAction()) return;
             ExecuteAction(preview: true);
@@ -82,6 +84,9 @@ namespace Ambush
         {
             // ThrowableAnimationCommand anim = animationFactory.Generate(playerBehaviour.position, node);
             // AnimationInvoker.Enqueue(anim);
+            AreaView.HideArea(); 
+            AreaView.HideRange();
+            AreaView.ResetView();
             SimpleAttackAction action =
                 new SimpleAttackAction(damage, playerBehaviour.position, node, animationFactory);
             ActionSystem.Add(action);

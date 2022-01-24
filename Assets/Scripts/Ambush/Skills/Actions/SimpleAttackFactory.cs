@@ -18,6 +18,7 @@ namespace Ambush
             SimpleAttackController controller = new SimpleAttackController();
 
             controller.cost = cost;
+            controller.uiSprite = uiSprite;
             controller.damage = damage;
             controller.range = range;
             controller.animationFactory = animationFactory;

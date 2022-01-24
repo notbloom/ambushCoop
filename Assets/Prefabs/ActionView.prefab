@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f805077a2454771a2d7b845852e496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageUI: {fileID: 0}
+  imageUI: {fileID: 6580855833560600111}
   panelImageUI: {fileID: 0}
   nameUI: {fileID: 0}
   playerBehaviour: {fileID: 0}

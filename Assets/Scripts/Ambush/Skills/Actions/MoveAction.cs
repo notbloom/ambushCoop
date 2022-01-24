@@ -1,9 +1,9 @@
 namespace Ambush
 {
- 
+
     public class MoveAction : IAction
     {
-        
+
         readonly BoardAgent boardAgent;
         readonly Node target;
         readonly MoveAnimationFactory animationFactory;
@@ -17,13 +17,13 @@ namespace Ambush
 
         public void Do()
         {
-            
+
             var anim = animationFactory.Generate(boardAgent, target);
             AnimationInvoker.Enqueue(anim);
-            //     
+            //
             // if (target.occupant == null) return;
             // if (!(target.occupant is BoardAgent)) return;
-            //     
+            //
             // BoardAgent targetAgent = target.occupant as BoardAgent;
             // targetAgent.currentHealth -= damage;
             // ReceiveDamageAnimationCommand receiveDamage =

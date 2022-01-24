@@ -1,2 +1,5 @@
 [[Changelog]]
+[[Core Loop Experience]]
+[[Equipment & Skills]]
 [[RoadMap]]
+[[Ideas]]

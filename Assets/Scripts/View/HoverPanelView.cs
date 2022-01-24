@@ -1,25 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using Ambush;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using Ambush;
+
 public class HoverPanelView : MonoBehaviour
 {
-    public Image imageUI;
-    public GameObject hoverPanelGameobject;
-    public TextMeshProUGUI titleUI;
-    public TextMeshProUGUI descriptionUI;
-    public TextMeshProUGUI hpUI;
-    public Slider hpSlider;
     public static HoverPanelView instance;
+    public TextMeshProUGUI descriptionUI;
+    public GameObject hoverPanelGameobject;
+    public Slider hpSlider;
+    public TextMeshProUGUI hpUI;
+    public Image imageUI;
+    public TextMeshProUGUI titleUI;
 
-    void Start()
+    private void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        if (instance == null) instance = this;
     }
 
     public static void Populate(BoardAgent agent)
@@ -27,11 +23,11 @@ public class HoverPanelView : MonoBehaviour
         instance.imageUI.sprite = agent.boardSprite;
         instance.titleUI.text = agent.readableName;
         instance.descriptionUI.text = agent.Description();
-        instance.hpUI.text = agent.currentHealth.ToString() + " / " + agent.maxHealth.ToString();
+        instance.hpUI.text = agent.currentHealth + " / " + agent.maxHealth;
         instance.hpSlider.maxValue = agent.maxHealth;
         instance.hpSlider.value = agent.currentHealth;
-
     }
+
     //deprecated
     // public static void Populate(AgentBase agentBase)
     // {
@@ -43,11 +39,12 @@ public class HoverPanelView : MonoBehaviour
     //     instance.hpSlider.value = agentBase.agent.hp;
     //
     // }
-     public static void Show(BoardAgent agentBase)
+    public static void Show(BoardAgent agentBase)
     {
         Populate(agentBase);
         Show();
     }
+
     // public static void Show(AgentBase agentBase)
     // {
     //     Populate(agentBase);
@@ -57,6 +54,7 @@ public class HoverPanelView : MonoBehaviour
     {
         instance.hoverPanelGameobject.SetActive(true);
     }
+
     public static void Hide()
     {
         instance.hoverPanelGameobject.SetActive(false);

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SessionTracker : MonoBehaviour
@@ -28,7 +26,7 @@ public class SessionTracker : MonoBehaviour
     {
         if (scene.name == PlayScene)
         {
-       //     Board.LoadScenario(scenarioID);
+            //     Board.LoadScenario(scenarioID);
         }
     }
     public static void NewSession()

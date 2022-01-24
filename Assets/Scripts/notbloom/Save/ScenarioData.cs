@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using notbloom.HexagonalMap;
 using UnityEngine;
 
 [Serializable]
@@ -12,9 +11,9 @@ public class MObject
 }
 public class ScenarioData
 {
-    public List<NodeData> s_nodes;
-    public List<NodeData> s_starting_nodes;
-    public List<ObjectInstaceData> s_objects;
+  //  public List<NodeData> s_nodes;
+   // public List<NodeData> s_starting_nodes;
+   // public List<ObjectInstaceData> s_objects;
 
     public string string_id;
 

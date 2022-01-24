@@ -6,11 +6,10 @@
       {
         "id": "a3a0d1a6c17cbfdd",
         "type": "leaf",
-        "dimension": 34.679487179487175,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Action cycle.md",
+            "file": "Core Loop Experience.md",
             "mode": "source"
           }
         },
@@ -19,11 +18,10 @@
       {
         "id": "1958c67088330a77",
         "type": "leaf",
-        "dimension": 65.32051282051282,
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Action cycle.md",
+            "file": "Core Loop Experience.md",
             "mode": "preview"
           }
         },
@@ -67,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "02c4db4ab05380c4",
@@ -84,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Action cycle.md",
+                "file": "Core Loop Experience.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,14 +107,15 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "1958c67088330a77",
+  "active": "a3a0d1a6c17cbfdd",
   "lastOpenFiles": [
-    "Action cycle.md",
-    "Equipment & Skills.md",
     "Core Loop Experience.md",
+    "Changelog.md",
+    "Network.md",
+    "MainDiagram.md",
     "Main.md",
-    "Ideas.md",
+    "Equipment & Skills.md",
     "RoadMap.md",
-    "Changelog.md"
+    "Ideas.md"
   ]
 }

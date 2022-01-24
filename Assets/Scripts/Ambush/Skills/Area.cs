@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace Ambush
 {
+    //DEPRECATED?
     public static class Area
     {
         

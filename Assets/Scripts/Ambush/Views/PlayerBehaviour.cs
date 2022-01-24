@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 namespace Ambush
 {
@@ -9,6 +10,7 @@ namespace Ambush
     {
         public SpriteRenderer spriteRenderer;        
         public BoardPlayer boardAgent;
+        public Slider slider;
         public Node position => boardAgent.position;
         public Transform Transform() => transform;
 
@@ -29,6 +31,17 @@ namespace Ambush
             // actions = new List<IActionController>();
             // actions.Add(saa);
         }
+
+        void Start()
+        {
+            if (slider != null)
+            {
+                slider.maxValue = boardAgent.maxHealth;
+                slider.value = boardAgent.currentHealth;
+            }
+        }
+
+        public float CurrentHp() => slider.value;
 
         public void ProcessEquipment(){
             actions = new List<IActionController>();
@@ -114,8 +127,13 @@ namespace Ambush
         {
 
         }
-        
 
+        public void ShowHP(float hp)
+        {
+            
+            slider.value = hp;
+            
+        }
 
 
         internal void RequestTarget(int v, object singleTarget)

@@ -15,26 +15,26 @@ namespace Ambush
         
         public override IActionController Generate() {
             
-            SimpleAttackAction action = new SimpleAttackAction();
+            SimpleAttackController controller = new SimpleAttackController();
 
-            action.cost = cost;
-            action.damage = damage;
-            action.range = range;
-            action.animationFactory = animationFactory;
+            controller.cost = cost;
+            controller.damage = damage;
+            controller.range = range;
+            controller.animationFactory = animationFactory;
 
-            return action;
+            return controller;
         }
-        public IActionController GenerateNew()
-        {
-
-            SimpleAttackAction action = new SimpleAttackAction();
-
-            action.cost = cost;
-            action.damage = damage;
-            action.range = range;
-            action.animationFactory = animationFactory;
-
-            return action;
-        }
+        // public IActionController GenerateNew()
+        // {
+        //
+        //     SimpleAttackAction action = new SimpleAttackAction();
+        //
+        //     action.cost = cost;
+        //     action.damage = damage;
+        //     action.range = range;
+        //     action.animationFactory = animationFactory;
+        //
+        //     return action;
+        // }
     }
 }

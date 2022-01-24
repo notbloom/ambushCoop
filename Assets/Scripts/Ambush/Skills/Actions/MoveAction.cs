@@ -78,6 +78,7 @@ namespace Ambush
             // foreach (var item in collection)
             // {
             //     por cada paso crear una anim
+            //Board.MoveTo(Agent, )
             // }
             AnimationInvoker.Enqueue(anim);
 

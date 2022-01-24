@@ -3,11 +3,10 @@
 Playable Generic Scenario
 
 Loading:
-[ ] Create Map
-[ ] Hace move1 y que funcione
 
-* Create Enemies from Data
-* Create Players
+* Create Generic Map
+* Create Genric (Move 1, Attack 1 Melee) Enemies from Data
+* Create Player 
 
 Game Loop:
 

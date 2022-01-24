@@ -10,9 +10,9 @@ namespace Ambush
         
         public virtual IActionController Generate() {
 
-            SimpleAttackAction action = new SimpleAttackAction();
-            action.cost = cost;            
-            return action;
+            SimpleAttackController controller = new SimpleAttackController();
+            controller.cost = cost;            
+            return controller;
         }
     }
 }

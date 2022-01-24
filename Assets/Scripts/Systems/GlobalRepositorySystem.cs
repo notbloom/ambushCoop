@@ -27,9 +27,9 @@ public class GlobalRepositorySystem : MonoBehaviour
         return instance.playerAvatars[spriteID];
     }
 
-    public static ScriptableCard Card(string cardID) {
-        return Resources.Load("Cards/" + cardID, typeof(ScriptableCard)) as ScriptableCard;
-    }
+    // public static ScriptableCard Card(string cardID) {
+    //     return Resources.Load("Cards/" + cardID, typeof(ScriptableCard)) as ScriptableCard;
+    // }
     void Update()
     {
         

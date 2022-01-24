@@ -6,8 +6,14 @@ using Codice.CM.Common;
 
 namespace Ambush
 {
+    /// TODO: Area de movimiento no contempla pathfinding
+    /// TODO: Hacer que se ejecute la accion en el tablero.
+    ///     Valido tambien pal attack.
+    ///     Hay una funcion en el map: StepInto, StepTo, que tienen la logica de choques.
+    /// TODO: La logica debe saber como 
     
-    public class MoveActionController : IActionController
+
+    public class MoveAction : IActionController
     {
         [SerializeField]
         public int steps = 2;

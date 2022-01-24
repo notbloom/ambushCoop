@@ -3,7 +3,9 @@
 Playable Generic Scenario
 
 Loading:
-* Create Map
+[ ] Create Map
+[ ] Hace move1 y que funcione
+
 * Create Enemies from Data
 * Create Players
 

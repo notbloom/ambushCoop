@@ -9,15 +9,15 @@ namespace Ambush
 
         public MoveAnimationFactory animationFactory;
         
-        public override IActionController Generate() {
+        //public override IActionController Generate() {
             
-            MoveActionController controller = new MoveActionController();
-            controller.uiSprite = uiSprite;
-            controller.steps = steps;
-            controller.animationFactory = animationFactory;
+        //    MoveActionController controller = new MoveActionController();
+        //    controller.uiSprite = uiSprite;
+        //    controller.steps = steps;
+        //    controller.animationFactory = animationFactory;
 
-            return controller;
-        }
+        //    return controller;
+        //}
       
     }
 }
